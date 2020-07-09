@@ -2,26 +2,30 @@ w, h = 1000, 800
 
 class Ball(object):
     
-    def __init__(self,_id, _x, _y, _vx=0, _vy=0, _dir='UP', _color=0):
+    def __init__(self,_id, _x, _y, _vx=0, _vy=0, _dir='UP', _color=0, _mode='Linear'):
         self.x, self.y = _x, _y
         self.vx, self.vy = _vx, _vy
         self.id = _id
         self.dir = _dir #'UP', 'DOWN', "RIGHT", "LEFT"
         self.av = 0
         self.color = _color
-        
+        self.mode = _mode #'Linear' or 'Arc'
+
+                        
     def move(self):
         
         if self.dir=='UP':
             if self.y > ymin:
                 self.y -= self.vy
             else:
+                self.mode = 'Arc'
                 self.dir = 'ARC_12_to_3'
                 self.av = PI
         elif self.dir=='DOWN':
             if self.y < ymax:
                 self.y += self.vy            
             else:
+                self.mode = 'Arc'
                 self.dir = 'ARC_6_to_9'
                 self.av = 0
                 
@@ -29,6 +33,7 @@ class Ball(object):
             if self.x < xmax:
                 self.x += self.vx
             else:
+                self.mode = 'Arc'
                 self.dir = 'ARC_3_to_6'
                 self.av = 3*PI/2
                 
@@ -36,78 +41,84 @@ class Ball(object):
             if self.x > xmin:
                 self.x -= self.vx
             else:
+                self.mode = 'Arc'
                 self.dir = 'ARC_9_to_12'
                 self.av = 0
 
-                                                        
+                                                                                                                                              
     def display(self):
-
-        if self.dir == 'ARC_12_to_3':
+        
+        if self.mode == 'Arc':
             self.av += theta
+
+        if self.dir == FOUR_ARCS[0]:
             if self.av < 3*PI/2:
                 pushMatrix()
-                translate(xs, ye)
+                translate(*FOUR_CORNERS[0])
                 rotate(self.av)
                 fill(*self.color)
-                ellipse(0, radius, 20, 20)
+                ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
+                self.mode = 'Linear'
                 self.dir = 'LEFT'
                 self.x = xmax
                 self.y = ye
-                self.av = PI/2
-        elif self.dir == 'ARC_9_to_12':
-            self.av += theta
+                
+        elif self.dir == FOUR_ARCS[1]:
             if self.av < PI/2:
                 pushMatrix()
-                translate(xe, ye)
+                translate(*FOUR_CORNERS[1])
                 rotate(self.av)
                 fill(*self.color)
-                ellipse(-1*radius, 0, 20, 20)
+                ellipse(-1*pendulum_radius, 0, ball_radius, ball_radius)
                 popMatrix()
             else:
+                self.mode = 'Linear'
                 self.dir = 'DOWN'
                 self.x = xe
                 self.y = ymin
                 
-        elif self.dir == 'ARC_6_to_9':
-            self.av += theta
+                
+        elif self.dir == FOUR_ARCS[2]:
             if self.av < PI/2:
                 pushMatrix()
-                translate(xe, ys)
+                translate(*FOUR_CORNERS[2])
                 rotate(self.av)
                 fill(*self.color)
-                ellipse(0, radius, 20, 20)
+                ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
+                self.mode = 'Linear'
                 self.dir = 'RIGHT'
                 self.x = xmin
                 self.y = ys
                 
-        elif self.dir == 'ARC_3_to_6':
-            self.av += theta
+        elif self.dir == FOUR_ARCS[3]:
             if self.av < TWO_PI:
                 pushMatrix()
-                translate(xs, ys)
+                translate(*FOUR_CORNERS[3])
                 rotate(self.av)
                 fill(*self.color)
-                ellipse(0, radius, 20, 20)
+                ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
+                self.mode = 'Linear'
                 self.dir = 'UP'
                 self.x = xs
                 self.y = ymax
-
                                 
                 
         else: # Linear motion
             fill(*self.color)
-            ellipse(self.x, self.y, 20,20)
+            ellipse(self.x, self.y, ball_radius,ball_radius)
 
-    
+#START_ANGLE = [3*PI/2, PI/2,  PI/2, TWO_PI]               
+END_ANGLE = [3*PI/2, PI/2,  PI/2, TWO_PI]           
 
 sqside = 500
-num_balls = 4      
+ball_radius = 30
+num_balls = 5      
 vx, vy = 1, 1  
 xs = w/2-sqside/2
 ys = h/2-sqside/2
@@ -118,11 +129,16 @@ xmin = xs+ibd
 ymin = ys+ibd
 xmax = xs+ibd*num_balls
 ymax = ys+ibd*num_balls
-radius = sqside - ibd
+pendulum_radius = sqside - ibd
 theta = PI/2 * vx / ibd
 RED, BLUE = (255,0,0), (0,255,0)
 GREEN, BLACK = (0, 0,255), (0,0,0)
 colors = [RED, BLUE, GREEN, BLACK]
+
+FOUR_CORNERS = [(xs, ye), (xe, ye), (xe, ys), (xs, ys)]
+FOUR_ARCS = ['ARC_12_to_3', 'ARC_9_to_12', 'ARC_6_to_9', 'ARC_3_to_6']                                                         
+
+
 
 balls = []
 for x in range(num_balls):
@@ -133,10 +149,10 @@ for x in range(num_balls):
     
         
 def setup():    
-
     size(w,h)
     background(127)
     smooth()
+    
     
 def draw():
     global balls, active_balls, a
