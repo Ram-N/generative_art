@@ -56,7 +56,7 @@ class Ball(object):
                 pushMatrix()
                 translate(*FOUR_CORNERS[0])
                 rotate(self.av)
-                fill(*self.color)
+                fill(self.color)
                 ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
@@ -70,7 +70,7 @@ class Ball(object):
                 pushMatrix()
                 translate(*FOUR_CORNERS[1])
                 rotate(self.av)
-                fill(*self.color)
+                fill(self.color)
                 ellipse(-1*pendulum_radius, 0, ball_radius, ball_radius)
                 popMatrix()
             else:
@@ -85,7 +85,7 @@ class Ball(object):
                 pushMatrix()
                 translate(*FOUR_CORNERS[2])
                 rotate(self.av)
-                fill(*self.color)
+                fill(self.color)
                 ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
@@ -99,7 +99,7 @@ class Ball(object):
                 pushMatrix()
                 translate(*FOUR_CORNERS[3])
                 rotate(self.av)
-                fill(*self.color)
+                fill(self.color)
                 ellipse(0, pendulum_radius, ball_radius, ball_radius)
                 popMatrix()
             else:
@@ -110,7 +110,7 @@ class Ball(object):
                                 
                 
         else: # Linear motion
-            fill(*self.color)
+            fill(self.color)
             ellipse(self.x, self.y, ball_radius,ball_radius)
 
 #START_ANGLE = [3*PI/2, PI/2,  PI/2, TWO_PI]               
@@ -142,10 +142,10 @@ FOUR_ARCS = ['ARC_12_to_3', 'ARC_9_to_12', 'ARC_6_to_9', 'ARC_3_to_6']
 
 balls = []
 for x in range(num_balls):
-    balls.append(Ball(x, xmin + x*ibd,ys, vx,vy, 'RIGHT', RED)) 
-    balls.append(Ball(x, xmin + x*ibd,ye, vx,vy, 'LEFT', BLUE)) 
-    balls.append(Ball(x, xs, ymin +x*ibd, vx,vy, 'UP', GREEN)) 
-    balls.append(Ball(x, xe, ymin +x*ibd, vx,vy, 'DOWN', BLACK)) 
+    balls.append(Ball(x, xmin + x*ibd,ys, vx,vy, 'RIGHT', 255)) 
+    balls.append(Ball(x, xmin + x*ibd,ye, vx,vy, 'LEFT', 255)) 
+    balls.append(Ball(x, xs, ymin +x*ibd, vx,vy, 'UP', 255)) 
+    balls.append(Ball(x, xe, ymin +x*ibd, vx,vy, 'DOWN', 255)) 
     
         
 def setup():    
@@ -166,6 +166,10 @@ def draw():
     for b in balls:
         b.move()
         b.display()
-        
     
+    if frameCount >= 100:
+        noLoop()
+    if not frameCount%40:
+        print(frameCount)
+    saveFrame("images/white-###.png")
     
