@@ -1,7 +1,8 @@
 This is a "study" in which I try to disassemble and recreate designs that other artists have created. It is a way to learn, and hopefully stumble on something interesting along the way.
 
 This study was inspired by this image.
-![Image by FunkyVector](images/corona_sine_inspiration.png)
+<img src="images/corona_sine_inspiration.png" width="400">
+
 
 ## Elements to observe and recreate
 1. Notice the circluar "gap" in the center
@@ -30,7 +31,10 @@ will be in x, PI-x, x+2PI, 3PI-x, x+4PI, 5PI-x and so on..
 Let's use the notation that 2PI is one 'octave'. So [x, PI-x] is within one octave.
 [x, x+2PI] is exactly one ocatve. We use this fact in the code.
 
-![Task 1](images/task1.png| width=100)
-![Task 2](images/task2.png| width=100)
-![Task 3](images/task3.png| width=100)
-![Final Image](images/corona_study.png| width=100)
+<img src="images/task1.png" width="200">
+<img src="images/task2.png" width="200">
+<img src="images/task3.png" width="200">
+
+And finally,
+<img src="images/corona_study.png" width="400">
+

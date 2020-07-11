@@ -2,8 +2,9 @@
 
 This was an early gif-loop attempt.
 
-![colored_balls](images/trapeze_loop.gif | width=400)
-![white_balls](images/white_trapeze.gif| width=400)
+<img src="images/white_trapeze.gif" width="400">
+<img src="images/trapeze_loop.gif" width="400">
+
 ### Idea
 
 I got this idea based on a very old juggling sequence. What if 20 (or 25) balls could loop endlessly on a square. From one edge to its adjacent side, it would "fly" (reminiscent of trapeze artists).
