@@ -2,8 +2,8 @@
 
 This was an early gif-loop attempt.
 
-<img src="images/white_trapeze.gif" width="400">
-<img src="images/trapeze_loop.gif" width="400">
+<img src="images/white_trapeze.gif" width="250">
+<img src="images/trapeze_loop.gif" width="250">
 
 ### Idea
 
