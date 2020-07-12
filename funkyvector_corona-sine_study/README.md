@@ -2,7 +2,7 @@ This is a "study" in which I try to disassemble and recreate designs that other 
 
 This study was inspired by this image.
 <img src="images/corona_sine_inspiration.png" width="300">
-Image source, inspiration and credit: [](http://Funkyvector.com)
+Image source, inspiration and credit: http://funkyvector.com
 
 ## Elements to observe and recreate
 1. Notice the circluar "gap" in the center
