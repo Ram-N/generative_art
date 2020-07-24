@@ -10,3 +10,24 @@ Can they criss-cross without ever bumping into each other? That's what this this
 
 You can play around with many of the parameters in the code:
 `num_set` is the number of balls in each set
+
+TODO: This still needs a GIF LOOP to be created...
+
+## [Trapeze Balls](trapeze_balls/trapeze_balls_gif_loop.pyde)
+
+These were the early gif-loop attempts
+
+<img src="images/white_trapeze.gif" width="250">
+<img src="images/trapeze_loop.gif" width="250">
+
+
+# Studies
+
+Just to see how this works, try out
+
+## Two Balls Revolving
+
+## Ferris Wheel
+
+
+

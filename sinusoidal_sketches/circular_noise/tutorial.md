@@ -75,7 +75,23 @@ Based on `2 * (cos(t)+2)` we can tell that the max_noise will always stay within
 In fact, it will start at value 6, go slowly down to 2, and then it will make the reverse trip where it will
 slowly increase back to 6.
 
-In English: max_noise is one way of controlling the figures/shapes to slowly contract and expand in a periodic manner, with time.
+In English: max_offset is one way of controlling the figures/shapes to slowly contract and expand in a periodic manner, with time.
+
+### Effect of dampening the max_offset variable
+
+Let's say that for a few frames, we want to squeeze down on max_offset so hard that we allow not variations at all. We can do this by setting:
+
+```
+max_offset= 2 * (cos(time_value)+1)
+```
+
+For certain frames, the radius is exactly equal for all values of theta. (Rotation invariant)
+Look at this GIF to see the impact of this change.
+
+![noise_cancel](images/noise_cancel.gif)
+
+
+
 
 # Dealing with Perlin Noise
 
