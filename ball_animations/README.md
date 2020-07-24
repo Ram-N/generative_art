@@ -17,8 +17,8 @@ TODO: This still needs a GIF LOOP to be created...
 
 These were the early gif-loop attempts
 
-<img src="images/white_trapeze.gif" width="250">
-<img src="images/trapeze_loop.gif" width="250">
+<img src="trapeze_balls/images/white_trapeze.gif" width="250">
+<img src="trapeze_balls/images/trapeze_loop.gif" width="250">
 
 
 # Studies
