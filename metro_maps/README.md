@@ -12,6 +12,11 @@ This project creates Metro Maps for imaginary cities.
 5. Junctions are shown with a bigger circle with a colored border.
 6. All lines can only run at 90 or 45 degree lines.
 
+**More Intricate Rules**
+1. Overlapping routes should be nicely aligned
+2. Minimal crossovers of routes
+
+
 **Dynamic**
 
 D1. Lines and Stations "disappear" over time, starting from origin until the destination disappears.
