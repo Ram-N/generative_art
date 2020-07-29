@@ -1,6 +1,6 @@
 # Metro Maps
 
-![Sample Map](images/mm_5.jpg)
+<img src="images/mm_5.jpg" width="500">
 
 This project creates Metro Maps for imaginary cities.
 
@@ -9,9 +9,8 @@ different set of Terminals, Routes, Junctions and Stations.
 
 **Xanadu Metro Map**
 
-1. Stations can only be placed on an invisible grid. Hexagonal centers?
 2. A "Line" goes from an O station to a D station. (O and D should be closer to the boundaries of the grid.)
-3. Parallael lines run fat and adjacent to each other
+3. Parallel lines run fat and adjacent to each other
 4. Some stations are "junctions" where the lines will cross each other. Show those with a white oval. These are
 places wherein passengers can switch lines.
 6. All lines can only run at 90 or 45 degree lines, a convention followed ever since the London Underground created its famous maps.
@@ -36,5 +35,5 @@ So I haven't implemented the dynamic component yet. Might come back to it.
 <img src="images/mm_4.jpg" width="200">
 <img src="images/mm_5.jpg" width="200">
 
-A few more examples can be found in the [images]('images') directory.
+A few more examples can be found in the [images](images/) directory.
 
