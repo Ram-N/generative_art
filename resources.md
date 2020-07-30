@@ -8,16 +8,40 @@ Assorted list of resources that I've come across.
 - [Why Love GenArt? Artnome](https://www.artnome.com/news/2018/8/8/why-love-generative-art)
 - A retrospective on [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
 
+
+
 ## List of Lists
 These resources contain GenArt Lists inside themselves
-
+- [Awesome Creative Coding](https://github.com/terkelg/awesome-creative-coding)
 - [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
+
+
+### 
+- [Mathematics of Animation](https://winkervsbecks.github.io/mathematics-of-animation/#/)
 
 ## Processing Resources
 
 - OpenProcessing.org: A great community with excellent open-sourced projects to learn from
 
 - 3D in Processing: https://www.uni-weimar.de/kunst-und-gestaltung/wiki/images/XinWang-How_to_make_a_simple_3D_in_processing.pdf
+
+### Python Repos
+Here are a set of Python-based GenArt repos that I like, admire and am inspired by.
+
+- https://github.com/anaulin/generative-art
+- https://github.com/aaronpenne/generative_art
+- https://github.com/JakobGlock/Generative-Art
+- https://github.com/gengeomergence/GenArt
+
+
+### Books
+
+ -1. [The Nature of Code by Daniel Shiffman](https://natureofcode.com/) - The "Bible" of GenArt. The book is available for free to browse online. All the code is downloadable. Plus [Daniel's YouTube channel](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw) is a priceless resource for those seeking to learn.
+
+ -2. [Generative Design: Visualize, Program, and Create with Processing](https://www.amazon.com/Generative-Design-Visualize-Program-Processing/dp/1616890770/ref=sr_1_2?dchild=1&keywords=generative+design&qid=1596110874&sr=8-2) Authors: Hartmut Bohnacker, Benedikt Gross, Julia Laub, Claudius Lazzeroni (Editor)
+
+
+
 
 
 ## Images and Portraits:
