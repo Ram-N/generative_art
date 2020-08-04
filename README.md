@@ -18,14 +18,14 @@ I try to make all my code available and runnable by others. There are many param
         - [Torus](#Torus)
 
     - Maps
-        -[Metro Maps](#Metro-Maps)
+        - [Metro Maps](#Metro-Maps)
 
     - Image-Based 
-        -[15-Puzzle](#15-puzzle)
+        - [15-Puzzle](#15-puzzle)
 
 
 
-### Metro Maps
+### Metro Maps [Code](/metro_maps) [images](metro_maps/images)
 
 An experimental project that creates Metro Maps for imaginary cities.
 

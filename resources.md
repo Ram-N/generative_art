@@ -33,6 +33,9 @@ Here are a set of Python-based GenArt repos that I like, admire and am inspired 
 - https://github.com/JakobGlock/Generative-Art
 - https://github.com/gengeomergence/GenArt
 
+Eric Davidson: - https://github.com/erdavids?tab=repositories
+I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/videos). He is an excellent (and generous) teacher. I first came across his Mondrain Tiles project.
+
 
 ### Books
 
@@ -48,3 +51,8 @@ Here are a set of Python-based GenArt repos that I like, admire and am inspired 
 - https://www.openprocessing.org/sketch/392202
 - https://www.openprocessing.org/sketch/876285: A very clever use of line widths mapped to image pixels
 - [Canvas Cards by Luke Patton](https://canvas-cards.glitch.me/)
+
+# Animated GIFS
+
+- Prof. Golan's Github has LoopTemplates for Processing.py https://github.com/golanlevin/LoopTemplates
+- His course: http://cmuems.com/2018/60212f/

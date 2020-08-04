@@ -14,9 +14,9 @@ August 2020
 from ball import Ball
 import colors
 
-w, h = 800, 800
-
-num_balls = 3
+w, h = 600, 600
+radius = 10
+num_balls = 5
 num_active = 0
 
 launch_gap = num_balls * 2
@@ -24,16 +24,23 @@ launch_gap = num_balls * 2
 balls = []
 for id in range(num_balls):
     balls.append(
-        Ball(id, 0, int(random(h)), 1 + int(random(2)), 1 + int(random(2)), _radius=10)
+        Ball(
+            id,
+            0,
+            int(random(h)),
+            1 + int(random(3)),
+            2 + int(random(4)),
+            _radius=radius,
+        )
     )
     balls.append(
         Ball(
             num_balls + id,
             int(random(h)),
             0,
-            1 + int(random(2)),
-            1 + int(random(2)),
-            _radius=10,
+            2 + int(random(3)),
+            1 + int(random(5)),
+            _radius=radius,
         )
     )
 
@@ -43,6 +50,7 @@ def setup():
     background(127)
     smooth()
     noStroke()
+    frameRate(30)
 
 
 def draw():
@@ -63,3 +71,7 @@ def draw():
             b.display()
             b.collide(balls)
 
+    saveFrame("images/coll_###.jpg")
+
+    if frameCount > 600:
+        noLoop()

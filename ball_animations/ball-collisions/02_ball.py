@@ -42,7 +42,7 @@ class Ball(object):
 
     def display(self):
         fill(*colors.COLORS[self.color])
-        ellipse(self.x, self.y, 2 * self.radius, 2 * self.radius)
+        ellipse(self.x, self.y, 20, 20)
         # print("ball", self.id, self.vy, self.y)
 
     def collide(self, balls):
@@ -54,11 +54,26 @@ class Ball(object):
                 if self.id < b.id:  # check n^2/ 2 pairs.
                     min_dist = self.radius + b.radius
                     if ball_dist(b, self) < min_dist - 0.5:
+                        print("vx before", self.vx, b.vx, frameCount)
+                        ydist = b.y - self.y
+                        xdist = b.x - self.x
+                        # Logic taken from https://processing.org/examples/bouncybubbles.html
+                        theta = atan2(ydist, xdist)
+                        x_comp = self.x + cos(theta) * min_dist - b.x
+                        y_comp = self.y + sin(theta) * min_dist - b.y
+                        x_comp = speed_limit(x_comp)
+                        y_comp = speed_limit(y_comp)
+                        self.vx -= x_comp * 2
+                        self.vy -= y_comp * 2
+                        b.vx += x_comp * 2
+                        b.vy += y_comp * 2
 
-                        b.vx, self.vx = self.vx, b.vx
-                        b.vy, self.vy = self.vy, b.vy
+                        # print("Before", b.color, self.color, "Frame", frameCount)
+                        # print("Before ID", b.id, self.id, self.y, b.y)
                         b.color = next_color(b.color)
                         self.color = next_color(self.color)
                         self.prev_collision = frameCount
                         b.prev_collision = frameCount
+                        # print("After:", b.color, self.color, "id", self.id, b.id)
+                        print("After", self.vx, b.vx, theta, frameCount)
 

@@ -42,7 +42,7 @@ class Ball(object):
 
     def display(self):
         fill(*colors.COLORS[self.color])
-        ellipse(self.x, self.y, 2 * self.radius, 2 * self.radius)
+        ellipse(self.x, self.y, 20, 20)
         # print("ball", self.id, self.vy, self.y)
 
     def collide(self, balls):
@@ -54,11 +54,30 @@ class Ball(object):
                 if self.id < b.id:  # check n^2/ 2 pairs.
                     min_dist = self.radius + b.radius
                     if ball_dist(b, self) < min_dist - 0.5:
+                        print("vy before", self.vy, b.vy)
+                        collision_y = b.y - self.y
+                        collision_x = b.x - self.x
+                        theta = atan2(collision_y, collision_x)  # collision direction
+                        # https://spicyyoghurt.com/tutorials/html5-javascript-game-development/collision-detection-physics
+                        coll_norm_x = collision_x / min_dist
+                        coll_norm_y = collision_y / min_dist
 
-                        b.vx, self.vx = self.vx, b.vx
-                        b.vy, self.vy = self.vy, b.vy
+                        rel_vx = b.vx - self.vx
+                        rel_vy = b.vy - self.vy
+                        speed = coll_norm_x * rel_vx + coll_norm_y * rel_vy
+
+                        b.vx -= speed * coll_norm_x
+                        b.vy -= speed * coll_norm_y
+                        self.vx += speed * coll_norm_x
+                        self.vy += speed * coll_norm_y
+
+                        # print("Before", b.color, self.color, "Frame", frameCount)
+                        # print("Before ID", b.id, self.id, self.y, b.y)
+                        print("vy before", self.vy, b.vy)
                         b.color = next_color(b.color)
                         self.color = next_color(self.color)
                         self.prev_collision = frameCount
                         b.prev_collision = frameCount
+                        # print("After:", b.color, self.color, "id", self.id, b.id)
+                        print("After", self.vy, b.vy, theta)
 

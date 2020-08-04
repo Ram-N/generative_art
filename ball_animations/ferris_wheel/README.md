@@ -1,8 +1,11 @@
 ## Ferris Wheel
 
-This is a very basic script to illustrate the power of `rotate`
+*Building Blocks*
 
-<img src='images/ferris.gif width='200'>
+This is a very basic script, mainly to illustrate the power of `rotate` instead of worrying about
+r * sin(theta) and r*cos(theta) calculations.
+
+<img src='images/ferris.gif' width='200'>
 
 ## Code
 

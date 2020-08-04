@@ -1,10 +1,6 @@
 """
 
-This is one script in a series.
-In 01.. we have the ability to launch a set of balls inside a confined Box
-
-Note: This requires that the file ball.py (rename 01ball.py to ball.py) to be in the same folder
-
+Debugging the collisions
 
 Author: Ram Narasimhan
 August 2020
@@ -14,27 +10,24 @@ August 2020
 from ball import Ball
 import colors
 
-w, h = 800, 800
+w, h = 600, 600
 
-num_balls = 3
+num_balls = 1
 num_active = 0
 
 launch_gap = num_balls * 2
 
 balls = []
 for id in range(num_balls):
+    balls.append(Ball(id, _x=100, _y=100, _vy=1, _vx=0, _radius=10, _colornum=2))
     balls.append(
-        Ball(id, 0, int(random(h)), 1 + int(random(2)), 1 + int(random(2)), _radius=10)
+        Ball(num_balls + id, _x=100, _y=300, _vy=-1, _vx=0, _radius=10, _colornum=4)
     )
     balls.append(
-        Ball(
-            num_balls + id,
-            int(random(h)),
-            0,
-            1 + int(random(2)),
-            1 + int(random(2)),
-            _radius=10,
-        )
+        Ball(num_balls * 2 + id, _x=200, _y=350, _vy=0, _vx=1, _radius=10, _colornum=1)
+    )
+    balls.append(
+        Ball(num_balls * 3 + id, _x=400, _y=350, _vy=0, _vx=-1, _radius=10, _colornum=3)
     )
 
 
@@ -51,7 +44,7 @@ def draw():
 
     # when to launch? Waits for a "launch_gap" number of frames before it launches
     # the next ball
-    if num_active < num_balls * 2:
+    if num_active < len(balls):
         if not frameCount % (launch_gap):
             balls[num_active].active = True  # launch one more ball
             num_active += 1
