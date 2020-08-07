@@ -35,3 +35,11 @@ different set of Terminals, Routes, Junctions and Stations.
 <img src="metro_maps/images/mm_5.jpg" width="500">
 
 
+### Ball Animations [Code](/ball_animations) [images](ball_animations/images)
+
+A series of sketches on balls colliding, as well as balls dodging each other, avoiding collisions.
+
+<img src="ball_animations/trapeze_balls/images/trapeze_loop.gif" width="300">
+
+<img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="300">
+

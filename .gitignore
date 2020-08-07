@@ -1,2 +1,4 @@
 sketch.properties
 *.doctree
+*.class
+package.json
