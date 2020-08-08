@@ -13,6 +13,11 @@ the canvas dimensions, all of which gives the optimal separation such that all c
 <img src="images/basic_cross_start.gif" width="250">
 <img src="images/basic_cross_steady.gif" width="250">
 
+## Pinball
+
+<img src="images/dia1_bounce5_start.gif" width="250">
+<img src="images/dia1_bounce5_steady.gif" width="250">
+
 
 
 
