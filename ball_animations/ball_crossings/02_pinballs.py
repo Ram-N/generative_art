@@ -281,7 +281,7 @@ def draw():
             b.move()
             b.display()
 
-    saveFrame("images/pinball_###.jpg")
+    # saveFrame("images/bounce5_###.jpg")
 
     if frameCount > 1000:
         noLoop()

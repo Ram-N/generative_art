@@ -13,12 +13,19 @@ the canvas dimensions, all of which gives the optimal separation such that all c
 <img src="images/basic_cross_start.gif" width="250">
 <img src="images/basic_cross_steady.gif" width="250">
 
-## Pinball
+## All Across
 
 <img src="images/dia1_bounce5_start.gif" width="250">
 <img src="images/dia1_bounce5_steady.gif" width="250">
 
+## Pinballs
 
+What if there were streams of balls that had close encounters, but managed to barely avoid collisions?
+
+<img src="images/pinballs_start.gif" width="250">
+<img src="images/pinballs_steady.gif" width="250">
+
+The code for Pinballs can be found in `02_pinballs.py`
 
 
 
