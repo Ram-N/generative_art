@@ -19,6 +19,11 @@ These resources contain GenArt Lists inside themselves
 ### 
 - [Mathematics of Animation](https://winkervsbecks.github.io/mathematics-of-animation/#/)
 
+
+## Tutorials
+ 
+- Tim Rodenbroeker: https://timrodenbroeker.de/teaching/#anchor-tutorials (Image-related tutorials in Processing)
+
 ## Processing Resources
 
 - OpenProcessing.org: A great community with excellent open-sourced projects to learn from

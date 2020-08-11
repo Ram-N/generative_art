@@ -43,3 +43,4 @@ A series of sketches on balls colliding, as well as balls dodging each other, av
 
 <img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="300">
 
+<img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="300">
