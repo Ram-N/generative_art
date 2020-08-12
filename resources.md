@@ -38,8 +38,12 @@ Here are a set of Python-based GenArt repos that I like, admire and am inspired 
 - https://github.com/JakobGlock/Generative-Art
 - https://github.com/gengeomergence/GenArt
 
-Eric Davidson: - https://github.com/erdavids?tab=repositories
+
+## Video Tutorials (YouTube)
+
+- Eric Davidson: - https://github.com/erdavids?tab=repositories
 I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/videos). He is an excellent (and generous) teacher. I first came across his Mondrain Tiles project.
+- Niraj Rajan has several quick and easy examples to try: https://www.youtube.com/playlist?list=PLbU3H-1ix4dQK8KVl6391jmXJTULDY_-c
 
 
 ### Books

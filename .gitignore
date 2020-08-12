@@ -2,3 +2,5 @@ sketch.properties
 *.doctree
 *.class
 package.json
+sketch_*
+modes

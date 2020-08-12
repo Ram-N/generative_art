@@ -41,16 +41,20 @@ def setup():
     noStroke()
 
 
-freq = [3, 5, 7]
+fp_cycle = 60.0
+
+freq = [0.5, 1, 2]
 amplitude = [20, 50, 80]
 
 
 def draw():
-    # background(128)
+    background(128)
+
+    theta = 360.0 / fp_cycle
 
     for idx, b in enumerate(balls):
-        b.vy = cos(float(frameCount) / freq[idx]) * 20  # amplitude[idx]
-        # b.vy = cos(float(frameCount) / 20) * amplitude[idx]
+        b.vy = cos(radians(frameCount * theta) * freq[idx]) * 20
+        # b.vy = cos(radians(frameCount) * theta) * amplitude[idx]
         b.move_sinusoidal()
         b.display()
     if not frameCount % 30:
