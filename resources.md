@@ -45,6 +45,7 @@ Here are a set of Python-based GenArt repos that I like, admire and am inspired 
 I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/videos). He is an excellent (and generous) teacher. I first came across his Mondrain Tiles project.
 - Niraj Rajan has several quick and easy examples to try: https://www.youtube.com/playlist?list=PLbU3H-1ix4dQK8KVl6391jmXJTULDY_-c
 
+- **Matthew Epler** [has an excellent playlist](https://www.youtube.com/watch?v=rTqvf0BkTNE&list=PLyRZnpOSgMj3K8AV2I6UldnvTj6d_Zrf0) (series of short videos) on how he looks at one image and goes about creating an entire "Generative System" around it. He does it very organically, starting with simpler steps and is constantly layering in complexity. Well worth watching, *even if you are not coding in P5.js!* [Code](https://github.com/matthewepler/Generative-Design-Systems-with-P5js)
 
 ### Books
 

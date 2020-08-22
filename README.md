@@ -44,3 +44,13 @@ A series of sketches on balls colliding, as well as balls dodging each other, av
 <img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="300">
 
 <img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="300">
+
+### Dots and Dashes [Code](/dots_and_dashes) [images](dots_and_dashes/images)
+
+Space filling and Space shrinking, rendered Algorithmically
+
+<img src="ball_animations/dots_and_dashes/images/BW_41.jpg" width="300">
+<img src="ball_animations/dots_and_dashes/images/BW_1.gif" width="300">
+<img src="ball_animations/dots_and_dashes/images/BW_2.gif" width="300">
+
+
