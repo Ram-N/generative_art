@@ -30,8 +30,15 @@ These resources contain GenArt Lists inside themselves
 
 - 3D in Processing: https://www.uni-weimar.de/kunst-und-gestaltung/wiki/images/XinWang-How_to_make_a_simple_3D_in_processing.pdf
 
+
+### Processing Repos
+Here a few Processing-based GenArt repos that I like, admire and am inspired by.
+
+- https://github.com/hamoid/Fun-Programming
+
+
 ### Python Repos
-Here are a set of Python-based GenArt repos that I like, admire and am inspired by.
+Here are a few Python-based GenArt repos that I like, admire and am inspired by.
 
 - https://github.com/anaulin/generative-art
 - https://github.com/aaronpenne/generative_art

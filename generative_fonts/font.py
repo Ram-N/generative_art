@@ -73,10 +73,10 @@ class Letter(object):
 
     def render(self):
         # x,y is the top left corner (NW corner)
-        xoffset = self.x + self.width / 2
-        yoffset = self.y + self.height / 2
         shp_opt = generate_base()
-        render_element("base", shp_opt, xoffset, yoffset)
+        xoffset = self.x + self.width / 2
+        yoffset = self.y + self.height * 3 / 4
+        render_element("base", shp_opt, xoffset, yoffset, self.width, self.height)
 
 
 class Font(object):
@@ -112,18 +112,38 @@ def generate_base():
         LR: Left root
     """
     _opts1 = ["S1", "T1", "T2", "TC", "R2", "RR", "RL"]
-    _opts2 = ["Fill", "NoFill"]
+    _opts2 = ["fill", "nofill"]
     rnd1 = int(random(len(_opts1)))
     rnd2 = int(random(len(_opts2)))
 
     return (_opts1[rnd1], _opts2[rnd2])
 
 
-def render_element(shape_kind, shape_option, x, y):
+def render_element(shape_kind, shape_option, x, y, letw, leth):
 
     base_width = 10
+    base_height = 10
 
     if shape_kind == "base":
+        if shape_option[1] == "fill":
+            fill(0)
+        if shape_option[1] == "nofill":
+            noFill()
+
         if shape_option[0] == "S1":  # simple rectangle
             rectMode(CENTER)
             rect(x, y, base_width, base_width)
+        if shape_option[0] == "T1":  # single Triangle
+            triangle(
+                x, y, x - base_width, y + base_height, x + base_width, y + base_height
+            )
+        if shape_option[0] == "T2":  # Two Triangles
+            for x_elem in [x - (letw / 4), x + letw / 4]:
+                triangle(
+                    x_elem,
+                    y,
+                    x_elem - base_width,
+                    y + base_height,
+                    x_elem + base_width,
+                    y + base_height,
+                )
