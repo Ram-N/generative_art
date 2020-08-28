@@ -1,3 +1,23 @@
+from bezier_sketch import render_outline, render_lettertop
+
+
+def get_cell_gridlines(cell_x, cell_y, fw, fh, margin, _sq=8):
+
+    gx, gy = [], []
+
+    for s in range(_sq + 1):
+        gx.append(cell_x + margin + (fw / _sq * s))
+        gy.append(cell_y + margin + (fh / _sq * s))
+    return gx, gy
+
+
+def draw_cell_gridlines(cell_x, cell_y, gx, gy, sq=8):
+
+    for s in range(sq + 1):
+        line(gx[s], gy[0], gx[s], gy[sq])  # verts
+        line(gx[0], gy[s], gx[sq], gy[s])  # horiz
+
+
 class FontGrid:
 
     """Represents a rectangular grid on the screen.
@@ -8,57 +28,52 @@ class FontGrid:
     """
 
     def __init__(
-        self,
-        num_rows,
-        num_cols,
-        canvas_width,
-        canvas_height,
-        size=1,
-        xstart=0,
-        ystart=0,
+        self, num_rows, num_cols, canvas_width, canvas_height, xstart=0, ystart=0
     ):
 
         self.num_rows = num_rows
         self.num_cols = num_cols
-        self.letter_size = size
         self.alphabet = []
-        self.centers = []
+        self.nw_corners = []
         self.letter_width = (canvas_width - (2 * xstart)) / num_cols
         self.letter_height = (canvas_height - (2 * ystart)) / num_rows
-        self.xmargin = xstart
-        self.ymargin = ystart
+        self.grid_xmargin = xstart
+        self.grid_ymargin = ystart
 
-        xdist = self.letter_width
-        ydist = self.letter_height
         letw = self.letter_width
         leth = self.letter_height
 
+        # Create letter-forms
         id = 0
         for row in range(num_rows):
             for col in range(num_cols):
-                cx, cy = (xstart + col * xdist, ystart + ydist * row)
+                cx, cy = (xstart + col * letw, ystart + leth * row)
                 letter = Letter(cx, cy, letw, leth, id)
                 letter.row, letter.col = row, col
+                letter.gx, letter.gy = get_cell_gridlines(cx, cy, letw, leth, margin=0)
+
                 self.alphabet.append(letter)
-                self.centers.append((cx, cy))
+                self.nw_corners.append((cx, cy))
                 id += 1
 
-    def render_letters(self):
-        for l in self.alphabet:
-            l.render()
-
-    def render_grid_border(self, v_pairs=None, **kwargs):
-
+    def render_grid_border(self):
+        rectMode(CORNER)
+        print(
+            self.grid_xmargin, self.grid_ymargin, self.letter_height, self.letter_width
+        )
         for row in range(self.num_rows):
-            lstart_y = self.ymargin + row * self.letter_height
+            lstart_y = self.grid_ymargin + row * self.letter_height
             for col in range(self.num_cols):
-                lstart_x = self.xmargin + col * self.letter_width
+                lstart_x = self.grid_xmargin + col * self.letter_width
                 rect(lstart_x, lstart_y, self.letter_width, self.letter_height)
 
+        print(lstart_x, lstart_y)
 
-def get_hexgrid_centers(fg):
-    """ get the center x and y coords for each hexagon as a list of (x,y)"""
-    return [(letter.x, letter.y) for letter in fg.alphabet]
+    def render_letters(self, show_gridlines=False):
+        for l in self.alphabet:
+            l.render()
+            if show_gridlines:
+                l.render_gridlines()
 
 
 class Letter(object):
@@ -77,6 +92,15 @@ class Letter(object):
         xoffset = self.x + self.width / 2
         yoffset = self.y + self.height * 3 / 4
         render_element("base", shp_opt, xoffset, yoffset, self.width, self.height)
+        noFill()
+        st, end = render_outline(self.x, self.y, self.gx, self.gy)
+        render_lettertop(st, end, self.gx, self.gy)
+
+    def render_gridlines(self):
+        gx, gy = get_cell_gridlines(
+            self.x, self.y, self.width, self.height, margin=0, _sq=8
+        )
+        draw_cell_gridlines(self.x, self.y, gx, gy)
 
 
 class Font(object):
@@ -147,3 +171,8 @@ def render_element(shape_kind, shape_option, x, y, letw, leth):
                     x_elem + base_width,
                     y + base_height,
                 )
+
+
+def get_grid_centers(fg):
+    """ get the center x and y coords for each hexagon as a list of (x,y)"""
+    return [(letter.x, letter.y) for letter in fg.alphabet]
