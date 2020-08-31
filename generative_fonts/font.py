@@ -1,5 +1,5 @@
-from bezier_sketch import render_outline, render_letter_top
-from bezier_sketch import render_letter_base
+from font_parts import render_outline, render_letter_top
+from font_parts import render_letter_base, render_letter_interior
 
 
 def get_cell_gridlines(cell_x, cell_y, fw, fh, margin, _sq=8):
@@ -59,16 +59,14 @@ class FontGrid:
 
     def render_grid_border(self):
         rectMode(CORNER)
-        print(
-            self.grid_xmargin, self.grid_ymargin, self.letter_height, self.letter_width
-        )
+        # print(
+        #     self.grid_xmargin, self.grid_ymargin, self.letter_height, self.letter_width
+        # )
         for row in range(self.num_rows):
             lstart_y = self.grid_ymargin + row * self.letter_height
             for col in range(self.num_cols):
                 lstart_x = self.grid_xmargin + col * self.letter_width
                 rect(lstart_x, lstart_y, self.letter_width, self.letter_height)
-
-        print(lstart_x, lstart_y)
 
     def render_letters(self, show_gridlines=False):
         for l in self.alphabet:
@@ -91,7 +89,9 @@ class Letter(object):
         yoffset = self.y + self.height * 3 / 4
         # render_element("base", shp_opt, xoffset, yoffset, self.width, self.height)
         noFill()
+        strokeWeight(2)
         st, end, _dir = render_outline(self.x, self.y, self.gx, self.gy)
+        render_letter_interior(st, end, _dir, self.gx, self.gy)
         render_letter_top(st, end, _dir, self.gx, self.gy)
         render_letter_base(st, end, _dir, self.gx, self.gy)
 
