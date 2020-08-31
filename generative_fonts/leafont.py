@@ -7,7 +7,7 @@ from font import *
 
 w, h = 800, 1000
 canvas_xmargin, canvas_ymargin = 20, 20
-num_rows, num_cols = 10, 10
+num_rows, num_cols = 5, 5
 
 fg = FontGrid(num_rows, num_cols, w, h, xstart=canvas_xmargin, ystart=canvas_ymargin)
 render_again = True
@@ -27,6 +27,7 @@ def draw():
             num_rows, num_cols, w, h, xstart=canvas_xmargin, ystart=canvas_ymargin
         )
         fg.render_grid_border()
+        strokeWeight(2)
         fg.render_letters(show_gridlines=False)
         render_again = False
 
