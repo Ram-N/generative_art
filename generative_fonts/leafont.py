@@ -27,6 +27,7 @@ def draw():
             num_rows, num_cols, w, h, xstart=canvas_xmargin, ystart=canvas_ymargin
         )
         fg.render_grid_border()
+        # stroke(0, 100, 0)
         fg.render_letters(show_gridlines=False)
         render_again = False
 
@@ -39,3 +40,6 @@ def keyPressed():
 
     elif key == "t":  # Toggle
         show = not show
+    elif key == "s":
+        saveFrame("images/screenshot" + str(int(random(2000))) + ".png")
+

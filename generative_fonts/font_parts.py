@@ -59,12 +59,14 @@ def render_letter_interior(st, end, _dir, gx, gy):
 
     ## ELLIPSE Add-on
     if pick_one([0, 0, 0, 0, 0, 1]):
+
         pushMatrix()
         translate(int((gx[st[0]] + gx[end[0]]) / 2), int((gy[st[1]] + gy[end[1]]) / 2))
         if _dir == "right":
-            rotate(PI / 4)
+            rotate(atan2(gy[end[1]] - gy[st[1]], gx[end[0]] - gx[st[0]]) + PI / 2)
+
         elif _dir == "left":
-            rotate(-PI / 4)
+            rotate(atan2(gy[end[1]] - gy[st[1]], gx[end[0]] - gx[st[0]]) + PI / 2)
         ellipse(0, 0, xstep, 2 * ystep)
         popMatrix()
 
@@ -85,14 +87,18 @@ def render_letter_interior(st, end, _dir, gx, gy):
 
 
 def render_letter_top(st, end, _dir, gx, gy):
-    xstep, ystep = gx[1] - gx[0], gy[1] - gy[0]
 
+    top_shape = pick_one(["none", "ellipse", "triangle"])
     if int(random(2)):
         fill(0)
+    xstep, ystep = gx[1] - gx[0], gy[1] - gy[0]
 
-    if int(random(2)):
+    if top_shape == "none":
+        noFill()
+        return
+    elif top_shape == "ellipse":
         ellipse(gx[end[0]], gy[end[1]], xstep, ystep)
-    else:
+    elif top_shape == "triangle":
         if _dir == "left":
             x1a = -xstep
             x2a = 0
