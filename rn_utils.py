@@ -39,6 +39,12 @@ def keyPressed():
     elif key == ENTER:
         if msg:
             t = Texto(msg)
+    elif key == "f":  # freeze
+        noLoop()
+    elif key == "r":  # resume
+        loop()
+    elif key == "g":  # inch forward - slo motion
+        redraw()
 
 
 def pick_one(_lst):
