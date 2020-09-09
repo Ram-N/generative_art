@@ -7,6 +7,7 @@ Assorted list of resources that I've come across.
 - [Inconvergent's Essay](https://inconvergent.net/generative/) is just fantastic.
 - [Why Love GenArt? Artnome](https://www.artnome.com/news/2018/8/8/why-love-generative-art)
 - A retrospective on [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
+- [Quotes about GenArt](http://www.artsnova.com/computer-art-quotes.html)
 
 
 

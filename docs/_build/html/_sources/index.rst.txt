@@ -10,6 +10,7 @@ Welcome to Generative Art's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   install_processing_python
    tutorial_circular_noise
 
 Indices and tables

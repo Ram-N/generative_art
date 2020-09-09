@@ -65,9 +65,12 @@ def draw():
             for col in range(num_cols):
                 c = int(random(len(_colors)))
                 palette.append((_colors[c]))
-                directions.append(
-                    (int(random(2)), 1 + int(random(4)), 1 + int(random(4)))
-                )
+                done = 0
+                while not done:
+                    cos_factor, sin_factor = 1 + int(random(4)), 1 + int(random(4))
+                    if cos_factor != sin_factor:
+                        done = 1
+                directions.append((int(random(2)), cos_factor, sin_factor))
 
     for row in range(num_rows):
         for col in range(num_cols):
@@ -75,6 +78,8 @@ def draw():
             colr = palette[col + row * num_cols]
             _dir = directions[col + row * num_cols]
             draw_partial_shape(x, y, row + 1, col + 1, max_angle, r, colr, _dir)
+
+    saveFrame("images/cardiod_grid####.png")
 
 
 def keyPressed():
