@@ -48,7 +48,7 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
+        <img src="sinusoidal_sketches/images/2circle_cardioid.gif" width="250px">
     </td>
    <td>
         <img src="generative_fonts/images/leafont1.gif" width="250px">

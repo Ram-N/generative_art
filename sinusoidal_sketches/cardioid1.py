@@ -41,11 +41,9 @@ def draw():
 
         ellipse(x, y, 3, 3)  # basically the x,y point. Drawing it as an ellipse
 
-    # if frameCount > 198:
-    #     noLoop()
+    if frameCount > 360:
+        noLoop()
 
 
-# Interesting to try
-# x = r * cos(3 * a)
-# y = r * sin(2 * a)
+#    saveFrame("images/c1_###.png")
 
