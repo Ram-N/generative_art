@@ -90,7 +90,7 @@ Reverse chronological order.
        <img src="dots_and_dashes/images/BW_2.gif" width="250px">
     </td>    
    <td>
-        <img src="ball_animations/images/sinusoidal_balls.gif" width="250px">
+        <img src="ball_animations/images/frequencies.gif" width="250px">
     </td>    
    <td>
        <img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="250">

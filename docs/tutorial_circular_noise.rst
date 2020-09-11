@@ -99,7 +99,7 @@ Static rings
 In Processing, we are going to only use ``setup()``. We will get to ``draw()`` later.
 We could use a circle or ellipse to start, but instead let's use ``BeginShape`` and ``EndShape``.
 
-Here's some staring setup code::
+Here's some `setup()` code to get started::
 
    def setup():
       size(800,800)

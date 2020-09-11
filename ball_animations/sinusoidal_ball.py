@@ -15,51 +15,71 @@ Things to Try:
 
 from ball import Ball
 
-w, h = 1000, 500
+w, h = 360 * 3, 500
 num_balls = 3
 speed = 2
 
+# Create 3 balls, and set their properties.
 balls = [
     Ball(
-        _id="sin_" + str(id),
+        _id="ball_" + str(id),
         _x=0,
-        _y=50 + id * 100,
+        _y=100 + id * 100,
         _vx=speed,
-        _vy=0,
+        _vy=0,  # vertical speed. We will set this later
         _radius=10,
-        _launch=int(speed * id),
         _colornum=id,
     )
     for id in range(num_balls)
 ]
 
 
+# Try changing any of these PARAMETERS
+FREQ = [0.5, 1, 2]
+AMPLITUDE = [20, 50, 80]
+ERASE_TRAILS = True  # True or False are valid options
+angle_step = 360.0 / 60.0  # 6 degrees
+
+
 def setup():
     size(w, h)
     background(128)
     smooth()
-    noStroke()
+    for x in range(24):
+        line(x * 60, 0, x * 60, 500)
 
-
-fp_cycle = 60.0
-
-freq = [0.5, 1, 2]
-amplitude = [20, 50, 80]
+    for y in range(3):
+        line(0, 100 + 100 * y, w, 100 + 100 * y)
 
 
 def draw():
-    background(128)
 
-    theta = 360.0 / fp_cycle
+    if ERASE_TRAILS:
+        background(128)
+
+    stroke(0)
+    for x in range(24):
+        line(x * 60, 0, x * 60, 500)
+    for y in range(3):
+        line(0, 100 + 100 * y, w, 100 + 100 * y)
+    noStroke()
 
     for idx, b in enumerate(balls):
-        b.vy = cos(radians(frameCount * theta) * freq[idx]) * 20
-        # b.vy = cos(radians(frameCount) * theta) * amplitude[idx]
-        b.move_sinusoidal()
-        b.display()
-    if not frameCount % 30:
-        print(b.x, b.y, b.vx, b.vy)
+        b.vy = cos(radians(frameCount * angle_step) * FREQ[idx]) * 20
+        # b.vy = cos(radians(frameCount) * angle_step) * AMPLITUDE[idx]
 
-    if not frameCount % 500:
-        save("images/diff_frequencies.jpg")
+        # b.vy is the distance in the y-direction that ball b has moved.
+        # Thus, b's y position is ystart + vy
+
+        b.move_sinusoidal()  # record the ball's new x and y positions
+        b.display()
+        if not frameCount % 30:
+            print(frameCount, b.id, b.x, b.y, b.starty, b.vx, b.vy)
+
+    saveFrame("images/freq###.png")
+    # saveFrame("images/amp###.png")
+    if not frameCount % 540:
+        save("images/no_trail_diff_frequencies.jpg")
+        # save("images/no_trail_diff_amplitudes.png")
         noLoop()
+
