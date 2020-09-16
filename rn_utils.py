@@ -1,3 +1,17 @@
+def shuffle(_list):
+
+    #    for i from 0 to n−2 do
+    #     j ← random integer such that i ≤ j < n
+    #     exchange a[i] and a[j]
+
+    n = len(_lst)
+    for i in range(0, n - 2):
+        j = int(random(i, n))
+        _lst[i], _lst[j] = _lst[j], _lst[i]
+
+    return _lst
+
+
 def display_grid_points(x_margin, y_margin, num_rows, num_cols, sep):
 
     for row in range(num_rows):

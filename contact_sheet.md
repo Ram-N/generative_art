@@ -213,9 +213,9 @@ Reverse chronological order.
     <td>
         <img src="metro_maps/images/mm_5.jpg" width="250px">
     </td>
-    <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
-    </td>
+   <td>
+        <img src="sinusoidal_sketches/funkyvector_corona-sine_study/images/corona_study.png" width="250px">
+   </td>    
   </tr>
 
 [comment]: # (This a description Row for the images above) 
@@ -251,27 +251,28 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-        <img src="sinusoidal_sketches/funkyvector_corona-sine_study/images/corona_study.png" width="250px">
-   </td>    
-   <td>
         <img src="ball_animations/trapeze_balls/images/trapeze_loop.gif" width="250">
     </td>
     <td>
         <img src="ball_animations/trapeze_balls/images/white_trapeze.gif" width="250">
     </td>
+   <td>
+        <img src="ball_animations/images/ferris.gif" width="250px">
+   </td>    
   </tr>
 
 [comment]: # (This a description Row for the images above) 
   <tr> 
-    <td> 
-        CoronaSine Study, 2020-07-10
-    </td>
     <td> 
         Multicolor Trapeze, 2020-07-09
     </td>
     <td> 
         White Trapeze Balls, 2020-07-08
     </td>
+    <td> 
+        Ferris Wheel
+    </td>
+
   </tr>
   
 [comment]: # (This a spacer row) 
