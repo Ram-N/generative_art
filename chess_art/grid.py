@@ -8,11 +8,11 @@ class Cell(object):
         self.centerx = _x + _cw / 2
         self.centery = _y + _ch / 2
 
-    def render(self, color=None):
+    def render(self, fc=None):
         if self.color:
             fill(self.color)
-        if color:
-            fill(color)
+        if fc:
+            fill(fc)
         rect(self.x, self.y, self.w, self.h)
 
 

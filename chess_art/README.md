@@ -31,17 +31,26 @@ and output several lists/dictionaries which I then use in my processing code.
 
 * For example: 0-0 for white has to be parsed as (Ke1-g1 and Rh1-Rf1)
 
+## Things to DO
+0. Need a UCI game generator
+1. Get piece paths generated for all 16 pieces.
+2. Captures: From square and to square...
+3. Checks: From square and to square
+4. Nine dots. And keep track of which ones are occupied.
+5. Line gets darker (or lighter as the game progresses!)
+6. Square gets darker the more it gets attention. (DONE)
+
+
 
 * https://www.cs.kent.ac.uk/people/staff/djb/uci-analyser/
 
 
-<img src="trapeze_balls/images/white_trapeze.gif" width="250">
-<img src="trapeze_balls/images/trapeze_loop.gif" width="250">
-
-## Criss-cross
-
-<img src="ball_crossings/images/balls9x9.gif" width="250">
 
 
+<img src="images/ver1.png" width="250">
+
+<img src="images/ver2_captures.png" width="250">
+
+<img src="images/ver3_timecolor.png" width="250">
 
 

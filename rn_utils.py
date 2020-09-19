@@ -62,9 +62,6 @@ def keyPressed():
 
 
 def pick_one(_lst):
-    """ randomly picks one from a list of 2 """
-    if len(_lst) == 2:
-        return _lst[0] if int(random(2)) else _lst[1]
-    elif len(_lst) == 3:
-        return _lst[int(random(3))]
+    """ randomly picks one from a list of items """
+    return _lst[int(random(len(_lst)))]
 
