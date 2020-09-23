@@ -18,3 +18,5 @@ def setup():
         rotate(step)
         line(0, 0, 200, 0)
 
+    saveFrame("images/basic_rotation.png")
+

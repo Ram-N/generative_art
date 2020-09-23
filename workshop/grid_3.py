@@ -13,3 +13,6 @@ def setup():
             rotate(int(random(4)) * PI / 2)  # rotate randomly by 90, 180, 270 or 0
             arc(20, 20, 80, 80, PI, 3 * HALF_PI)
             popMatrix()
+
+    saveFrame("images/grid2.png")
+
