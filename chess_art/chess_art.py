@@ -1,9 +1,11 @@
 from grid import Grid
 from constants import *
+from render_chess import *
+from games_dict import GAMES
 
 
 def get_pgns(full_pgn):
-    pgns = full_pgn.split()
+    pgns = full_pgn.split()  # split into move numbers and plys. B and W get separated
     return [p for p in pgns if not "." in p]
 
 
@@ -12,16 +14,14 @@ def pick_one(_lst):
     return _lst[int(random(len(_lst)))]
 
 
-def get_cell(name, cells):
-    """ Given a square name, return the cell object from the list of cells"""
-    if len(name) != 2 or (name[0] not in LETTERS) or (int(name[1]) not in range(1, 9)):
-        print("wrong cell coordinates. Must be in [a1, h8]")
-        return None
+def get_result(pgns):
 
-    ypos = 8 - int(name[1])
-    xpos = LD[name[0]]
-    pos = xpos * 8 + ypos
-    return cells[pos]
+    if pgns[-1] == "1-0":
+        return 1
+    if pgns[-1] == "0-1":
+        return 0  # black won
+
+    return 0.5
 
 
 def create_capture_dict(pgn):
@@ -52,97 +52,6 @@ def parse_pgn_ply(pgn):
     # print(move, flag)
     p = "N"
     return (p, flag)
-
-
-def color_square(ply, move, cells):
-    """ Idea is to color the square darker for increasing ply of Black moves.
-        Lighter for incr ply of White moves.
-    """
-    _from, _to = get_cell(move[:2], cells), get_cell(move[2:], cells)
-    black = ply % 2
-    if black:
-        color = max(0, 100 - ply)
-    else:
-        color = min(255, 150 + ply)
-    _to.render(fc=color)
-
-
-def render_move(
-    piece, play_color, _fromsq, _tosq, cells, _color, wt_base=1, wt_piece=1
-):
-
-    move_color = "#030303" if play_color == "BLACK" else "#C0C0C0"
-
-    st, end = get_cell(_fromsq, cells), get_cell(_tosq, cells)
-    if overlap:  # All pieces go through center
-        stx, sty = st.centerx, st.centery
-        endx, endy = (end.centerx, end.centery)
-    else:
-        stx, sty = (
-            st.centerx + piece_adj[play_color][piece][0] * ADJUST_PIXELS,
-            st.centery + piece_adj[play_color][piece][1] * ADJUST_PIXELS,
-        )
-        endx, endy = (
-            end.centerx + piece_adj[play_color][piece][0] * ADJUST_PIXELS,
-            end.centery + piece_adj[play_color][piece][1] * ADJUST_PIXELS,
-        )
-
-    if jitter_flag:
-        stx, sty = (
-            st.centerx + pick_one(jitter) * 10,
-            st.centery + pick_one(jitter) * 10,
-        )
-        endx, endy = (
-            end.centerx + pick_one(jitter) * 10,
-            end.centery + pick_one(jitter) * 10,
-        )
-
-    # draw a base
-    stroke(move_color)
-    strokeWeight(wt_base)
-    line(stx, sty, endx, endy)
-
-    stroke(_color)
-    strokeWeight(wt_piece)
-    line(stx, sty, endx, endy)
-
-    strokeWeight(1)  # reset
-    stroke(0)  # reset
-
-
-def show_move2(move, pgn, cells, _color=None, wt=1):
-
-    if len(move) != 4:
-        print("Unable to follow Move coordinates. Must be in [a1, h8]")
-        return None
-
-    ply_characterists = parse_pgn_ply(pgn)
-
-    st, end = get_cell(move[:2], cells), get_cell(move[2:], cells)
-    strokeWeight(5)
-    if _color:
-        stroke(_color)
-    line(st.centerx, st.centery, end.centerx, end.centery)
-    strokeWeight(1)  # reset
-    stroke(0)  # reset
-
-
-def show_captures(uci_move, pgn_move, capture_d, cells):
-
-    if "x" in pgn_move:
-        if "+" in pgn_move:
-            sq = pgn_move[-3:-1]
-        else:
-            sq = pgn_move[-2:]
-
-        c = get_cell(sq, cells)
-        num_caps = capture_d[sq]
-        stroke(CAPTURE_PALETTE[num_caps])
-        noFill()
-        strokeWeight(5)
-        rect(c.x, c.y, c.w, c.h)
-        strokeWeight(1)  # reset
-        stroke(0)  # reset
 
 
 def get_piece_paths(ply, move, pgn_ply, cells, curr_pos, piece_paths):
@@ -194,7 +103,7 @@ def get_piece_paths(ply, move, pgn_ply, cells, curr_pos, piece_paths):
             print(curr_pos[play_color])
             print("move", pgn_ply, move, ply, "not found")
 
-        if capture_flag:
+        if capture_flag:  # remove the captured piece from current position
             curr_pos = update_current_position_for_capture(curr_pos, opp_color, _to)
 
     return piece_paths, curr_pos
@@ -238,12 +147,10 @@ DEBUG = False
 
 
 def setup():
-    size(108 * 8 + 20, 108 * 8 + 20)
+    size(108 * 8 + 2 * 20, 108 * 8 + 2 * 20)
 
     grid = Grid(8, 8, _cell_gutter=0)
-    # print(grid)
-    grid.render_margin(127)
-    grid.render_grid(127)
+    grid.render_grid(180)
     cells = grid.cells
 
     curr_pos = {
@@ -292,22 +199,29 @@ def setup():
         },
     }
 
-    if 0:
-        for cc in capture_d.keys():
-            c = get_cell(cc, cells)
-            c.render(fc="#FF0FF")
-
-    capture_d = create_capture_dict(full_pgn)
-    # print(capture_d)
+    gnum = "Game6"
+    full_pgn = GAMES[gnum]["pgn"]
+    full_uci = GAMES[gnum]["uci"]
+    title_str = GAMES[gnum]["header"]
 
     moves = full_uci.split()  # UCI
     pgns = get_pgns(full_pgn)
+    result = get_result(pgns)
+    print(result)
+    capture_d = create_capture_dict(full_pgn)
+    # print(capture_d)
+
     # update current position of pieces
     # Get piece paths
     for ply, move in enumerate(moves):
         piece_paths, curr_pos = get_piece_paths(
             ply, move, pgns[ply], cells, curr_pos, piece_paths
         )
+
+    if PRINT_PIECE_PATH:
+        for play_color in ["WHITE", "BLACK"]:
+            for p, path in piece_paths[play_color].items():
+                print(play_color, p, len(path) - 1)
 
     print("final position")
     print(curr_pos["WHITE"])
@@ -324,6 +238,9 @@ def setup():
         for ply, move in enumerate(moves):
             color_square(ply, move, cells)  # color the _to square
 
+    # RENDERING STARTS HERE
+    render_game_result(result, grid)
+
     for ply, move in enumerate(moves):
         # Shown as Colored Square Outlines
         show_captures(move, pgns[ply], capture_d, cells)
@@ -331,24 +248,31 @@ def setup():
     for play_color in ["WHITE", "BLACK"]:
         for piece in piece_paths[play_color].keys():
             for idx, motion in enumerate(piece_paths[play_color][piece][:-1]):
+                num_moves = len(piece_paths[play_color][piece])
                 _fromsq, _tosq = motion[1], piece_paths[play_color][piece][idx + 1][1]
-                _color = PIECE_COLOR[piece]
+                piece_color = PIECE_COLOR[play_color][piece]
+                if piece[0] in ["N", "B", "R"]:  # compute color based on gradation
+                    pc_range = PIECE_COLOR[play_color][piece]
+                    piece_color = get_color_range(pc_range, num_moves)[idx]
+
                 render_move(
                     piece,
-                    play_color,
+                    play_color,  # W or B
                     _fromsq,
                     _tosq,
                     cells,
-                    _color,
+                    piece_color,
                     wt_base=11,
                     wt_piece=5,
                 )
 
         # print()
 
+    fill(10, 10, 15)
+    render_title(title_str, (200, 20))
     print(len(moves), len(pgns))
 
-    # saveFrame("images/ver7_piece_adj.png")
+    saveFrame("images/" + title_str + ".png")
 
 
 def draw():

@@ -32,21 +32,23 @@ and output several lists/dictionaries which I then use in my processing code.
 * For example: 0-0 for white has to be parsed as (Ke1-g1 and Rh1-Rf1)
 
 ## Things to Do
-
-1. Show winner of game.
-4. Nine dots. And keep track of which ones are occupied. NQN, B-B, RKR
-5. Piece color Line gets darker (or lighter as the game progresses!)
+2. End caps, move end circles?
 3. Show capture squares with Colored Outlines. [ ] of different piece colors
 4. Show Castling as one Bundle
 2. Captures: From square and to square (Is this useful?)
 3. Checks: From square and to square
 5. Read multiple files and generate multiple plots
 6. Opening, Middle Game, EndGame Split image into 3 images below the main one
+7. 8 Queens in Adjust pixels.
 
 ## Completed
 0. Need a UCI game generator (In Jupyter using python-chess)
 1. Get piece paths generated for all 16 pieces.
-6. Square gets darker the more it gets attention. (DONE but abandoned)
+2. Square gets darker the more it gets attention. (DONE but abandoned)
+3. Show winner of game.
+4. Five dots. N B R Q K (And keep track of which ones are occupied) - Nine didn't work due to overlaps
+5. Piece color Line gets darker (or lighter as the game progresses.)
+6. Add Title - Game Details
 
 
 * https://www.cs.kent.ac.uk/people/staff/djb/uci-analyser/
@@ -61,3 +63,9 @@ and output several lists/dictionaries which I then use in my processing code.
 <img src="images/ver3_timecolor.png" width="250">
 
 
+### Interesting Side Note
+
+The 8-Queens problem. I have never come across an actual use case where the 8-Queens problem was needed.
+I had to find a "home" for all 8 pieces in each square such that there piece-paths never overlapped.
+It turns out that the solution to the 8-Q problem is what was needed. Once I did that, the piece paths showed up
+without overlapping! Interesting that a chess-based mathematical problem was needed.

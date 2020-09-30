@@ -1,6 +1,28 @@
+from colors import *
+
 LETTERS = ["a", "b", "c", "d", "e", "f", "g", "h"]
 LD = {"a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6, "h": 7}
-REDS = ["#ff0000", "#e50000", "#cc0000", "#b20000", "#990000", "#7f0000"]
+REDS = [
+    "#ff0000",
+    "#e50000",
+    "#cc0000",
+    "#b20000",
+    "#990000",
+    "#7f0000",
+    "#ff0000",
+    "#e50000",
+    "#cc0000",
+    "#b20000",
+    "#990000",
+    "#7f0000",
+]
+PRINT_PIECE_PATH = True
+jitter = [-2, -1, 0, 1, 2]
+CAPTURE_PALETTE = REDS
+COLOR_SQUARE = False
+jitter_flag = False
+overlap = False
+ADJUST_PIXELS = 20
 
 YELLOWS = [
     "#ffff05",
@@ -17,47 +39,50 @@ YELLOWS = [
     "#ffff61",
 ]
 
-CAPTURE_PALETTE = REDS
-COLOR_SQUARE = False
-jitter_flag = False
-overlap = False
-ADJUST_PIXELS = 10
-
 
 PIECE_COLOR = {
-    "R1": "#006400",
-    "N1": "#FF8C00",
-    "B1": "#00008B",
-    "Q": "#ff00ff",
-    "K": "#C49102",  # Dijon yellow
-    "B2": "#0066CC",
-    "N2": "#FF6600",
-    "R2": "#3CB043",
+    "WHITE": {
+        "R1": GREENS,
+        "N1": ORANGES,
+        "B1": BLUES,
+        "R2": GREENS,
+        "N2": ORANGES,
+        "B2": BLUES,
+        "Q": "#ff00ff",
+        "K": "#CECECE",
+    },
+    "BLACK": {
+        "R1": GREENS,
+        "N1": ORANGES,
+        "B1": BLUES,
+        "R2": GREENS,
+        "N2": ORANGES,
+        "B2": BLUES,
+        "Q": "#ff00ff",
+        "K": "#A00301",
+    },
 }
-
-
-jitter = [-2, -1, 0, 1, 2]
 
 
 piece_adj = {
     "WHITE": {
-        "R1": (-1, 1),
-        "N1": (-1, -1),
-        "B1": (-1, 0),
-        "Q": (0, -1),
-        "K": (0, 1),
-        "B2": (-1, 0),
-        "N2": (1, 0),
-        "R2": (1, 1),
+        "B1": (0, 0),
+        "N1": (-2, -1),
+        "R1": (2, 1),
+        "Q": (1, -2),
+        "K": (-1, 2),
+        "R2": (2, 1),
+        "N2": (-2, -1),
+        "B2": (0, 0),
     },
     "BLACK": {
-        "N2": (-1, 1),
-        "R1": (1, -1),
-        "B1": (1, 0),
-        "K": (0, -1),
-        "Q": (0, 1),
-        "B2": (-1, 0),
-        "R2": (-1, -1),
-        "N1": (1, 1),
+        "N2": (2, -1),
+        "B1": (0, 0),
+        "R1": (2, -1),
+        "K": (-1, -2),
+        "Q": (1, 2),
+        "R2": (2, -1),
+        "B2": (0, 0),
+        "N1": (2, -1),
     },
 }
