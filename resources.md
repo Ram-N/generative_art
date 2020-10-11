@@ -40,13 +40,13 @@ Here a few Processing-based GenArt repos that I like, admire and am inspired by.
 
 
 ### Python Repos
-Here are a few Python-based GenArt repos that I like, admire and am inspired by.
+Here are a few Python-based GenArt repos that I like, admire, and am inspired by.
 
 - https://github.com/anaulin/generative-art
 - https://github.com/aaronpenne/generative_art
-- https://github.com/JakobGlock/Generative-Art
 - https://github.com/gengeomergence/GenArt
-
+- https://github.com/houseofleft/generative_python_scripts
+- https://github.com/JakobGlock/Generative-Art
 
 ## Video Tutorials (YouTube)
 
