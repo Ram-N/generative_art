@@ -4,7 +4,49 @@ Reverse chronological order.
 
 ## `Contact Sheet of GenArt Created`
 
+
+
 <table style="padding:10px">
+
+[comment]: # (This a images link row) 
+  <tr>
+    <td> 
+         <img src="domain_warping/images/expt2_perlin_v_dw.png" width="250">
+   </td>
+    <td>
+        <img src="geom_rollers/images/colored_triangles.gif" width="250">
+    </td>
+   <td>
+        <img src="chess_art/images/Deep Blue (Computer)_Garry Kasparov_Game_02_IBM Man-Machine, New York USA_.png" width="250">
+    </td>    
+  </tr>
+
+[comment]: # (This a description Row for the images above) 
+  <tr> 
+    <td> 
+        Domain Warping Expts, 2020-10-10
+    </td>
+    <td> 
+      <a href="geom_rollers">Geom Rollers</a>, 2020-09-30
+    </td>
+    <td> 
+      <a href="chess_art">Chess Art</a>, 2020-09-20
+    </td>
+  </tr>
+
+[comment]: # (This a spacer row) 
+  <tr> 
+    <td> 
+           ___
+    </td>
+    <td> 
+           ___
+    </td>
+    <td> 
+           ___
+    </td>
+  </tr>
+
 
 [comment]: # (This a images link row) 
   <tr>

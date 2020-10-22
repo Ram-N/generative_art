@@ -1,6 +1,11 @@
 # Chess Art
 
+<img src="images/Garry Kasparov_Deep Blue (Computer)_Game_05_IBM Man-Machine, New York USA_.png" width="250">
+<img src="images/Deep Blue (Computer)_Garry Kasparov_Game_02_IBM Man-Machine, New York USA_.png" width="250">
+
+
 `grid.py` is the file to display the board (squares).
+
 
 
 ## The Challenge At Hand
