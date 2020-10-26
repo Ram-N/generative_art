@@ -13,17 +13,20 @@ def setup():
 
 #    print(jn.posx, jn.posy)
 
-kolam_pattern = [
-    ("1C", "S"),
-    ("2D", "SW"),
-    ("1C", "E"),
-    ("1C", "S"),
-    ("4D", "NE"),
-    ("1C", "N"),
-    ("1C", "S"),
-    ("2D", "SE"),
-    ("1C", "W"),
-]
+kolam_pattern = {
+    "cover_size": "narrow",
+    "covers": [
+        ("1C", "S", "narrow"),
+        ("2D", "SW", "narrow"),  # ne is a junction
+        ("1C", "E", "narrow"),
+        ("1C", "S", "narrow"),
+        ("4D", "NE", "blocky"),  # all 4 jns
+        ("1C", "N", "blocky"),  # N is a junction
+        ("1C", "S", "narrow"),
+        ("4D", "SE", "blocky"),
+        ("1C", "W", "narrow"),
+    ],
+}
 #     ("4C", "S"),
 #     ("4C", "E"),
 #     ("4C", "W"),
@@ -38,8 +41,12 @@ def draw():
     background(0)
     translate(width / 2, height / 2)
     fill(255, 0, 0)
-    ellipse(0, 0, 5, 5)
-    points.render_jns()
+    ellipse(0, 0, 15, 15)
+    #    points.render_jns()
     points.render_dots()
     points.render_kolam(kolam_pattern)
+    #    points.render_axis()
     noLoop()
+
+    saveFrame("images/k1.png")
+

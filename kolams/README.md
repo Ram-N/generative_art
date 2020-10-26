@@ -12,8 +12,6 @@
 - Dot-pattern shape: Rhombic, square, circular, 5-2-1 (5, 3 and 1, and then 3 and 5)
 
 
-
-
 <img src="images/dots_1.jpeg" width="500">
 
 ## Inspiration
@@ -29,6 +27,12 @@ From the [mathLapse article](https://imaginary.org/film/mathlapse-math-art-south
 As can be seen here, there are many other possibilities to create a SL kolam based on the set of dots above.
 
 <img src="images/lines-dots-circles-indian-traditional-260nw-1296789643.webp" width="500">
+
+
+## Pattern Variations
+1. Each dot-cell can share junctions with its neighbor (called `overlapping borders`)
+2. Each dot-cell has its own set of junctions. (`non-overlapping.`)
+3. The dot covers can be `blocky` or `narrow` (This has to be specified as a kolam_spec)
 
 ## Top-level Functions
 
