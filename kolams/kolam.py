@@ -48,5 +48,6 @@ def draw():
     #    points.render_axis()
     noLoop()
 
-    saveFrame("images/k1.png")
+
+#    saveFrame("images/k1.png")
 
