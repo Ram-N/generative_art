@@ -1,4 +1,4 @@
-from dots import GridPattern
+from dots import GridPattern, get_random_kolam_pattern
 
 w, h = 1000, 1000
 points = GridPattern(dot_pattern="square", num_seq=[6, 3])
@@ -13,28 +13,8 @@ def setup():
 
 #    print(jn.posx, jn.posy)
 
-kolam_pattern = {
-    "cover_size": "narrow",
-    "covers": [
-        ("1C", "S", "narrow"),
-        ("2D", "SW", "narrow"),  # ne is a junction
-        ("1C", "E", "narrow"),
-        ("1C", "S", "narrow"),
-        ("4D", "NE", "blocky"),  # all 4 jns
-        ("1C", "N", "blocky"),  # N is a junction
-        ("1C", "S", "narrow"),
-        ("4D", "SE", "blocky"),
-        ("1C", "W", "narrow"),
-    ],
-}
-#     ("4C", "S"),
-#     ("4C", "E"),
-#     ("4C", "W"),
-#     ("4D", "NE"),
-#     ("4D", "SW"),
-#     ("4D", "NW"),
-#     ("4D", "SE"),
-# ]
+dots_in_quarter = 9
+kolam_pattern = get_random_kolam_pattern(dots_in_quarter)
 
 
 def draw():

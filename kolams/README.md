@@ -41,6 +41,14 @@ As can be seen here, there are many other possibilities to create a SL kolam bas
 - Generate Junctions
 - JJ Connects
 
+## Things to work on
+- Given a (posx, posy) get the dot object
+- Given a px, py, get the dot's cover pattern
+- Given a px, py get dot's neighborhood pattern. (Neighbor posx, posy.. or None. The directions of neighbors 
+would be N, E, S, W or NW, NE, SE, SW)
+
+
+
 ### Common Utilities
 1. For the Grid, I use the same class/files as in Chess_Art (`grid.py`)
 2. For finer grid near the dots, I use fine-grid based on what I did in `generative fonts.` finer grid.py

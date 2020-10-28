@@ -11,6 +11,47 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td> 
+         <img src="kolams/images/k1.png" width="250">
+   </td>
+    <td>
+        <img src = "10_print/images/swirly_rainbow.png" width = '250'>
+    </td>
+   <td>
+        <img src = "10_print/images/arc_print.png" width = '250'>
+    </td>    
+  </tr>
+
+[comment]: # (This a description Row for the images above) 
+  <tr> 
+    <td> 
+      <a href="10_print">Kolams-1</a>, 2020-10-24
+    </td>
+    <td> 
+      <a href="10_print">10Print_rainbow</a>, 2020-10-27
+    </td>
+    <td> 
+      <a href="10_print">10Print-Arc</a>, 2020-10-26
+    </td>
+  </tr>
+
+[comment]: # (This a spacer row) 
+  <tr> 
+    <td> 
+           ___
+    </td>
+    <td> 
+           ___
+    </td>
+    <td> 
+           ___
+    </td>
+  </tr>
+
+
+
+[comment]: # (This a images link row) 
+  <tr>
+    <td> 
          <img src="domain_warping/images/expt2_perlin_v_dw.png" width="250">
    </td>
     <td>

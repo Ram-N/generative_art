@@ -1,7 +1,12 @@
+def pick_one(_lst):
+    """ randomly picks one from a list of items """
+    return _lst[int(random(len(_lst)))]
+
+
 def shuffle(_list):
 
     #    for i from 0 to n−2 do
-    #     j ← random integer such that i ≤ j < n
+    #     j <-  random integer such that i ≤ j < n
     #     exchange a[i] and a[j]
 
     n = len(_lst)
@@ -59,9 +64,4 @@ def keyPressed():
         loop()
     elif key == "g":  # inch forward - slo motion
         redraw()
-
-
-def pick_one(_lst):
-    """ randomly picks one from a list of items """
-    return _lst[int(random(len(_lst)))]
 

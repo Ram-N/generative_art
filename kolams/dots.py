@@ -1,3 +1,5 @@
+from rn_utils import choose_one
+
 dot_sep = 80
 jn_per_dot = 5
 dot_size = 7  # how big is each dot
@@ -5,14 +7,25 @@ jn_px = 3  # how big is each jn point
 cover_size = 2
 MODIFIER = 0.75
 
+COVER_SIZE = ["narrow", "full"]
+COVER_C = ["1C", "2C", "4D", "IC"]
+COVER_D = ["1D", "2D", "4C", "ID"]
+CARDINAL = ["N", "E", "S", "W"]
+DIAGONAL = ["NW", "NE", "SE", "SW"]
+
+# pixel separation between 2 junctions
 jnp = dot_sep / (jn_per_dot - 1)
+
+# This dict has the 45degree multiples for rotations, based on the Direction
 direction_dict = {
     "2C": {"N": 0, "E": 2, "S": 4, "W": 6},
     "2D": {"NE": 0, "SE": 2, "SW": 4, "NW": 6},
     "1C": {"W": 2, "N": 4, "E": 6, "S": 0},
     "1D": {"SW": 0, "NW": 2, "NE": 4, "SE": 6},
-    "4D": {"SW": 0, "NW": 0, "NE": 0, "SE": 0},
-    "4C": {"W": 0, "N": 0, "E": 0, "S": 0},
+    "4C": {"SW": 0, "NW": 0, "NE": 0, "SE": 0},
+    "4D": {"W": 0, "N": 0, "E": 0, "S": 0},
+    "IC": {"W": 2, "N": 0, "E": 2, "S": 0},
+    "ID": {"NE": 0, "NW": 2, "SE": 2, "SW": 0},
 }
 ROTATIONS = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
 
@@ -128,8 +141,7 @@ class GridPattern(object):
     def render_jns(self):
         fill(255, 200, 100)
 
-        rots = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
-        for rx, ry in rots:
+        for rx, ry in ROTATIONS:
             pushMatrix()
             scale(rx, ry)
             for jn in self.jns:
@@ -152,6 +164,21 @@ class GridPattern(object):
             for idx, dt in enumerate(self.dots):
                 # print(dt.posx, dt.posy)
                 dt.cover(kpc[idx][0], kpc[idx][1], kpc[idx][2])
+
+
+def get_random_kolam_pattern(dots_in_quarter):
+
+    kolam_pattern = {}
+    kd = []
+
+    for d in range(dots_in_quarter):
+        _cv = choose_one(COVER_C)
+        _dir = choose_one(CARDINAL)
+        _size = choose_one(COVER_SIZE)
+        kd.append((_cv, _dir, _size))
+    kolam_pattern["covers"] = kd
+
+    return kolam_pattern
 
 
 def bottom_line(cover_size, jnp):
@@ -201,11 +228,11 @@ def nw_line(cover_size, jnp, _narrow_A=True, _narrow_B=False):
 def render_cover(style, _dir, cover_size, jnp, _size):
     """Cover a single dot per instructions
     
-        _size: blocky or Narrow
+        _size: full or Narrow
     
     """
-
-    rotate(PI / 4 * direction_dict[style][_dir])
+    if style in direction_dict:
+        rotate(PI / 4 * direction_dict[style][_dir])
 
     if style == "4D":
         _narrow = True if _size == "narrow" else False
@@ -288,3 +315,51 @@ def render_cover(style, _dir, cover_size, jnp, _size):
             0,
         )
 
+    if style == "IC":  # two sharp corners, Cardinal. Base is along N-S axis
+        _narrow = True if _size == "narrow" else False
+        modifier = MODIFIER if _narrow else 1
+        bezier(
+            0,
+            -cover_size * jnp,
+            -cover_size * jnp * modifier,
+            0,
+            -cover_size * jnp * modifier,
+            0,
+            0,
+            cover_size * jnp,
+        )
+        bezier(
+            0,
+            -cover_size * jnp,
+            cover_size * jnp * modifier,
+            0,
+            cover_size * jnp * modifier,
+            0,
+            0,
+            cover_size * jnp,
+        )
+
+    if style == "ID":  # two sharp corners, Cardinal. Base is along SW-NE axis
+        _narrow = True if _size == "narrow" else False
+        modifier = MODIFIER if _narrow else 1
+        bezier(
+            -cover_size * jnp,
+            cover_size * jnp,
+            -cover_size * jnp * modifier,
+            0,
+            0,
+            -cover_size * jnp * modifier,
+            cover_size * jnp,
+            -cover_size * jnp,
+        )
+
+        bezier(
+            -cover_size * jnp,
+            cover_size * jnp,
+            0,
+            cover_size * jnp * modifier,
+            cover_size * jnp * modifier,
+            0,
+            cover_size * jnp,
+            -cover_size * jnp,
+        )
