@@ -42,11 +42,13 @@ As can be seen here, there are many other possibilities to create a SL kolam bas
 - JJ Connects
 
 ## Things to work on
-- Given a (posx, posy) get the dot object
+- Given a (posx, posy) get the dot object 
 - Given a px, py, get the dot's cover pattern
 - Given a px, py get dot's neighborhood pattern. (Neighbor posx, posy.. or None. The directions of neighbors 
-would be N, E, S, W or NW, NE, SE, SW)
+would be N, E, S, W or NW, NE, SE, SW)- Implemented
 
+<img src="images/k1.png" width="250">
+<img src="images/k2_one_loop.png" width="250">
 
 
 ### Common Utilities

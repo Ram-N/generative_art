@@ -8,8 +8,8 @@ cover_size = 2
 MODIFIER = 0.75
 
 COVER_SIZE = ["narrow", "full"]
-COVER_C = ["1C", "2C", "4D", "IC"]
-COVER_D = ["1D", "2D", "4C", "ID"]
+COVER_C = ["1C", "2D", "4D", "IC"]  # mid points
+COVER_D = ["1D", "2C", "4C", "ID"]  # corners
 CARDINAL = ["N", "E", "S", "W"]
 DIAGONAL = ["NW", "NE", "SE", "SW"]
 
@@ -27,11 +27,53 @@ direction_dict = {
     "IC": {"W": 2, "N": 0, "E": 2, "S": 0},
     "ID": {"NE": 0, "NW": 2, "SE": 2, "SW": 0},
 }
+
+
+BINARY_PATTERN = [
+    "0001",
+    "0010",
+    "0011",
+    "0100",
+    "0101",
+    "0110",
+    "0111",
+    "1000",
+    "1001",
+    "1010",
+    "1011",
+    "1100",
+    "1101",
+    "1110",
+    "1111",
+]
+
+# binary-dictionary translate from the 4 digit code to full directions
+# This is for Cardinal directions N E S W
+mid_binary = {
+    "0000": ("0", "0", "narrow"),
+    "0001": ("1C", "W", "narrow"),
+    "0010": ("1C", "S", "narrow"),
+    "0100": ("1C", "E", "narrow"),
+    "1000": ("1C", "N", "narrow"),
+    "0011": ("2D", "NE", "any"),
+    "0110": ("2D", "NW", "any"),
+    "1100": ("2D", "SW", "any"),
+    "1001": ("2D", "SE", "any"),
+    "1010": ("IC", "N", "any"),
+    "0101": ("IC", "E", "any"),
+    "1101": ("1C", "N", "full"),
+    "1110": ("1C", "E", "full"),
+    "0111": ("1C", "S", "full"),
+    "1011": ("1C", "W", "full"),
+    "1111": ("4D", "N", "full"),
+}
+
+
 ROTATIONS = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
 
 
-class Point(object):
-    """A Point in the kolam plane is either a DOT or a Junction."""
+class Cell(object):
+    """A Cell in the kolam plane is the square around a DOT"""
 
     def __init__(self, _posx, _posy, x, y, _isdot):
         """ position is dot index
@@ -45,6 +87,27 @@ class Point(object):
 
         self.circled = False  # only dots need to be circled
         self.neighbors = []
+
+    def get_neighbor(self, _dir, grid):
+        """Get neighboring cell based on _dir specified"""
+
+        if _dir.lower() not in ["n", "e", "s", "w", "up", "down", "left", "right"]:
+            return None
+
+        _dir = _dir.lower()
+        px, py = self.posx, self.posy
+        for dt in grid.dots:
+            dx, dy = dt.posx, dt.posy
+            if _dir == "n" and (px == dx) and dy == (py - 1):
+                return dt
+            if _dir == "s" and (px == dx) and dy == (py + 1):
+                return dt
+            if _dir == "w" and (py == dy) and dx == (px - 1):
+                return dt
+            if _dir == "e" and (py == dy) and dx == (px + 1):
+                return dt
+
+        return None
 
     def render_cell_border(self):  # for each DOT
         """Define a fine grid around each dot"""
@@ -61,8 +124,41 @@ class Point(object):
     # define all types of junctions for each dot
     # shared jns. Unique jns.
 
+    def set_walls(self, cells):
+        """ Sets the booleans for the walls for one dot"""
+
+        legal, loop_count = 0, 0
+        while not legal:
+            loop_count += 1
+            self.north = choose_one(["0", "1"])
+            self.east = choose_one(["0", "1"])
+            self.south = choose_one(["0", "1"])
+            self.west = choose_one(["0", "1"])
+            legal = 1
+
+            if self.posx == 0:  # west wall
+                self.west = "0"  # west wall cannot have a 1
+            if self.posy == 0:  # west wall
+                self.north = "0"  # west wall cannot have a 1
+
+            # Set Common walls based on N and W neighbors
+            north_cell = self.get_neighbor("n", cells)
+            west_cell = self.get_neighbor("w", cells)
+            if north_cell:  # N Wall should match N-cell's south wall
+                self.north = north_cell.south
+            if west_cell:  # W Wall should match W-cell's east wall
+                self.west = west_cell.east
+
+            bin_pattern = "".join([self.north, self.east, self.south, self.west])
+            if bin_pattern == "0000":
+                legal = 0
+            if loop_count > 100:
+                raise ValueError
+
+        return bin_pattern
+
     def cover(self, style, _dir, _size):
-        """Go to single dot and draw per directions"""
+        """Go to single dot and draw cover per directions"""
 
         # print(self.x, self.y)
         strokeWeight(3)
@@ -73,35 +169,6 @@ class Point(object):
         translate(self.x, self.y)
         render_cover(style, _dir, cover_size, jnp, _size=_size)
         popMatrix()
-
-
-def mark_points(n, sep_pix, _isdot):
-    """ Points (dots or jns) get created here, with their pos and coords set. """
-
-    pts = []
-    m = n // 2
-    if n % 2:  # odd
-        offset = 0
-        xx = m + 1
-        if not _isdot:
-            xx = m * 5 + 3
-            m = 0
-    else:  # even n
-        offset = -0.5
-        xx = m
-        if not _isdot:
-            offset = 0
-            xx = m * (jn_per_dot - 1) + 1
-            m = 0
-    for x in range(xx):
-        for y in range(xx):
-            pts.append(
-                Point(
-                    x, y, (x - m - offset) * sep_pix, (y - m - offset) * sep_pix, _isdot
-                )
-            )
-
-    return pts
 
 
 class GridPattern(object):
@@ -120,8 +187,59 @@ class GridPattern(object):
         n = num_seq[0]
 
         if dot_pattern == "square":
-            self.dots = mark_points(n, dot_sep, _isdot=True)
-            self.jns = mark_points(n, jnp, _isdot=False)
+            self.dots = self.mark_points(n, dot_sep, _isdot=True)
+            self.jns = self.mark_points(n, jnp, _isdot=False)
+
+    def mark_points(self, n, sep_pix, _isdot):
+        """ Cells (dots or jns) get created here.
+        
+          Their attributes walls, pos and coords set. 
+         """
+
+        pts = []
+        m = n // 2
+        if n % 2:  # odd
+            offset = 0
+            xx = m + 1
+            if not _isdot:
+                xx = m * 5 + 3
+                m = 0
+        else:  # even n
+            offset = -0.5
+            xx = m
+            if not _isdot:
+                offset = 0
+                xx = m * (jn_per_dot - 1) + 1
+                m = 0
+        for x in range(xx):
+            for y in range(xx):
+                cell = Cell(
+                    x, y, (x - m - offset) * sep_pix, (y - m - offset) * sep_pix, _isdot
+                )
+                pts.append(cell)
+
+        return pts
+
+    def get_random_kolam_pattern(self):
+
+        kolam_pattern = {}
+        kd = []
+
+        for d in self.dots:
+            # bin_p = set_walls(d)
+            # bin_p = choose_one(BINARY_PATTERN)
+            bin_p = d.set_walls(self)  # use the binary code to set the walls
+
+            _cv, _dir, _size = mid_binary[bin_p]
+            if _size == "any":
+                _size = choose_one(COVER_SIZE)
+            kd.append((_cv, _dir, _size))
+            # print(_cv, _dir, _size)
+
+        kolam_pattern["covers"] = kd
+
+        # print(get_binary("1", "1", "0", "1"))
+        self.pattern = kolam_pattern
 
     def render_axis(self):
         midx = int(self.jns[0].x + self.jns[-1].x / 2)
@@ -148,9 +266,9 @@ class GridPattern(object):
                 ellipse(jn.x, jn.y, jn_px, jn_px)
             popMatrix()
 
-    def render_kolam(self, kolam_pattern, _reflection=True):
+    def render_kolam(self, _reflection=True):
 
-        kpc = kolam_pattern["covers"]
+        kpc = self.pattern["covers"]
 
         if _reflection:
             for rx, ry in ROTATIONS:
@@ -164,21 +282,6 @@ class GridPattern(object):
             for idx, dt in enumerate(self.dots):
                 # print(dt.posx, dt.posy)
                 dt.cover(kpc[idx][0], kpc[idx][1], kpc[idx][2])
-
-
-def get_random_kolam_pattern(dots_in_quarter):
-
-    kolam_pattern = {}
-    kd = []
-
-    for d in range(dots_in_quarter):
-        _cv = choose_one(COVER_C)
-        _dir = choose_one(CARDINAL)
-        _size = choose_one(COVER_SIZE)
-        kd.append((_cv, _dir, _size))
-    kolam_pattern["covers"] = kd
-
-    return kolam_pattern
 
 
 def bottom_line(cover_size, jnp):
@@ -363,3 +466,14 @@ def render_cover(style, _dir, cover_size, jnp, _size):
             cover_size * jnp,
             -cover_size * jnp,
         )
+
+
+def get_binary(a, b, c, d):
+    """Give 4 walls, get its binary representation string
+    
+    Parameters:
+        a, b, c and d are 0 or 1
+    """
+
+    return "".join([a, b, c, d])
+
