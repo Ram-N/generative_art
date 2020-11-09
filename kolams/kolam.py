@@ -2,7 +2,8 @@ from dots import GridPattern
 from rn_utils import *
 
 w, h = 1000, 1000
-cells = GridPattern(dot_pattern="square", num_seq=[6, 3])
+cells = GridPattern(dot_pattern="square", num_seq=[8, 3])
+# Initialize dot covers
 cells.get_random_kolam_pattern()
 dots_in_quarter = 9
 
@@ -17,8 +18,8 @@ def draw():
     global cells
 
     if not frameCount % 40:
-        cells.get_random_kolam_pattern()
-        saveFrame("images/random1_####.png")
+        cells.get_random_kolam_pattern(dot="random")
+        # saveFrame("images/random1_####.png")
 
     if frameCount > 1000:
         noLoop()

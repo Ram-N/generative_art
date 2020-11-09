@@ -8,8 +8,8 @@ cover_size = 2
 MODIFIER = 0.75
 
 COVER_SIZE = ["narrow", "full"]
-COVER_C = ["1C", "2D", "4D", "IC"]  # mid points
-COVER_D = ["1D", "2C", "4C", "ID"]  # corners
+COVER_C = ["1C", "2D", "4D", "IC"]  # jn at mid Cell
+COVER_D = ["1D", "2C", "4C", "ID"]  # jn at cell corners
 CARDINAL = ["N", "E", "S", "W"]
 DIAGONAL = ["NW", "NE", "SE", "SW"]
 
@@ -85,11 +85,12 @@ class Cell(object):
         self.y = y  # y coord
         self.dot = _isdot  # a point can be a dot or a junction
 
+        self.pattern = None
         self.circled = False  # only dots need to be circled
         self.neighbors = []
 
     def get_neighbor(self, _dir, grid):
-        """Get neighboring cell based on _dir specified"""
+        """Get neighboring cell obj based on neighboring _dir specified"""
 
         if _dir.lower() not in ["n", "e", "s", "w", "up", "down", "left", "right"]:
             return None
@@ -125,7 +126,7 @@ class Cell(object):
     # shared jns. Unique jns.
 
     def set_walls(self, cells):
-        """ Sets the booleans for the walls for one dot"""
+        """ Randomly sets the the walls for one dot to form its cover"""
 
         legal, loop_count = 0, 0
         while not legal:
@@ -155,11 +156,17 @@ class Cell(object):
             if loop_count > 100:
                 raise ValueError
 
-        return bin_pattern
+            _cv, _dir, _cover_size = mid_binary[bin_pattern]
+            if _cover_size == "any":
+                _size = choose_one(COVER_SIZE)
 
-    def cover(self, style, _dir, _size):
+        return _cv, _dir, _cover_size
+
+    def cover(self):
+
         """Go to single dot and draw cover per directions"""
 
+        style, _dir, _size = self.pattern
         # print(self.x, self.y)
         strokeWeight(3)
         stroke(250)
@@ -220,26 +227,28 @@ class GridPattern(object):
 
         return pts
 
-    def get_random_kolam_pattern(self):
+    def get_random_kolam_pattern(self, dot="all"):
+        """
 
-        kolam_pattern = {}
-        kd = []
-
-        for d in self.dots:
-            # bin_p = set_walls(d)
-            # bin_p = choose_one(BINARY_PATTERN)
-            bin_p = d.set_walls(self)  # use the binary code to set the walls
-
-            _cv, _dir, _size = mid_binary[bin_p]
-            if _size == "any":
-                _size = choose_one(COVER_SIZE)
-            kd.append((_cv, _dir, _size))
-            # print(_cv, _dir, _size)
-
-        kolam_pattern["covers"] = kd
-
-        # print(get_binary("1", "1", "0", "1"))
-        self.pattern = kolam_pattern
+        Parameters:
+        dot = 'all' randomize the entire kolam
+        dot = 'random' randomize cover for a single dot
+        dot = (x,y) randomize dot at posx posy
+        """
+        if dot == "all":
+            for d in self.dots:
+                _cv, _dir, _size = d.set_walls(cells=self)
+                d.pattern = (_cv, _dir, _size)
+                # kd.append((_cv, _dir, _size))
+        if dot == "random":
+            done = 0
+            while not done:
+                d = choose_one(self.dots)
+                old_pattern = d.pattern
+                new_pattern = d.set_walls(cells=self)
+                if old_pattern != new_pattern:
+                    done = 1
+                    d.pattern = new_pattern
 
     def render_axis(self):
         midx = int(self.jns[0].x + self.jns[-1].x / 2)
@@ -268,20 +277,16 @@ class GridPattern(object):
 
     def render_kolam(self, _reflection=True):
 
-        kpc = self.pattern["covers"]
-
         if _reflection:
             for rx, ry in ROTATIONS:
                 pushMatrix()
                 scale(rx, ry)
-                for idx, dt in enumerate(self.dots):
-                    # print(dt.posx, dt.posy)
-                    dt.cover(kpc[idx][0], kpc[idx][1], kpc[idx][2])
+                for dt in self.dots:
+                    dt.cover()
                 popMatrix()
         else:
-            for idx, dt in enumerate(self.dots):
-                # print(dt.posx, dt.posy)
-                dt.cover(kpc[idx][0], kpc[idx][1], kpc[idx][2])
+            for dt in self.dots:
+                dt.cover()
 
 
 def bottom_line(cover_size, jnp):
