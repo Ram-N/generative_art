@@ -1,4 +1,18 @@
 import colors
+import math
+
+SPEED_LIMIT = 10
+COLL_RECUPERATION = 15
+
+
+def ball_dist(b1, b2):
+    """ Euclidean distance between two ball """
+    return math.sqrt((b1.x - b2.x) ** 2 + (b1.y - b2.y) ** 2)
+
+
+def speed_limit(comp):
+    """Don't let it go beyond -1*SPEED_LIMIT or +1*SPEED_LIMIT"""
+    return max(min(comp, SPEED_LIMIT), -1 * SPEED_LIMIT)
 
 
 class Ball(object):
@@ -10,7 +24,7 @@ class Ball(object):
         _vx=0,
         _vy=0,
         _radius=10,
-        _angle = 0
+        _angle=0,
         _cx=0,
         _cy=0,
         _length=0,
@@ -24,9 +38,6 @@ class Ball(object):
         self.startx, self.starty = _x, _y
         self.active = False
         self.radius = _radius
-        self.angle = _angle
-        self.cx, self.cy = _cx, _cy
-        self.length = _length
         self.color = _colornum
         self.prev_collision = -3  # frameCount when the collision occurred
         self.launch = _launch  # frameCount for ball to make its first appearance?
@@ -60,11 +71,6 @@ class Ball(object):
             self.x = self.startx
             self.y = self.starty
 
-    def revolve(self):
-        self.angle += radians(angle_step)
-        self.x += self.cx + self.length * sin(self.angle)
-        self.y += self.cy + self.length * cos(self.angle)
-    
     def move_sinusoidal(self):
         self.x += self.vx
         self.y = self.starty + self.vy
@@ -94,3 +100,49 @@ class Ball(object):
                         self.prev_collision = frameCount
                         b.prev_collision = frameCount
 
+
+class Pendulum(Ball):
+    def __init__(
+        self,
+        _id,
+        _x,
+        _y,
+        _vx=0,
+        _vy=0,
+        _radius=10,
+        _speed=1,
+        _angle=0,
+        _cx=0,
+        _cy=0,
+        _length=0,
+        _colornum=0,
+        _launch=0,
+    ):
+        Ball.__init__(self, _id=_id, _x=_x, _y=_y, _radius=_radius, _colornum=_colornum)
+        self.angle = _angle
+        self.cx, self.cy = _cx, _cy
+        self.length = _length
+        self.speed = _speed
+
+    def revolve(self, angle_step):
+        self.angle += radians(self.speed)
+        self.x = self.cx + self.length * sin(self.angle)
+        self.y = self.cy + self.length * cos(self.angle)
+
+    def display_pendulum(self):
+        strokeWeight(3)
+        line(self.cx, self.cy, self.x, self.y)
+        self.display()
+
+    def collide(self, balls):
+        # check with all the other balls to see if colliding...
+        for b in balls:
+            if (
+                frameCount > self.prev_collision + COLL_RECUPERATION
+            ):  # hack to avoid successive collision
+                if self.id < b.id:  # check n^2/ 2 pairs.
+                    if ball_dist(b, self) < 2 * self.radius:
+                        print(b.speed, self.speed)
+                        b.speed, self.speed = self.speed, b.speed
+                        self.prev_collision = frameCount
+                        b.prev_collision = frameCount

@@ -18,7 +18,8 @@ def draw():
     global cells
 
     if not frameCount % 40:
-        cells.get_random_kolam_pattern(dot="random")
+        # cells.get_random_kolam_pattern(dot="random")
+        cells.get_random_kolam_pattern(dot="all")
         # saveFrame("images/random1_####.png")
 
     if frameCount > 1000:

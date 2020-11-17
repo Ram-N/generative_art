@@ -46,7 +46,9 @@ As can be seen here, there are many other possibilities to create a SL kolam bas
 ## Things to work on
 - Have an option in which 'island formation' is minimized, or eliminated. In a 3x3 dots, the bottom 3 and the right 3 dots cannot *all* be zeros. That would an island to be formed.
 
-- Take care of dot square size odd (5, 7). This involves drawing 1/2 covers!
+- Make narrow cover to be "smoother" 
+
+- Take care of dot square size odd (5, 7, 9). This involves drawing 1/2 covers!
 - Implement diminishing dot patterns. 7-5-3 or 8-6-4 type of patterns
 - Given a (posx, posy) get the dot object (Done)
 - Given a px, py, get the dot's cover pattern 
@@ -58,7 +60,7 @@ As can be seen here, there are many other possibilities to create a SL kolam bas
 
 ### Aesthetics
 - Implement completely new covers each frame change. (Done. get_random_kolam(dots='all))
-- Implement a random version wherein only one dot changes in each new 'frame change'.
+- Implement a random version wherein only one dot changes in each new 'frame change'. Implemented: use: get_random_kolam(dots='random')
 
 
 ### Common Utilities

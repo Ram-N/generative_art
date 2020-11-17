@@ -2,21 +2,7 @@ import colors
 
 
 class Ball(object):
-    def __init__(
-        self,
-        _id,
-        _x,
-        _y,
-        _vx=0,
-        _vy=0,
-        _radius=10,
-        _angle = 0
-        _cx=0,
-        _cy=0,
-        _length=0,
-        _colornum=0,
-        _launch=0,
-    ):
+    def __init__(self, _id, _x, _y, _vx=0, _vy=0, _radius=10, _colornum=0, _launch=0):
         self.x, self.y = _x, _y
         self.vx, self.vy = _vx, _vy
         self.id = _id
@@ -24,9 +10,6 @@ class Ball(object):
         self.startx, self.starty = _x, _y
         self.active = False
         self.radius = _radius
-        self.angle = _angle
-        self.cx, self.cy = _cx, _cy
-        self.length = _length
         self.color = _colornum
         self.prev_collision = -3  # frameCount when the collision occurred
         self.launch = _launch  # frameCount for ball to make its first appearance?
@@ -60,11 +43,6 @@ class Ball(object):
             self.x = self.startx
             self.y = self.starty
 
-    def revolve(self):
-        self.angle += radians(angle_step)
-        self.x += self.cx + self.length * sin(self.angle)
-        self.y += self.cy + self.length * cos(self.angle)
-    
     def move_sinusoidal(self):
         self.x += self.vx
         self.y = self.starty + self.vy
