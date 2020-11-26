@@ -2,7 +2,7 @@ import colors
 import math
 
 SPEED_LIMIT = 10
-COLL_RECUPERATION = 15
+COLL_RECUPERATION = 10
 
 
 def ball_dist(b1, b2):
@@ -87,7 +87,7 @@ class Ball(object):
         # check with all the other balls to see if colliding...
         for b in balls:
             if (
-                frameCount > self.prev_collision + 5
+                frameCount > self.prev_collision + COLL_RECUPERATION
             ):  # hack to avoid successive collision
                 if self.id < b.id:  # check n^2/ 2 pairs.
                     min_dist = self.radius + b.radius
@@ -123,9 +123,30 @@ class Pendulum(Ball):
         self.cx, self.cy = _cx, _cy
         self.length = _length
         self.speed = _speed
+        self.coll_with = None
+        self.max_angle = PI / 2
 
     def revolve(self, angle_step):
+        """ The Pendulum makes complete loops """
         self.angle += radians(self.speed)
+        self.x = self.cx + self.length * sin(self.angle)
+        self.y = self.cy + self.length * cos(self.angle)
+
+    def settle(self):
+        """ The Pendulum slowly settles down at angle=0 """
+        if (self.angle >= self.max_angle) or (
+            self.angle <= -self.max_angle
+        ):  # time to reverse
+            print("reverse", self.angle, self.max_angle)
+            self.speed *= -0.9  # damped
+            self.max_angle *= 0.9
+            if self.speed > 0:
+                self.angle = self.max_angle
+            else:
+                self.angle = -self.max_angle
+
+        self.angle += radians(self.speed)
+        print(self.angle, self.max_angle, self.speed)
         self.x = self.cx + self.length * sin(self.angle)
         self.y = self.cy + self.length * cos(self.angle)
 
@@ -134,15 +155,24 @@ class Pendulum(Ball):
         line(self.cx, self.cy, self.x, self.y)
         self.display()
 
-    def collide(self, balls):
+    def collide(self, balls, consecutive=False):
         # check with all the other balls to see if colliding...
         for b in balls:
-            if (
-                frameCount > self.prev_collision + COLL_RECUPERATION
-            ):  # hack to avoid successive collision
-                if self.id < b.id:  # check n^2/ 2 pairs.
-                    if ball_dist(b, self) < 2 * self.radius:
-                        print(b.speed, self.speed)
-                        b.speed, self.speed = self.speed, b.speed
-                        self.prev_collision = frameCount
-                        b.prev_collision = frameCount
+            if frameCount > self.prev_collision + COLL_RECUPERATION:
+
+                # Avoid successive collision
+                # Case A: Conseq = True. proceed.
+                # Case b: Conseq = False, check self.coll_with !=b
+                if consecutive or (not consecutive and self.coll_with != b):
+                    if self.id != b.id:  # check n^2/ 2 pairs.
+                        if ball_dist(b, self) < 2 * self.radius:
+                            # print(b.speed, self.speed)
+                            b.speed, self.speed = self.speed, b.speed
+                            self.prev_collision = frameCount
+                            b.prev_collision = frameCount
+
+                            self.coll_with = b
+                            b.coll_with = self
+
+                            # color swaps
+                            self.color, b.color = b.color, self.color

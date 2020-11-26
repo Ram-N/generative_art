@@ -25,6 +25,11 @@ These were the early gif-loop attempts
 <img src="ball_crossings/images/balls9x9.gif" width="250">
 
 
+## Pendulums
+
+<img src="pendulums/images/5_pendulums.png" width="250">
+
+
 # Studies
 
 Just to see how this works, try out

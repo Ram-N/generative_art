@@ -22,7 +22,7 @@ def draw():
         cells.get_random_kolam_pattern(dot="all")
         # saveFrame("images/random1_####.png")
 
-    if frameCount > 1000:
+    if frameCount > 100:
         noLoop()
 
     background(0)

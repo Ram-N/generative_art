@@ -5,7 +5,7 @@ jn_per_dot = 5
 dot_size = 7  # how big is each dot
 jn_px = 3  # how big is each jn point
 cover_size = 2
-MODIFIER = 0.75
+MODIFIER = 0.8
 
 COVER_SIZE = ["narrow", "full"]
 COVER_C = ["1C", "2D", "4D", "IC"]  # jn at mid Cell
@@ -72,6 +72,18 @@ mid_binary = {
 ROTATIONS = [(1, 1), (1, -1), (-1, 1), (-1, -1)]
 
 
+def get_point_between(x1, y1, x2, y2, frac):
+    """ Find coords of an intermediate point.
+
+        frac is between 0 and 1
+    """
+
+    new_x = x1 + (x2 - x1) * frac
+    new_y = y1 + (y2 - y1) * frac
+
+    return new_x, new_y
+
+
 class Cell(object):
     """A Cell in the kolam plane is the square around a DOT"""
 
@@ -117,7 +129,7 @@ class Cell(object):
         #     self.grid_xmargin, self.grid_ymargin, self.letter_height, self.letter_width
         # )
         noFill()
-        stroke(0, 244, 0)
+        stroke(0, 44, 0)
         cx = self.x - dot_sep / 2
         cy = self.y - dot_sep / 2
         rect(cx, cy, dot_sep, dot_sep)
@@ -162,6 +174,17 @@ class Cell(object):
 
         return _cv, _dir, _cover_size
 
+    def get_different_pattern(self, cells):
+        done = 0
+        attempts = 0
+        while not done and attempts < 100:
+            old_pattern = self.pattern
+            new_pattern = self.set_walls(cells=cells)
+            if old_pattern != new_pattern:
+                self.pattern = new_pattern
+                done = 1
+            attempts += 1
+
     def cover(self):
 
         """Go to single dot and draw cover per directions"""
@@ -192,6 +215,7 @@ class GridPattern(object):
         self.jns = []
 
         n = num_seq[0]
+        self.grid_length = n // 2  # 1/4 of the total grid, in case of XY reflection
 
         if dot_pattern == "square":
             self.dots = self.mark_points(n, dot_sep, _isdot=True)
@@ -227,6 +251,15 @@ class GridPattern(object):
 
         return pts
 
+    def get_dot_given_posx_posy(self, posx, posy):
+
+        for dt in self.dots:
+            if dt.posx == posx and dt.posy == posy:
+                return dt
+
+        print("didnt find", posx, posy)
+        return None
+
     def get_random_kolam_pattern(self, dot="all"):
         """
 
@@ -241,14 +274,20 @@ class GridPattern(object):
                 d.pattern = (_cv, _dir, _size)
                 # kd.append((_cv, _dir, _size))
         if dot == "random":
-            done = 0
-            while not done:
-                d = choose_one(self.dots)
-                old_pattern = d.pattern
-                new_pattern = d.set_walls(cells=self)
-                if old_pattern != new_pattern:
-                    done = 1
-                    d.pattern = new_pattern
+            d = choose_one(self.dots)
+            d.get_different_pattern()
+
+        # Make sure that the southern wall is not all zero's
+        # This leads to island formation
+        southern_dots, eastern_dots = [], []
+        max_pos = self.grid_length - 1
+        for pos in range(self.grid_length):
+            southern_dots.append(
+                self.get_dot_given_posx_posy(pos, max_pos)
+            )  # south wall
+            eastern_dots.append(self.get_dot_given_posx_posy(max_pos, pos))  # east wall
+
+        check_islands(southern_dots, _dir="s", cells=self)
 
     def render_axis(self):
         midx = int(self.jns[0].x + self.jns[-1].x / 2)
@@ -283,10 +322,26 @@ class GridPattern(object):
                 scale(rx, ry)
                 for dt in self.dots:
                     dt.cover()
+                    dt.render_cell_border()
                 popMatrix()
         else:
             for dt in self.dots:
                 dt.cover()
+
+
+def check_islands(dots_set, _dir, cells):
+    _sum = 0
+    for dt in dots_set:
+        if _dir == "s":
+            _sum += int(dt.south)
+
+    while not _sum:  # Island on the southern border
+        print("hey")
+        d = choose_one(dots_set)  # get a random southern dot
+        d.get_different_pattern(cells=cells)
+        for dt in dots_set:
+            if _dir == "s":
+                _sum += int(dt.south)
 
 
 def bottom_line(cover_size, jnp):
@@ -409,19 +464,35 @@ def render_cover(style, _dir, cover_size, jnp, _size):
 
     if style == "1C":  # one sharp corner, Cardinal. Base has rounded North
         _narrow = True if _size == "narrow" else False
-        modifier = MODIFIER if _narrow else 1
-        sw_line(cover_size, jnp, False, _narrow)
-        se_line(cover_size, jnp, False, _narrow)
-        bezier(
-            -cover_size * jnp * modifier,
-            0,
-            0,
-            -cover_size * jnp,
-            0,
-            -cover_size * jnp,
-            cover_size * jnp * modifier,
-            0,
+        frac = MODIFIER if _narrow else 1
+
+        curve_x = 0
+        curve_ys = cover_size * jnp
+        curve_ye = -cover_size * jnp * frac
+
+        newx1, newy1 = get_point_between(
+            0, cover_size * jnp, -cover_size * jnp, 0, frac
         )
+        newx2, newy2 = get_point_between(0, cover_size * jnp, cover_size * jnp, 0, frac)
+        if _size == 'narrow':
+            bezier(0, curve_ys, newx1, newy1, newx1, newy1, 0, curve_ye)
+            bezier(0, curve_ys, newx2, newy2, newx2, newy2, 0, curve_ye)
+        else:
+            line(0, cover_size * jnp, newx1, newy1)
+            line(0, cover_size * jnp, newx2, newy2)
+            bezier(
+                newx1,
+                newy1,
+                -jnp * 1.1,
+                -cover_size * jnp,
+                jnp * 1.1,
+                -cover_size * jnp,
+                newx2,
+                newy2,
+            )
+
+
+        stroke(255)
 
     if style == "IC":  # two sharp corners, Cardinal. Base is along N-S axis
         _narrow = True if _size == "narrow" else False

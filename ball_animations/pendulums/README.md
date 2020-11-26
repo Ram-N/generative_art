@@ -1,23 +1,29 @@
 # Ball Animations - Pendulums
 
-`ball.py` has the Class, with move and display logic.
+`ball.py` has the base Class for Balls. Building on that, we create a sub-class
+called `Pendulum.` The following images and attempts use these.
 
-## single_pendulum.py
+## 01_Single_pendulum.py
 
-One pendulum, rotates around a center, but using ball.py
+One pendulum, rotating around a center. This is the pendulum object, at its most
+basic.
 
+## 02_Multiple_pendulums.py
 
+Many pendulums, rotating around a common center
 
-## [Trapeze Balls](trapeze_balls/trapeze_balls_gif_loop.pyde)
+## 03_Collisions Multiple_pendulums.py
 
-These were the early gif-loop attempts
-
-<img src="trapeze_balls/images/white_trapeze.gif" width="250">
-<img src="trapeze_balls/images/trapeze_loop.gif" width="250">
-
-## Criss-cross
-
-<img src="ball_crossings/images/balls9x9.gif" width="250">
+Many pendulums, rotating around a common center and collisions cause change of direction.
+<img src="images/multiple_1.gif" width="250">
 
 
+## 04_Multiple_pendulums.py
+
+Many pendulums, rotating around a common center
+
+<img src="images/5_pendulums.png" width="250">
+
+
+## 05 Criss-cross
 

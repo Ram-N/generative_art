@@ -21,8 +21,9 @@ balls = [
         _x=0,
         _y=100,
         _radius=radius,
-        _speed=(1 + int(random(7))) * pick_one([1, -1]),
-        _angle=int(random(360)) / 360.0 * TWO_PI,
+        _speed=0,
+        _angle = 0,
+        #_angle=int(random(360)) / 360.0 * TWO_PI,
         _cx=margin + x * ipd,
         _cy=margin + y * ipd,
         _length=length,
@@ -33,7 +34,10 @@ balls = [
     for x in range(pendulums_x)
 ]
 
-
+for b in balls:
+    if random(1) < 0.2:
+        b.speed = (1 + int(random(7))) * pick_one([1, -1])
+        b.color = int(random(5))
 angle_step = 360.0 / 120.0  # 6 degrees per frame
 
 
@@ -50,9 +54,9 @@ def draw():
     for idx, b in enumerate(balls):
         b.revolve(angle_step)
         b.display_pendulum()
-        b.collide(balls)
+        b.collide(balls, consecutive=True)  # allow multiple same pair colls
 
     # saveFrame("images/5_pen_collisions_###.png")
-    if not frameCount % 1500:
-        noLoop()
+    # if not frameCount % 1500:
+    #     noLoop()
 

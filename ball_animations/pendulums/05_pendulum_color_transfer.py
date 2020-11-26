@@ -33,6 +33,8 @@ balls = [
     for x in range(pendulums_x)
 ]
 
+balls[0].color = 1
+balls[-1].color = 3
 
 angle_step = 360.0 / 120.0  # 6 degrees per frame
 
@@ -53,6 +55,6 @@ def draw():
         b.collide(balls)
 
     # saveFrame("images/5_pen_collisions_###.png")
-    if not frameCount % 1500:
-        noLoop()
+    # if not frameCount % 1500:
+    #     noLoop()
 

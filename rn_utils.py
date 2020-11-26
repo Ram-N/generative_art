@@ -3,12 +3,7 @@ def pick_one(_lst):
     return _lst[int(random(len(_lst)))]
 
 
-def shuffle(_list):
-
-    #    for i from 0 to n−2 do
-    #     j <-  random integer such that i ≤ j < n
-    #     exchange a[i] and a[j]
-
+def shuffle(_lst):
     n = len(_lst)
     for i in range(0, n - 2):
         j = int(random(i, n))
@@ -26,30 +21,11 @@ def display_grid_points(x_margin, y_margin, num_rows, num_cols, sep):
             ellipse(x, y, 3, 3)
 
 
-def display_grid_squares(x_margin, y_margin, num_rows, num_cols, sep):
-    """
-    Display small squares around grid vertics
-    """
-
-    for row in range(num_rows):
-        for col in range(num_cols):
-            x = x_margin + sep * col
-            y = y_margin + sep * row
-            ellipse(x, y, 3, 3)
-            pushMatrix()
-            translate(x, y)
-            noFill()
-            rect(0, 0, 20, 20)
-            popMatrix()
-
-
 def keyPressed():
-    global show, circles
+    global show
 
     if key == "n":
         circles = []
-        c0 = Circle(width / 3, height / 2, 20, 0, 0, 0)
-        circles.append(c0)
     elif key == "t":  # Toggle
         show = not show
 
