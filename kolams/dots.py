@@ -2,7 +2,7 @@ from rn_utils import choose_one
 
 dot_sep = 80
 jn_per_dot = 5
-dot_size = 7  # how big is each dot
+dot_size = 10  # how big is each dot
 jn_px = 3  # how big is each jn point
 cover_size = 2
 MODIFIER = 0.8
@@ -260,6 +260,10 @@ class GridPattern(object):
         print("didnt find", posx, posy)
         return None
 
+    def print_pattern(self):
+        for d in self.dots:
+            print(d.pattern)
+
     def get_random_kolam_pattern(self, dot="all"):
         """
 
@@ -272,7 +276,6 @@ class GridPattern(object):
             for d in self.dots:
                 _cv, _dir, _size = d.set_walls(cells=self)
                 d.pattern = (_cv, _dir, _size)
-                # kd.append((_cv, _dir, _size))
         if dot == "random":
             d = choose_one(self.dots)
             d.get_different_pattern()
@@ -431,16 +434,14 @@ def render_cover(style, _dir, cover_size, jnp, _size):
     if style == "2D":  # base image has rounded NE
         _narrow = True if _size == "narrow" else False
         sw_line(cover_size, jnp, False, False)  # full line, center to mid
-        # nw_line(cover_size, jnp, _narrow, False)
-        # se_line(cover_size, jnp, False, _narrow)
 
-        modifier = (MODIFIER * 1.5) if _narrow else 1
+        modifier = (MODIFIER * 1.7) if _narrow else 1
         bezier(
             -cover_size * jnp,
             0,
             0,  # cover_size * jnp * modifier,
-            -cover_size * jnp * modifier,
-            cover_size * jnp * modifier,
+            -cover_size * jnp * 1.5,
+            cover_size * jnp * 1.5,
             0,  # -cover_size * jnp * modifier,
             0,
             cover_size * jnp,
@@ -474,9 +475,9 @@ def render_cover(style, _dir, cover_size, jnp, _size):
             0, cover_size * jnp, -cover_size * jnp, 0, frac
         )
         newx2, newy2 = get_point_between(0, cover_size * jnp, cover_size * jnp, 0, frac)
-        if _size == 'narrow':
-            bezier(0, curve_ys, newx1, newy1, newx1, newy1, 0, curve_ye)
-            bezier(0, curve_ys, newx2, newy2, newx2, newy2, 0, curve_ye)
+        if _size == "narrow":
+            bezier(0, curve_ys, newx1, newy1, newx1, curve_ye, 0, curve_ye)
+            bezier(0, curve_ys, newx2, newy2, newx2, curve_ye, 0, curve_ye)
         else:
             line(0, cover_size * jnp, newx1, newy1)
             line(0, cover_size * jnp, newx2, newy2)
@@ -490,7 +491,6 @@ def render_cover(style, _dir, cover_size, jnp, _size):
                 newx2,
                 newy2,
             )
-
 
         stroke(255)
 

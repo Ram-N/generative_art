@@ -24,6 +24,7 @@ def draw():
 
     if frameCount > 100:
         noLoop()
+        print(cells.print_pattern())
 
     background(0)
     translate(width / 2, height / 2)
