@@ -24,6 +24,7 @@ class Circular(object):
         radius_band = (1 - self.roundness) * self.radius / 2.0
         rmin, rmax = self.radius - radius_band, self.radius + radius_band
         re, g, b = self.color[0], self.color[1], self.color[2]
+        noStroke()
         fill(re, g, b, self.alpha)
 
         maxo = max_offset + random(16)

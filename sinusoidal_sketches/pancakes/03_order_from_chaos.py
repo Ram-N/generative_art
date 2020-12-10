@@ -24,22 +24,42 @@ def pancake(x, y, base_radius, roundness, colr, alpha):
     popMatrix()
 
 
+num_steps = 12
+base_col = random(360)
+step = 0
+
+
 def setup():
     size(w, h)
     background(0)
     noFill()
+    colorMode(HSB, 360, 100, 100)
 
-    for rad in [100, 75, 50, 25]:
-        for c in range(25):
-            chosen_palette = pick_one(colors.PALETTES)
-            pancake(
-                random(width),
-                random(height),
-                rad,
-                0.3,
-                pick_one(chosen_palette),
-                alpha=30,
-            )
 
-    save("images/order_chaos1.png")
+step = 1
+rad = 15 * (num_steps - step)
+alp = step * 150.0 / num_steps
+rnd = (step + 1) * 1.0 / num_steps
 
+
+def draw():
+    global base_col, step, rad, alp, rnd
+    if not (frameCount % 10):
+        step = frameCount / 10
+        rad = 15 * (num_steps - step)
+        alp = step * 150.0 / num_steps
+        rnd = (step + 1) * 1.0 / num_steps
+        base_col += 5
+
+    c = frameCount % 10
+    col = (
+        (base_col + c + (step * 200.0 / num_steps)) % 360,
+        50 + (step + 1) * 50.0 / num_steps,
+        50 + (step) * 50.0 / num_steps,
+    )
+    pancake(random(width), random(height), rad, rnd, col, alp)
+
+    saveFrame("images/order_chaos_###.png")
+
+    if frameCount > num_steps * 10:
+        noLoop()

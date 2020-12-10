@@ -1,6 +1,8 @@
 
 # Sinusoid Based Images
 
+<img src="images/chaos1.gif" width="250">
+
 ## PANCAKES
 
 <img src="images/15_overlaps.png" width="250px">
@@ -16,4 +18,10 @@ A Grid of Stacked Pancakes<br>
     2. Color - Dark to Brigher
     3. Alpha - Diffused to Opaque
     4. Roundness - Jagged to Round
+
+<img src="images/order_chaos1.png" width="250">
+<img src="images/order_chaos2.png" width="250">
+<img src="images/order_chaos3.png" width="250">
+<img src="images/order_chaos4.png" width="250">
+
 
