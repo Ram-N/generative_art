@@ -37,6 +37,7 @@ These resources contain GenArt Lists inside themselves
 Here a few Processing-based GenArt repos that I like, admire and am inspired by.
 
 - https://github.com/hamoid/Fun-Programming
+- https://github.com/nmillward/processing_sketches
 
 
 ### Python Repos
