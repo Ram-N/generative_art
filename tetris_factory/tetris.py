@@ -41,7 +41,7 @@ class Tetris(object):
 
             new_cell = grid.get_cell(newy, newx)
 
-            if new_cell.available and (newy, newx) not in _shape:
+            if new_cell.available and [newy, newx] not in _shape:
                 _shape.append([newy, newx])  # storing row, col
                 num_attempts = 0
                 curr_x, curr_y = newx, newy
@@ -75,19 +75,20 @@ class Tetris(object):
             return
 
         try:
-            for tcell in self.shape:
-                trow, tcol = tcell[0], tcell[1]
-                gc = grid.get_cell(trow, tcol)
-                gc.fill_cell(_color)
+            for trow, tcol in self.shape:
+                if trow < grid.num_rows:
+                    gc = grid.get_cell(trow, tcol)
+                    gc.fill_cell(_color)
         except:
-            print(self.shape, "unable to render")
+            print(self.shape, "unable to render", grid.num_rows, grid.num_cols)
 
 
 def update_cell_availability(_shape, grid):
     """ for each cell in each tetris piece, all its 8 neighbors are marked unavailable"""
     for crow, ccol in _shape:
         cell = grid.get_cell(crow, ccol)
-        cell.available = 0
+        if cell is not None:
+            cell.available = 0
 
         # mark all the neighbors of cell as unavailable
         for neigh in grid.get_neighbor_of(crow, ccol):
