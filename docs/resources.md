@@ -17,16 +17,13 @@ Assorted list of resources that I've come across.
 These resources contain GenArt Lists inside themselves
 - [Awesome Creative Coding](https://github.com/terkelg/awesome-creative-coding)
 - [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
+- [Jason Webb's Morphogenesis List](https://github.com/jasonwebb/morphogenesis-resources/blob/master/README.md)
 
 
 ### 
 - [Mathematics of Animation](https://winkervsbecks.github.io/mathematics-of-animation/#/)
 
 
-## Tutorials
- 
-- Tim Rodenbroeker: https://timrodenbroeker.de/teaching/#anchor-tutorials (Image-related tutorials in Processing)
-- [Tim Holman](https://tholman.com/) and [Ruth John's](https://ruthjohn.com/) [Generative Artistry Tutorials](https://generativeartistry.com/tutorials/) 
 
 ## Processing Resources
 
