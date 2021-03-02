@@ -1,12 +1,14 @@
 
 
-
+# Generative Art Links
 
 ### [Tutorials](tutorials.html)
 
 ### [Resources](resources.html)
 
 ### [Algorithms](algorithms.html)
+
+### [Interviews](interviews.html)
 
 # My work
 
@@ -29,25 +31,6 @@ For this coding challenge, a group of generative artists got together and create
 
 *****
 
-## Jan 31 
-### Prompt: Eno's Oblique Strategies 
-![keep](https://raw.githubusercontent.com/Ram-N/Genuary_2021/main/Jan31_Oblique_Strategies/images/keep0.png?s=400)
-**Description** The card chosen was "Repetition is a form of change." In a 5x5 grid, a series of L-shapes are nested and repeated. Theie color sequence repeated as well. For variation, some squares cell are combined to form a 2x2, 1x2 and 2x1 sets, with rotation added.
-
-[Code](Jan31_Oblique_Strategies/)
-
-*****
-
-## Jan 30 
-### Prompt: Replicate a Natural concept 
-
-![keep](https://raw.githubusercontent.com/Ram-N/Genuary_2021/main/Jan30_Natural_Concept/images/keep0.png?s=400)
-**Description** Basic fluid simulation, with multiple points of dye-introduction. The code is mostly borrowed, and I played around with colors and points of fluid introductions to understand how things work. 
-
-
-[Code](Jan30_Natural_Concept/)
-
-*****
 
 ## Jan 29 
 ### Prompt: Any Shape, None can touch. 

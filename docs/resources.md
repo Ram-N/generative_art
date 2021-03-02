@@ -9,6 +9,10 @@ Assorted list of resources that I've come across.
 - A retrospective on [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
 - [Quotes about GenArt](http://www.artsnova.com/computer-art-quotes.html)
 
+## Intro to Generative Art
+
+- [Generative Digital Art Tutorials and Inspiration](https://www.jotform.com/blog/generative-digital-art-tutorials-and-inspiration/)
+
 
 ## Newsletters
 - [Generative Collective's Weekly Newsletter](https://generative.substack.com/?sort=new) by Chris Reid is a great resource. Be sure to sign up.
@@ -18,7 +22,7 @@ These resources contain GenArt Lists inside themselves
 - [Awesome Creative Coding](https://github.com/terkelg/awesome-creative-coding)
 - [Making Canvas Cards](https://friendofpixels.com/posts/making-canvas-cards)
 - [Jason Webb's Morphogenesis List](https://github.com/jasonwebb/morphogenesis-resources/blob/master/README.md)
-
+- [Nikita Voloboev's Huge list of Generative Art Links](https://wiki.nikitavoloboev.xyz/art/generative-art)
 
 ### 
 - [Mathematics of Animation](https://winkervsbecks.github.io/mathematics-of-animation/#/)
