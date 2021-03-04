@@ -5,8 +5,15 @@ Generative Art created in 1-2 hours, as daily practice.
 -----
 -----
 ***
+## 2021-03-03
+<img src="2021-03-03/images/keep0.png" width="400">
+
+Made with P5.js. [Code](2021-03-03/)
+
+-----
 ## 2021-03-02
 <img src="2021-03-02/images/keep0.png" width="400">
+
 Made with P5.js. [Code](2021-03-02/)
 
 -----
@@ -37,16 +44,4 @@ sketch.js and index.html, under that day's directory.
 _Python_
 For most of these, I am using the `Processing` Framework. Since I mostly code in Python, I use [the Python extension of Processing](https://py.processing.org/reference/), which is not as popular as its Java version. Also, I sometimes create small resuable code segments which I use in multiple projects. I'm sharing all my genart code, in case it is useful to others. These I tend to keep in a folder called `common`.
 
-Ram ## 2021-03-02<img src="2021-03-02/images/keep0.png" width="400">Made with P5.js. [Code](2021-03-02/)-----## 2021-03-02<img src="2021-03-02/images/keep0.png" width="400">Made with P5.js. [Code](2021-03-02/)-----## 2021-03-02<img src="2021-03-02/images/keep0.png" width="400">Made with P5.js. [Code](2021-03-02/)-----## 2021-03-02
-<img src="2021-03-02/images/keep0.png" width="400">Made with P5.js. [Code](2021-03-02/)-----## 2021-03-02
-<img src="2021-03-02/images/keep0.png" width="400">
-Made with P5.js. [Code](2021-03-02/)
------
-## 2021-03-02
-<img src="2021-03-02/images/keep0.png" width="400">
-Made with P5.js. [Code](2021-03-02/)
------
-## 2021-03-02
-<img src="2021-03-02/images/keep0.png" width="400">
-Made with P5.js. [Code](2021-03-02/)
------
+Ram
