@@ -1,27 +1,37 @@
 # Daily Sketches
 
-Generative Art created in 1-2 hours, as daily practice.
+Quick sketches created during daily practice. I hope to spend under 1 hour to create these sketches.
+Some days it takes a lot longer.
 
+Daily Sketches: [2021](2021/)
 -----
 -----
 ***
-## 2021-03-03
-<img src="2021-03-03/images/keep0.png" width="400">
+## 2021-03-04
+<img src="2021/2021-03-04/images/keep_2021-3-5-9-49-23-9810.png" width="400">
 
-Made with P5.js. [Code](2021-03-03/)
+Made with P5.js. [Code](2021/2021-03-04/)
+
+-----
+
+
+## 2021-03-03
+<img src="2021/2021-03-03/images/keep0.png" width="400">
+
+Made with P5.js. [Code](2021/2021-03-03/)
 
 -----
 ## 2021-03-02
-<img src="2021-03-02/images/keep0.png" width="400">
+<img src="2021/2021-03-02/images/keep0.png" width="400">
 
-Made with P5.js. [Code](2021-03-02/)
+Made with P5.js. [Code](2021/2021-03-02/)
 
 -----
 
 ## 2021-03-01 
-<img src="2021-03-01/images/keep0.png" width="400">
+<img src="2021/2021-03-01/images/keep0.png" width="400">
 
-Made with P5.js. [Code](2021-03-01/)
+Made with P5.js. [Code](2021/2021-03-01/)
 
 -----
 

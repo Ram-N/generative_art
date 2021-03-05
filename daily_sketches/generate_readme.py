@@ -1,5 +1,5 @@
 """
-2021-03-02
+2021-03-05
 Ram Narasimhan
 
 Given a Directory and a few string inputs, automates the generation of README.md for that directory
@@ -11,7 +11,7 @@ Output: README.md (placed in the correct directory)
 from pathlib import Path
 
 
-INPUT_DIR = "2021-03-02"
+INPUT_DIR = "2021-03-04"
 TECH = "P5.js"
 
 
@@ -61,21 +61,38 @@ def read_main_file():
     return top, bottom
 
 
+def get_nameof_keepfile(image_dir):
+    """If keep0 is there, return that, else return name of the latest file"""
+
+    p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
+    files = [x for x in p if x.is_file()]
+
+    if "keep0.png" in files:
+        print("Found keep0.png")
+        return "keep0.png"
+    else:
+        _ctimes = [fname.stat().st_ctime for fname in files]
+        idx = _ctimes.index(max(_ctimes))
+        return files[idx].name
+
+
 def generate_todays_text(INPUT_DIR, TECH):
 
-    # TODO: Need to check if keep0.png exists in the images folder
+    keepfile_name = get_nameof_keepfile(f"{INPUT_DIR}/images/")
 
     todays_text = f"## {INPUT_DIR}\n"
-    todays_text += f'<img src="{INPUT_DIR}/images/keep0.png" width="400">\n'
-    todays_text += f"Made with {TECH}. [Code]({INPUT_DIR}/)\n\n"
-    todays_text += f"-----\n"
+    todays_text += (
+        f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
+    )
+    todays_text += f"Made with {TECH}. [Code](2021/{INPUT_DIR}/)\n\n"
+    todays_text += f"-----\n\n"
 
     return todays_text
 
 
 def main():
 
-    p = Path(INPUT_DIR + "/images").rglob("keep*.*")
+    p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
     files = [x for x in p if x.is_file()]
     md_string = ""
 
@@ -83,7 +100,7 @@ def main():
     md_string = add_images(files, md_string)
 
     # New README inside subdir.
-    textfile = open(INPUT_DIR + "/README.md", "w")  # the subdir README
+    textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README
     textfile.write(md_string)
     textfile.close()
 
@@ -92,14 +109,14 @@ def main():
     main_top, main_bottom = read_main_file()  # read the file and store its contents
     todays_text = generate_todays_text(INPUT_DIR, TECH)
 
-    mainfile = open("README.md", "w")
+    main_md_file = open("README.md", "w")
     print(todays_text)
-    mainfile.write(main_top)
-    mainfile.write(todays_text)  # This is the new addition
-    mainfile.write(main_bottom)
-    mainfile.close()
+    main_md_file.write(main_top)
+    main_md_file.write(todays_text)  # This is the new addition
+    main_md_file.write(main_bottom)
+    main_md_file.close()
 
-    bkfile = open("README2.md", "w")  # safety backup
+    bkfile = open("bkup_README.md", "w")  # safety backup
     bkfile.write(main_top + main_bottom)
     bkfile.close()
 
