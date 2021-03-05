@@ -4,3 +4,4 @@ sketch.properties
 package.json
 sketch_*
 modes
+*.txt
