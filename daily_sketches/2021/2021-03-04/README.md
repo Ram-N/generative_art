@@ -18,9 +18,8 @@ Here are some of the images that were generated.
 <img src = 'images/keep_2021-3-5-9-49-23-9810.png' width = '300'> 
 
 
+### Inspiration
 
-
-###Inspiration
 - https://www.visualcinnamon.com/portfolio/spirograph/
 
 [More Images](2021-03-04/images) 
