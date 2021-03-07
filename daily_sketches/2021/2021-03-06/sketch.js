@@ -31,7 +31,6 @@ function setup() {
   ];  // brown-orange-red
   palette = replicate(palette, 10)
 
-  fill(255);
   nRows = 20;
   nCols = 25;
   xStep = (width - 2 * canvasXMargin) / nCols;
@@ -41,15 +40,21 @@ function setup() {
     for (col = 0; col < nCols; col++) {
       px = canvasXMargin + xStep * col
       py = canvasYMargin + yStep * row
-      ellipse(px, py, 3, 3);
+      //ellipse(px, py, 3, 3);
     }
   }
 
-  oVerts = makeBlob();
-  print('back')
-  for (v of oVerts) {
-    print(v)
+  let alphaValue = 100;
+  for (rep = 0; rep < 15; rep++) {
+    c = color(palette[rep]);
+    c.setAlpha(alphaValue);
+    fill(c);
+    oVerts = makeBlob();
   }
+  // print('back')
+  // for (v of oVerts) {
+  //   print(v)
+  // }
 
   //   push();
   //   translate(xoff, height * 0.25 * (bloom + 1));
@@ -61,7 +66,7 @@ function makeBlob() {
   let verts = [];
   for (pt = 0; pt < 5; pt++) {
     y = int(random(nRows));
-    x = int(random(nRows));
+    x = int(random(nCols));
     let v = createVector(x, y);
     v.ordered = false;
     verts.push(v);
@@ -90,14 +95,14 @@ function makeBlob() {
 
   beginShape();
   for (v of vOrder) {
-    print(v.x, v.y)
+    //print(v.x, v.y)
     px = canvasXMargin + xStep * v.x;
     py = canvasYMargin + yStep * v.y;
     vertex(px, py);
   }
   endShape(CLOSE);
 
-  print('done')
+  //print('done')
   return (vOrder)
 }
 
