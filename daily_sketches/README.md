@@ -7,6 +7,16 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+
+## 2021-03-12
+<img src="2021/2021-03-12/images/keep_2021-3-12-19-38-20-2825.png" width="400">
+
+Keywords: Shapes, Blobs, Convex Hull, Non-overlapping, Internal points 
+
+Made using P5.js. [Code](2021/2021-03-12/)
+
+-----
+
 ## 2021-03-11
 <img src="2021/2021-03-11/images/keep_2021-3-12-9-43-25-1946.png" width="400">
 
