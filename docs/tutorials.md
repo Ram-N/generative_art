@@ -5,7 +5,8 @@
 - Tim Rodenbroeker: https://timrodenbroeker.de/teaching/#anchor-tutorials (Image-related tutorials in Processing)
 - [Tim Holman](https://tholman.com/) and [Ruth John's](https://ruthjohn.com/) [Generative Artistry Tutorials](https://generativeartistry.com/tutorials/) 
 
-
+ - [Inigo Quilez](https://iquilezles.org/index.html) has several very good tutorials and videos.
+ 
 ## Differential Growth
 - [Differential Growth](https://www.kaspar.wtf/code-poems/differential-growth)
 - https://github.com/jasonwebb/morphogenesis-resources#diffusion-limited-aggregation-dla
