@@ -22,4 +22,6 @@
     pixel swapping
     Size of circles
     Triangulation on face edges... to create iconic images
+
+## Text + Images Combining
     
