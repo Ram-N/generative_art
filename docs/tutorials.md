@@ -21,3 +21,6 @@
 
 ## Processing Tutorials
 - [25 LIFE-SAVING TIPS FOR PROCESSING by Amnon](https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/)
+
+## Images/Pixel Sorting
+- [Sorting Myself Out - Ruben Berenguel](https://mostlymaths.net/2020/05/sorting-myself-out.html/)
