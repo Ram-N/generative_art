@@ -11,13 +11,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td> 
-         <img src="kolams/images/k1.png" width="250">
+         <img src ="../kolams/images/k1.png" width="250">
    </td>
     <td>
-        <img src = "10_print/images/swirly_rainbow.png" width = '250'>
+        <img src ="../10_print/images/swirly_rainbow.png" width = '250'>
     </td>
    <td>
-        <img src = "10_print/images/arc_print.png" width = '250'>
+        <img src ="../10_print/images/arc_print.png" width = '250'>
     </td>    
   </tr>
 
@@ -52,13 +52,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td> 
-         <img src="domain_warping/images/expt2_perlin_v_dw.png" width="250">
+         <img src ="../domain_warping/images/expt2_perlin_v_dw.png" width="250">
    </td>
     <td>
-        <img src="geom_rollers/images/colored_triangles.gif" width="250">
+        <img src ="../geom_rollers/images/colored_triangles.gif" width="250">
     </td>
    <td>
-        <img src="chess_art/images/Deep Blue (Computer)_Garry Kasparov_Game_02_IBM Man-Machine, New York USA_.png" width="250">
+        <img src ="../chess_art/images/Deep Blue (Computer)_Garry Kasparov_Game_02_IBM Man-Machine, New York USA_.png" width="250">
     </td>    
   </tr>
 
@@ -92,13 +92,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td> 
-        <img src="workshop/images/pt_connections.gif" width="250">
+        <img src ="../workshop/images/pt_connections.gif" width="250">
     </td>
     <td>
-        <img src="ball_animations/images/disco.gif" width="250">
+        <img src ="../ball_animations/images/disco.gif" width="250">
     </td>
    <td>
-        <img src="sinusoidal_sketches/images/cardioid_grid.gif" width="250px">
+        <img src ="../sinusoidal_sketches/images/cardioid_grid.gif" width="250px">
     </td>    
   </tr>
 
@@ -131,13 +131,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
     <td>
-        <img src="sinusoidal_sketches/images/2circle_cardioid.gif" width="250px">
+        <img src ="../sinusoidal_sketches/images/2circle_cardioid.gif" width="250px">
     </td>
    <td>
-        <img src="generative_fonts/images/leafont1.gif" width="250px">
+        <img src ="../generative_fonts/images/leafont1.gif" width="250px">
     </td>    
     <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
+        <img src ="../metro_maps/images/mm_5.jpg" width="250px">
     </td>
   </tr>
 
@@ -170,13 +170,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
      <td>
-       <img src="dots_and_dashes/images/BW_2.gif" width="250px">
+       <img src ="../dots_and_dashes/images/BW_2.gif" width="250px">
     </td>    
    <td>
-        <img src="ball_animations/images/frequencies.gif" width="250px">
+        <img src ="../ball_animations/images/frequencies.gif" width="250px">
     </td>    
    <td>
-       <img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="250">
+       <img src ="../ball_animations/ball_crossings/images/pinballs_steady.gif" width="250">
     </td>    
   </tr>
 
@@ -210,13 +210,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-       <img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="250">
+       <img src ="../ball_animations/ball_crossings/images/balls_blue_orange.gif" width="250">
    </td>    
    <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
+        <img src ="../metro_maps/images/mm_5.jpg" width="250px">
     </td>
    <td>
-       <img src="dots_and_dashes/images/BW_2.gif" width="250px">
+       <img src ="../dots_and_dashes/images/BW_2.gif" width="250px">
     </td>    
   </tr>
 
@@ -250,13 +250,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-        <img src="sinusoidal_sketches/circular_noise/images/cn_purple.gif" width="250px">
+        <img src ="../sinusoidal_sketches/circular_noise/images/cn_purple.gif" width="250px">
     </td>    
     <td>
-        <img src="sinusoidal_sketches/circular_noise/images/cn_red_no_linear_noise.gif" width="250px">
+        <img src ="../sinusoidal_sketches/circular_noise/images/cn_red_no_linear_noise.gif" width="250px">
     </td>
     <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
+        <img src ="../metro_maps/images/mm_5.jpg" width="250px">
     </td>
   </tr>
 
@@ -291,13 +291,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-        <img src="ball_animations/images/sinusoidal_balls.gif" width="250px">
+        <img src ="../ball_animations/images/sinusoidal_balls.gif" width="250px">
     </td>    
     <td>
-        <img src="metro_maps/images/mm_5.jpg" width="250px">
+        <img src ="../metro_maps/images/mm_5.jpg" width="250px">
     </td>
    <td>
-        <img src="sinusoidal_sketches/funkyvector_corona-sine_study/images/corona_study.png" width="250px">
+        <img src ="../sinusoidal_sketches/funkyvector_corona-sine_study/images/corona_study.png" width="250px">
    </td>    
   </tr>
 
@@ -334,13 +334,13 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-        <img src="ball_animations/trapeze_balls/images/trapeze_loop.gif" width="250">
+        <img src ="../ball_animations/trapeze_balls/images/trapeze_loop.gif" width="250">
     </td>
     <td>
-        <img src="ball_animations/trapeze_balls/images/white_trapeze.gif" width="250">
+        <img src ="../ball_animations/trapeze_balls/images/white_trapeze.gif" width="250">
     </td>
    <td>
-        <img src="ball_animations/images/ferris.gif" width="250px">
+        <img src ="../ball_animations/images/ferris.gif" width="250px">
    </td>    
   </tr>
 

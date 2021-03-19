@@ -8,10 +8,11 @@ Input: path to directory
 Output: README.md (placed in the correct directory)
 """
 
+import sys, getopt
 from pathlib import Path
 
 
-INPUT_DIR = "2021-03-04"
+INPUT_DIR = "2021-03-19"
 TECH = "P5.js"
 
 
@@ -23,8 +24,8 @@ def add_header(md_string):
     md_string += "### Description" + "\n\n"
 
     md_string += (
-        "When possible I work for these `daily sketches` which are meant to be quick explorations \
-    on whatever has me interested that day. This code is not typically optimized, but I share it as-is \
+        "These `daily sketches` which are meant to be quick explorations \
+    on whatever topic interested me on that day. This code is not typically optimized, but I share it as-is \
     for anyone interested."
         + "\n\n"
     )
@@ -35,6 +36,7 @@ def add_header(md_string):
 
 
 def add_images(files, md_string):
+    """Add images to today's README file"""
     md_string += "Here are some of the images that were generated.\n\n"
     for f in files:
         md_string += "<img src = 'images/" + f.name + "' width = '300'> \n"
@@ -76,7 +78,18 @@ def get_nameof_keepfile(image_dir):
         return files[idx].name
 
 
+def check_todays_keywords(INPUT_DIR):
+    # open todays_notes file.
+    p = Path("2021/" + INPUT_DIR + "/todays_notes.txt")
+    with open(p, "r") as notes_file:
+        for line in notes_file:
+            if line[:9] == "Keywords:":
+                kwds = line
+                return (1, kwds)
+
+
 def generate_todays_text(INPUT_DIR, TECH):
+    """Today's text in the MAIN file"""
 
     keepfile_name = get_nameof_keepfile(f"{INPUT_DIR}/images/")
 
@@ -84,13 +97,37 @@ def generate_todays_text(INPUT_DIR, TECH):
     todays_text += (
         f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
     )
-    todays_text += f"Made with {TECH}. [Code](2021/{INPUT_DIR}/)\n\n"
+
+    keywords_exist, kwds = check_todays_keywords(INPUT_DIR)
+    if keywords_exist:
+        todays_text += f"{kwds} \n\n"
+
+    todays_text += f"Made using {TECH}. [Code](2021/{INPUT_DIR}/)\n\n"
     todays_text += f"-----\n\n"
 
     return todays_text
 
 
-def main():
+def main(argv):
+
+    INPUT_DIR = ""
+    try:
+        opts, args = getopt.getopt(argv, "hi:")
+    except getopt.GetoptError:
+        print("generate_readme.py -i <inputdir>")
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt == "-h":
+            print("Usage: generate_readme.py -i <inputdirname>")
+            sys.exit()
+        elif opt in ("-i", "-I"):
+            INPUT_DIR = arg
+
+    if INPUT_DIR == "":
+        print("Please specify an INPUT Directory name in -i option")
+        print("Usage: generate_readme.py -i <inputdirname>")
+        sys.exit()
 
     p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
     files = [x for x in p if x.is_file()]
@@ -122,5 +159,5 @@ def main():
 
 
 if __name__ == "__main__":
-    # execute only if run as a script
-    main()
+    main(sys.argv[1:])
+
