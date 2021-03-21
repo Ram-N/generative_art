@@ -4,16 +4,20 @@
 
 I jot down ideas that I get about what to try next here.
 
-### Islamic Designs Series
-
+## Single Line, mazelike
+- Waclaw Szpakinski
+  -   One long line all over the canvas, symmetrical
 ### Echo effects...lines that go parallel "around" fixed shapes
-### Single line
-    One long line all over the canvas, symmetrical
 
-### Map-making
+## Celtic Knots
+
+## Islamic Designs Series
+
+
+## Map-making
     Islands, lakes, rives...
 
-### Images related...
+## Images related...
     Pixel sorting
     pixel swapping
     Size of circles
