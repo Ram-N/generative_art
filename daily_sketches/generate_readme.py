@@ -12,11 +12,10 @@ import sys, getopt
 from pathlib import Path
 
 
-INPUT_DIR = "2021-03-19"
 TECH = "P5.js"
 
 
-def add_header(md_string):
+def add_header(md_string, INPUT_DIR):
 
     md_string += "# DAILY SKETCH for " + INPUT_DIR + "\n\n"
     md_string += "## Done using " + TECH + "\n\n"
@@ -35,7 +34,7 @@ def add_header(md_string):
     return md_string
 
 
-def add_images(files, md_string):
+def add_images(files, md_string, INPUT_DIR):
     """Add images to today's README file"""
     md_string += "Here are some of the images that were generated.\n\n"
     for f in files:
@@ -63,7 +62,7 @@ def read_main_file():
     return top, bottom
 
 
-def get_nameof_keepfile(image_dir):
+def get_nameof_keepfile(INPUT_DIR):
     """If keep0 is there, return that, else return name of the latest file"""
 
     p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
@@ -91,7 +90,7 @@ def check_todays_keywords(INPUT_DIR):
 def generate_todays_text(INPUT_DIR, TECH):
     """Today's text in the MAIN file"""
 
-    keepfile_name = get_nameof_keepfile(f"{INPUT_DIR}/images/")
+    keepfile_name = get_nameof_keepfile(INPUT_DIR)
 
     todays_text = f"## {INPUT_DIR}\n"
     todays_text += (
@@ -133,8 +132,8 @@ def main(argv):
     files = [x for x in p if x.is_file()]
     md_string = ""
 
-    md_string = add_header(md_string)
-    md_string = add_images(files, md_string)
+    md_string = add_header(md_string, INPUT_DIR)
+    md_string = add_images(files, md_string, INPUT_DIR)
 
     # New README inside subdir.
     textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README

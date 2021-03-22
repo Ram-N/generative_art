@@ -9,6 +9,8 @@ I jot down ideas that I get about what to try next here.
   -   One long line all over the canvas, symmetrical
 ### Echo effects...lines that go parallel "around" fixed shapes
 
+### 10Print like == horiz, vert and diag
+
 ## Celtic Knots
 
 ## Islamic Designs Series
