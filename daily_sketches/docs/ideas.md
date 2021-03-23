@@ -4,6 +4,14 @@
 
 I jot down ideas that I get about what to try next here.
 
+## Images related...
+    Portrait based.. 
+    Pixel sorting
+    pixel swapping
+    Rasterize: Size of circles
+    Triangulation on face edges... to create images
+
+
 ## Single Line, mazelike
 - Waclaw Szpakinski
   -   One long line all over the canvas, symmetrical
@@ -19,13 +27,10 @@ I jot down ideas that I get about what to try next here.
 ## Map-making
     Islands, lakes, rives...
 
-## Images related...
-    Pixel sorting
-    pixel swapping
-    Size of circles
-    Triangulation on face edges... to create images
 
 ## Text + Images Combining
+ - Generative Calligraphy
+ - Calligraphy strokes
     
 
 -----
