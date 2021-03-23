@@ -17,7 +17,9 @@
 
 
 ## Shapes
-[A wonderful writeup with great pics, on non-overlapping polygons](https://web.archive.org/web/20170429123136/http://paulbourke.net/texture_colour/randomtile/) 
+- [A wonderful writeup with great pics, on non-overlapping polygons](https://web.archive.org/web/20170429123136/http://paulbourke.net/texture_colour/randomtile/) 
+
+- [You won't believe that these are single lines](https://www.bldgblog.com/2018/05/journey-of-a-single-line/)
 
 ## Processing Tutorials
 - [25 LIFE-SAVING TIPS FOR PROCESSING by Amnon](https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/)

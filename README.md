@@ -1,10 +1,15 @@
 
 # Experiments in Generative Art
-## Using Python and Processing
+## Using Python, Processing, and P5.js
 
-*Note: Several of these experiment use the Processing but in the Python Mode*
+- *Daily Sketches* March 2021. | Gallery | Repo | Done using P5.js
+- *Genuary 2021* Find the [repo](https://github.com/Ram-N/Genuary_2021), and the [Github Pages](https://ram-n.github.io/Genuary_2021/).
+- *Hexagons* | [Gallery](https://ram-n.github.io/hexagons-gallery/) | Repo | Documentation | Done using Matplotlib. Repo contains Lots of Jupyter Notebooks, with examples.
+- You might want to look at the [images thumbnail sheet](https://github.com/Ram-N/generative_art/blob/main/docs/contact_sheet.md), to see if anything interests you, and then go to its code.
 
-This is a repo to store several GenArt attempts. I use Python (Matplotlib) and Processing to create art sketches.
+*Note: Several of these experiments use the Processing but in the Python Mode*
+
+This is a repo to store several GenArt attempts. I often use Python (Matplotlib) and Processing to create art sketches.
 
 This is a meta-repo, in the sense that it is a directory of directorys. Each sub-directory in the repo has the `code` as well as a set of `images` in the images directory (where applicable). The README.md in each directory
 explains what that particular experiment was about.
@@ -49,8 +54,8 @@ A series of sketches on balls colliding, as well as balls dodging each other, av
 
 Space filling and Space shrinking, rendered Algorithmically
 
-<img src="ball_animations/dots_and_dashes/images/BW_41.jpg" width="300">
-<img src="ball_animations/dots_and_dashes/images/BW_1.gif" width="300">
-<img src="ball_animations/dots_and_dashes/images/BW_2.gif" width="300">
+<img src="dots_and_dashes/images/BW_41.jpg" width="300">
+<img src="dots_and_dashes/images/BW_1.gif" width="300">
+<img src="dots_and_dashes/images/BW_2.gif" width="300">
 
 

@@ -82,5 +82,5 @@ I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/vid
 
 # Animated GIFS
 
-- Prof. Golan's Github has LoopTemplates for Processing.py https://github.com/golanlevin/LoopTemplates
-- His course: http://cmuems.com/2018/60212f/
+- [Prof. Golan's Github has LoopTemplates for Processing.py](https://github.com/golanlevin/LoopTemplates)
+- [Prof Golan's Course](http://cmuems.com/2018/60212f/)
