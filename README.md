@@ -2,8 +2,9 @@
 # Experiments in Generative Art
 ## Using Python, Processing, and P5.js
 
-- *Daily Sketches* March 2021. | Gallery | Repo | Done using P5.js
-- *Genuary 2021* Find the [repo](https://github.com/Ram-N/Genuary_2021), and the [Github Pages](https://ram-n.github.io/Genuary_2021/).
+**Quick Links**
+- *Daily Sketches* March 2021. | Gallery | [Repo](https://github.com/Ram-N/generative_art/tree/main/daily_sketches) | Done using P5.js
+- *Genuary 2021* |Gallery| [repo](https://github.com/Ram-N/Genuary_2021) | [Github Pages](https://ram-n.github.io/Genuary_2021/) |
 - *Hexagons* | [Gallery](https://ram-n.github.io/hexagons-gallery/) | Repo | Documentation | Done using Matplotlib. Repo contains Lots of Jupyter Notebooks, with examples.
 - You might want to look at the [images thumbnail sheet](https://github.com/Ram-N/generative_art/blob/main/docs/contact_sheet.md), to see if anything interests you, and then go to its code.
 
@@ -15,6 +16,8 @@ This is a meta-repo, in the sense that it is a directory of directorys. Each sub
 explains what that particular experiment was about.
 
 I try to make all my code available and runnable by others. There are many parameters that you can change and try to get your own results.
+
+========
 
 - Experiments
 
@@ -29,8 +32,10 @@ I try to make all my code available and runnable by others. There are many param
         - [15-Puzzle](#15-puzzle)
 
 
+========
 
-### Metro Maps [Code](/metro_maps) [images](metro_maps/images)
+
+### Metro Maps | [Code](/metro_maps) | [images](metro_maps/images)
 
 An experimental project that creates Metro Maps for imaginary cities.
 
@@ -39,8 +44,9 @@ different set of Terminals, Routes, Junctions and Stations.
 
 <img src="metro_maps/images/mm_5.jpg" width="500">
 
+========
 
-### Ball Animations [Code](/ball_animations) [images](ball_animations/images)
+### Ball Animations | [Code](/ball_animations) | [images](ball_animations/images)
 
 A series of sketches on balls colliding, as well as balls dodging each other, avoiding collisions.
 
@@ -49,8 +55,9 @@ A series of sketches on balls colliding, as well as balls dodging each other, av
 <img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="300">
 
 <img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="300">
+========
 
-### Dots and Dashes [Code](/dots_and_dashes) [images](dots_and_dashes/images)
+### Dots and Dashes | [Code](/dots_and_dashes) | [images](dots_and_dashes/images)
 
 Space filling and Space shrinking, rendered Algorithmically
 
@@ -58,4 +65,6 @@ Space filling and Space shrinking, rendered Algorithmically
 <img src="dots_and_dashes/images/BW_1.gif" width="300">
 <img src="dots_and_dashes/images/BW_2.gif" width="300">
 
+========
 
+Please look through the directories above. There are many 'experiments' for which I haven't yet added the descriptions.

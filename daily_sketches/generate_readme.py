@@ -101,7 +101,7 @@ def generate_todays_text(INPUT_DIR, TECH):
     if keywords_exist:
         todays_text += f"{kwds} \n\n"
 
-    todays_text += f"Made using {TECH}. [Code](2021/{INPUT_DIR}/)\n\n"
+    todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/)| \n\n"
     todays_text += f"-----\n\n"
 
     return todays_text

@@ -7,11 +7,20 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-03-24
+<img src="2021/2021-03-24/images/keep_2021-3-24-22-40-58-6120.png" width="400">
+
+Keywords: Rectangles, Overlap, Rhythmic lines
+ 
+
+Made using P5.js. | [Code](2021/2021-03-24/)| 
+
+-----
+
 ## 2021-03-23
 <img src="2021/2021-03-23/images/keep_2021-3-23-16-55-34-2030.png" width="400">
 
-Keywords: Hexagons, Shapes 
-
+Keywords: Rectangles, Overlap
 Made using P5.js. [Code](2021/2021-03-23/)
 
 -----
