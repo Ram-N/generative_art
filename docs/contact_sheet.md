@@ -14,23 +14,23 @@ Reverse chronological order.
          <img src ="../kolams/images/k1.png" width="250">
    </td>
     <td>
-        <img src ="../10_print/images/swirly_rainbow.png" width = '250'>
+        <img src ="../10_Print/images/swirly_rainbow.png" width = '250'>
     </td>
    <td>
-        <img src ="../10_print/images/arc_print.png" width = '250'>
+        <img src ="../10_Print/images/arc_print.png" width = '250'>
     </td>    
   </tr>
 
 [comment]: # (This a description Row for the images above) 
   <tr> 
     <td> 
-      <a href="10_print">Kolams-1</a>, 2020-10-24
+      <a href="../kolams/">Kolams-1</a>, 2020-10-24
     </td>
     <td> 
-      <a href="10_print">10Print_rainbow</a>, 2020-10-27
+      <a href="../10_Print/">10Print_rainbow</a>, 2020-10-27
     </td>
     <td> 
-      <a href="10_print">10Print-Arc</a>, 2020-10-26
+      <a href="../10_Print/">10Print-Arc</a>, 2020-10-26
     </td>
   </tr>
 
@@ -229,7 +229,7 @@ Reverse chronological order.
         Endless Collisions, 2020-08-04
     </td>
     <td> 
-        Ferris, 2020-07-31
+        Space Shrinking, 2020-07-31
     </td>
   </tr>
   
