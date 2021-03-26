@@ -4,7 +4,7 @@
 
 ### Description
 
-These `daily sketches` which are meant to be quick explorations     on whatever topic interested me on that day. This code is not typically optimized, but I share it as-is     for anyone interested.
+These `daily sketches` which are meant to be quick explorations     on whatever topic interested me on that day. This code is not typically optimized, but I share it as-is for anyone interested.
 
 [Code](2021-03-23) 
 

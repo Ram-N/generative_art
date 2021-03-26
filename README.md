@@ -17,7 +17,7 @@ explains what that particular experiment was about.
 
 I try to make all my code available and runnable by others. There are many parameters that you can change and try to get your own results.
 
-========
+-----
 
 - Experiments
 
@@ -32,7 +32,7 @@ I try to make all my code available and runnable by others. There are many param
         - [15-Puzzle](#15-puzzle)
 
 
-========
+-----
 
 
 ### Metro Maps | [Code](/metro_maps) | [images](metro_maps/images)
@@ -44,7 +44,7 @@ different set of Terminals, Routes, Junctions and Stations.
 
 <img src="metro_maps/images/mm_5.jpg" width="500">
 
-========
+-----
 
 ### Ball Animations | [Code](/ball_animations) | [images](ball_animations/images)
 
@@ -55,7 +55,7 @@ A series of sketches on balls colliding, as well as balls dodging each other, av
 <img src="ball_animations/ball_crossings/images/balls_blue_orange.gif" width="300">
 
 <img src="ball_animations/ball_crossings/images/pinballs_steady.gif" width="300">
-========
+-----
 
 ### Dots and Dashes | [Code](/dots_and_dashes) | [images](dots_and_dashes/images)
 
@@ -65,6 +65,6 @@ Space filling and Space shrinking, rendered Algorithmically
 <img src="dots_and_dashes/images/BW_1.gif" width="300">
 <img src="dots_and_dashes/images/BW_2.gif" width="300">
 
-========
+-----
 
 Please look through the directories above. There are many 'experiments' for which I haven't yet added the descriptions.

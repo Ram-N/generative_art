@@ -107,13 +107,10 @@ class Font(object):
         self.x, self.y = _x, _y
         self.vx, self.vy = _vx, _vy
         self.id = _id
-        # store the starting coords of each ball. For relaunching.
         self.startx, self.starty = _x, _y
         self.active = False
         self.radius = _radius
         self.color = _colornum
-        self.prev_collision = -3  # frameCount when the collision occurred
-        self.launch = _launch  # frameCount for ball to make its first appearance?
 
     def create(self):
         """
