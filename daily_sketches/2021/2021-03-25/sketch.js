@@ -20,9 +20,31 @@ class Ripple {
 
   createPath(grid) {
     let path = [];
-    let next = this.getNextGPt(this.source, grid)
-    path.push({ gs: this.source, ge: next });
+    let curr = this.source;
+    let max_loop = 100;
+    let iter = 0;
+    while (!this.terminatePath(curr, grid) && (iter < max_loop)) {
+      let next = this.getNextGPt(curr, grid)
+      if (next) {
+        next.free = false;
+        //print('next node', next.col, next.row)
+        path.push({ gs: curr, ge: next });
+        curr = next;
+      }
+      iter++;
+    }
+    print(path.length, 'path length')
     return path
+  }
+
+  terminatePath(GPt, grid) {
+    //print('term conditions', GPt.col, GPt.row, (GPt.col == grid.cols), (GPt.row == 0), (GPt.row == grid.rows));
+    if ((GPt.col == grid.cols) || (GPt.row == 0) || (GPt.row == grid.rows)) {
+      print('terminate cond raised')
+      return 1
+    }
+
+    return 0
   }
 
   getNextGPt(currGPt, grid) {
@@ -30,8 +52,9 @@ class Ripple {
     let neigh = grid.get4NearestGridPoints(currGPt.col, currGPt.row);
     let currMinDist = 10000;
     let next;
+    //print('length of neigh', neigh.length)
     for (n of neigh) {
-      print('ne', n, this.target)
+      //print('neighbor', n, this.target)
       if (n.free) {
         let dn = dist(n.x, n.y, this.target.x, this.target.y)
         if (dn < currMinDist) {
@@ -47,7 +70,7 @@ class Ripple {
   render() {
     // each LINK has a gs (grid start) and ge (grid end) for a single link of the ripple
     for (let link of this.path) {
-      print(link)
+      //print('link', link, 'link')
       line(link.gs.x, link.gs.y, link.ge.x, link.ge.y)
     }
   }
@@ -66,7 +89,7 @@ const gr = {
   rows: 20,
   cols: 20
 }
-const nEcho = 1;
+const nShapes = 2;
 
 function setup() {
   createCanvas(860, 860);
@@ -84,22 +107,24 @@ function setup() {
   rect(cnv.xMargin, cnv.yMargin, cnv.width, cnv.height);
   grid = new Grid(gr.rows, gr.cols, cnv.width, cnv.height, cnv.xMargin, cnv.yMargin);
   stroke(255);
-  renderGridPoints(grid.points) // rn_grid.js
+  //renderGridPoints(grid.points) // rn_grid.js
   let alphaValue = 100;
-  for (let echo = 0; echo < nEcho; echo++) {
+  for (let echo = 0; echo < nShapes; echo++) {
     colr = color(random(palette));
     colr.setAlpha(alphaValue);
     rct = createRectComplex(grid, colr);
     renderRectComplex(rct, grid, colr);
   }
 
-  gt = int(random(grid.rows));
-  let source = grid.getGPt(0, gt);
-  let target = grid.getGPt(grid.cols, gt);
-  rip = new Ripple(source, target, grid)
-  rip.createPath(grid)
-  print('starting render')
-  rip.render();
+  for (let rhy = 0; rhy < 10; rhy++) {
+    gt = int(random(grid.rows));
+    let source = grid.getGPt(0, gt);
+    let target = grid.getGPt(grid.cols, gt);
+    rip = new Ripple(source, target, grid)
+    rip.createPath(grid)
+    print('starting render')
+    rip.render();
+  }
 }
 
 

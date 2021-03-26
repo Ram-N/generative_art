@@ -70,7 +70,6 @@ class Grid {
         Note that this does not take xy Coords as the input
         Just pass in row and column numbers*/
     get4NearestGridPoints(gCol, gRow) {
-        print('Gcol, grow', gCol, gRow);
         let neigh = [];
         if (gCol < this.cols) {
             neigh.push(this.getGPt(gCol + 1, gRow));
