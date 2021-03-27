@@ -340,7 +340,7 @@ Reverse chronological order.
         <img src ="../ball_animations/trapeze_balls/images/white_trapeze.gif" width="250">
     </td>
    <td>
-        <img src ="../ball_animations/images/ferris.gif" width="250px">
+        <img src ="../ball_animations/ferris_wheel/images/ferris.gif" width="250px">
    </td>    
   </tr>
 
