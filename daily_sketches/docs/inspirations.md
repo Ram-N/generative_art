@@ -7,3 +7,5 @@
 ![](https://images.ctfassets.net/gn9l9yo495x8/2yF8HPwCar06uyxJBf2oog/88d253df973c5bd145c57b57d17a08a9/190425_132912_880.jpg?w=980&h=980&q=50)
 
 [Textile Designs](https://www.ivyandpearlboutique.com/fashion-and-news/fashion-school/fabric-and-textile-pattern-encyclopedia-complete-pattern-dictionary-illustrating-the-various-types-of-patterns-used-in-fabric-textile-and-clothing-design/)
+
+![](https://twitter.com/deconbatch/status/1375255178639708162/photo/1)

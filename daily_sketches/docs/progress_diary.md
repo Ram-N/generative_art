@@ -1,6 +1,15 @@
 
 ## Occasional Jottings related to the Daily Sketches
 
+
+**2021-03-26**
+The pace of progress and the amount of time I spend on coding here is not sustainable. So here's my current thinking:
+I can relieve this pressure by going into one of 2 modes. In Mode 1, I will simply generate a "sketch of the day"
+by tweaking parameters of any existing sketch. Most of my sketches have unexplored (in the grid-search sense) parameters anyway.
+I could be tweaking just one sketch for weeks at a time. That is sustainable.
+In Mode 2, (the creation mode) I will move at a more slow pace, building up my toolset or framework. These will eventually feed
+Mode 1 sketches. I need to think more on these lines.
+
 *2021-03-22*
 I know that I need to speed up. These sketches are taking up all of my 'free' time. So I need to see
 where and how to gain efficiency?
