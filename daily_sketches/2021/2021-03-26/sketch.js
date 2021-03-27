@@ -37,9 +37,9 @@ function setup() {
   let _scales = [[1, 1], [-1, 1], [1, -1], [-1, -1]];
 
   const shape = {
-    nEcho: 1,
-    maxRadius: 200,
-    sq: 30,
+    nEcho: 5,
+    maxRadius: 300,
+    sq: 120,
     extension: 50
   };
 
@@ -47,7 +47,8 @@ function setup() {
     push();
     scale(sc[0], sc[1]);
     for (let echo = 0; echo < shape.nEcho; echo++) {
-      let r = shape.maxRadius;
+      step = 5 * echo;
+      let r = shape.maxRadius - 4 * step;
       let s = shape.sq;
       let ext = shape.extension;
       renderShape(r, s, ext);
@@ -70,13 +71,12 @@ function renderShape(r, s, ext) {
   line(-semiEnd, -r / 2, -extEnd, -r / 2) // till extension
   strokeWeight(3)
   line(-extEnd, -r / 2, -extEnd + s, -r / 2)
-  stroke(200, 20, 0)
-  strokeWeight(1)
+  //stroke(200, 20, 0)
   line(-extEnd + s, -r / 2, -extEnd + s, -r / 2 + s)
 
+  strokeWeight(3)
   stroke(0, 255, 0)
   line(-r / 2, -semiEnd, -r / 2, -extEnd) // vert
-  strokeWeight(3)
   line(-r / 2, -extEnd, -r / 2, -extEnd + s)
   line(-r / 2, -extEnd + s, -r / 2 + s, -extEnd + s)
 }
