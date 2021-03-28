@@ -32,6 +32,20 @@ I jot down ideas that I get about what to try next here.
  - Generative Calligraphy
  - Calligraphy strokes
     
+## 30 Tutorials
+1. 4-way, 6-way and 8-way symmetry
+2. Perlin Noise: Mountain ranges.. lighter and darker as we go back
+3. Noise dots: Connected by 2 lines
+4. Sinusoidal curves
+5. 15-puzzle
+6. An Image made of images
+7. Curved Circles, touching each other
+8. random 90-Degree Rotations (Show before and after in final IG image)
+9. Hexagonal Grid
+10. Spiral Variations
+11. Tiles and tessallation (Hexagon?)
+
+
 
 -----
 ### 3 Hexagons Series

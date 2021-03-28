@@ -40,12 +40,19 @@ function setup() {
   grid = new Grid(gr.rows, gr.cols, cnv.width, cnv.height, cnv.xMargin, cnv.yMargin);
   stroke(255);
   //renderGridPoints(grid.points) // rn_grid.js
-  frameRate(3); // make frameRate 10 FPS
+  frameRate(3);
+
 }
 
 let changes = [0, 1, 2, 3, 4, 3, 2, 1];
 
 function draw() {
+
+  if (frameCount == 16) { // end the animation after 2 expand-contract cycles
+    noLoop();
+    return;
+  }
+
   background(0);
   draw_border(220);
 
@@ -70,6 +77,8 @@ function draw() {
       pop();
     }
   }
+  //this is a bit painful. save each image, but it works
+  saveFrames("images/rhy", "png", 5, 3);
 
 }
 
