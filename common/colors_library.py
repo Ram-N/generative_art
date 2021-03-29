@@ -4,7 +4,7 @@
 # 1 popular palette on Coolors
 color_p = ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"]  # courtesy Coolors
 
-color_p = [
+purples = [
     "#7400b8",
     "#6930c3",
     "#5e60ce",

@@ -134,9 +134,6 @@ palette = [
 _palette = [val for pair in zip(reds, greens) for val in pair] + ["#989898"]
 
 
-fill(252, 102, 0, 120)  # orange yellow
-
-
 # Piet Mondrian Color Palette
 BLACK = (0, 0, 0)
 MOND_WHITE = (223, 224, 236)
