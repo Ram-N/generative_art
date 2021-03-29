@@ -5,8 +5,8 @@
 **Quick Links**
 - *Daily Sketches* March 2021. | Gallery | [Repo](https://github.com/Ram-N/generative_art/tree/main/daily_sketches) | Done using P5.js
 - *Genuary 2021* |Gallery| [repo](https://github.com/Ram-N/Genuary_2021) | [Github Pages](https://ram-n.github.io/Genuary_2021/) |
-- *Hexagons* | [Gallery](https://ram-n.github.io/hexagons-gallery/) | Repo | Documentation | Done using Matplotlib. Repo contains Lots of Jupyter Notebooks, with examples.
-- You might want to look at the [images thumbnail sheet](https://github.com/Ram-N/generative_art/blob/main/docs/contact_sheet.md), to see if anything interests you, and then go to its code.
+- *Hexagons* | [Gallery](https://ram-n.github.io/hexagons-gallery/) | [Repo](https://github.com/Ram-N/hexagons) | [Documentation](https://ram-n.github.io/hexagons/build/html/index.html) | Done using Matplotlib. The repo contains several Jupyter Notebooks, with examples.
+- You might also want to look at the [images thumbnail sheet](https://github.com/Ram-N/generative_art/blob/main/docs/contact_sheet.md), to see if anything interests you, and then go to its directory to find the code.
 
 *Note: Several of these experiments use the Processing but in the Python Mode*
 
@@ -67,4 +67,4 @@ Space filling and Space shrinking, rendered Algorithmically
 
 -----
 
-Please look through the directories above. There are many 'experiments' for which I haven't yet added the descriptions.
+Please look through the directories in this repo, and check out the `images` folder in each. There are many 'experiments' for which I haven't yet added the descriptions.
