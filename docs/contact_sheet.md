@@ -291,7 +291,7 @@ Reverse chronological order.
 [comment]: # (This a images link row) 
   <tr>
    <td>
-        <img src ="../ball_animations/images/sinusoidal_balls.gif" width="250px">
+        <img src ="../image_sketches/15_puzzle/images/keep0.gif" width="250px">
     </td>    
     <td>
         <img src ="../metro_maps/images/mm_5.jpg" width="250px">

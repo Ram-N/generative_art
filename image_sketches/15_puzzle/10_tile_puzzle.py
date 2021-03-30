@@ -80,6 +80,22 @@ def setup():
     hole = find_hole(order, 15)
 
 
+def draw():
+    global smx, smy, w_compress, h_compress, imglist, order, hole
+
+    # we are listening for mousePressed. But also drawing the current sequence of small images
+    render_slices_by_given_sequence(imglist, sequence=order)
+
+
+def mousePressed():
+    global order, hole
+    tx, ty = get_tile_clicked()
+    if can_move(tx, ty, hole):
+        # make the swap. I.e. update the img_list "order"
+        order, hole = swap_tile_and_hole(order, tx, ty, hole)
+        saveFrame("images/zzle_####.png")
+
+
 def find_hole(sequence, hole_img):
 
     for idx, img in enumerate(sequence):
@@ -183,17 +199,3 @@ def can_move(tx, ty, hole):
     else:
         return 0
 
-
-def mousePressed():
-    global order, hole
-    tx, ty = get_tile_clicked()
-    if can_move(tx, ty, hole):
-        # make the swap. I.e. update the img_list "order"
-        order, hole = swap_tile_and_hole(order, tx, ty, hole)
-
-
-def draw():
-    global smx, smy, w_compress, h_compress, imglist, order, hole
-
-    # we are listening for mousePressed. But also drawing the current sequence of small images
-    render_slices_by_given_sequence(imglist, sequence=order)
