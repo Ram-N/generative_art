@@ -1,5 +1,9 @@
 from rn_utils import *
 
+"""
+Deconstruction of work by Okazz.
+"""
+
 colors = [
     "#FE4019",
     "#0B85CF",

@@ -138,7 +138,7 @@ class Cell(object):
     # shared jns. Unique jns.
 
     def set_walls(self, cells):
-        """ Randomly sets the the walls for one dot to form its cover"""
+        """ Randomly sets the the walls for one single dot to form its cover"""
 
         legal, loop_count = 0, 0
         while not legal:
@@ -149,10 +149,10 @@ class Cell(object):
             self.west = choose_one(["0", "1"])
             legal = 1
 
-            if self.posx == 0:  # west wall
+            if self.posx == 0:  # west wall boundary
                 self.west = "0"  # west wall cannot have a 1
-            if self.posy == 0:  # west wall
-                self.north = "0"  # west wall cannot have a 1
+            if self.posy == 0:  # north wall boundary
+                self.north = "0"  # north wall cannot have a 1
 
             # Set Common walls based on N and W neighbors
             north_cell = self.get_neighbor("n", cells)
