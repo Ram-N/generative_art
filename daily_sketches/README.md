@@ -7,6 +7,15 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-03-31
+<img src="2021/2021-03-31/images/keep_2021-3-31-23-29-58-3875.png" width="400">
+
+Keywords: Hexagons, Shapes 
+
+Made using P5.js. | [Code](2021/2021-03-31/)| 
+
+-----
+
 ## 2021-03-30
 <img src="2021/2021-03-30/images/keep_2021-3-30-23-10-8-4160.png" width="400">
 
