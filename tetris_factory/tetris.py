@@ -78,7 +78,21 @@ class Tetris(object):
             for trow, tcol in self.shape:
                 if trow < grid.num_rows:
                     gc = grid.get_cell(trow, tcol)
+                    fill(85, 180, 200)
+                    rhombus(gc.nwx, gc.nwy, 2, gc.width)
+
+            for trow, tcol in self.shape:
+                if trow < grid.num_rows:
+                    gc = grid.get_cell(trow, tcol)
+
+                    fill(170, 180, 100)
+                    rhombus2(gc.nwx, gc.nwy, 2, gc.width)
+
+            for trow, tcol in self.shape:
+                if trow < grid.num_rows:
+                    gc = grid.get_cell(trow, tcol)
                     gc.fill_cell(_color)
+
         except:
             print(self.shape, "unable to render", grid.num_rows, grid.num_cols)
 
@@ -94,4 +108,52 @@ def update_cell_availability(_shape, grid):
         for neigh in grid.get_neighbor_of(crow, ccol):
             ncell = grid.get_cell(neigh.row, neigh.col)
             ncell.available = 0
+
+
+def rhombus(x, y, orientation=0, size=1):
+    """
+        Draws a Rhombus with one vertex at x,y.. and of 3 (6) possible orientations
+    """
+    pushMatrix()
+    translate(x, y)
+
+    hh = size / 0.866 / 2  # w/(sqrt(3)/2)
+    # rotate(orientation * TWO_PI / 6)
+
+    center = (0, 0)
+    v0, v1 = (size, 0), (size / 2, -hh)
+    v2 = (-size / 2, -hh)
+    vers1 = [center, v0, v1, v2]
+
+    ellipse(0, 0, 10, 10)
+
+    beginShape()
+    for v in vers1:
+        vertex(v)
+    endShape(CLOSE)
+
+    popMatrix()
+
+
+def rhombus2(x, y, orientation=0, size=1):
+    """
+        Draws a Rhombus with one vertex at x,y.. and of 3 (6) possible orientations
+    """
+    pushMatrix()
+    translate(x, y)
+
+    hh = size / 0.866 / 2  # w/(sqrt(3)/2)
+    # rotate(orientation * TWO_PI / 6)
+
+    center = (0, 0)
+    v0, v1 = (-size / 2, -hh), (-size / 2, size - hh)
+    v2 = (0, size)
+    vers1 = [center, v0, v1, v2]
+
+    beginShape()
+    for v in vers1:
+        vertex(v)
+    endShape(CLOSE)
+
+    popMatrix()
 

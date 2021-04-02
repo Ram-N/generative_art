@@ -74,11 +74,11 @@ def draw():
 
     noStroke()
     for piece in tet_set:
-        _color = (10, 10, 30)
+        _color = (0, 200, 150)
         piece.render(g, _color)
 
-    # if not frameCount % 50:
-    #     noLoop()
+    if not frameCount % 50:
+        noLoop()
 
     if not frameCount % 100:
         print(frameCount)
