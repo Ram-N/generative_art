@@ -49,6 +49,7 @@ I jot down ideas that I get about what to try next here.
 
 -----
 ### 3 Hexagons Series
+    Two hexagons sharing a center, and rotation, create a nice "gear tooth" effect. Use that somehow
     Move them around in many ways. A grid of them.
     all the same size, r and r/2 size
     flat and pointy topped
