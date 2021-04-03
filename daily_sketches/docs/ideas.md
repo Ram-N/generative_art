@@ -2,7 +2,7 @@
 
 # Ideas for future daily sketches
 
-I jot down ideas that I get about what to try next here.
+A running of image ideas on what to try next here.
 
 ## Images related...
     Portrait based.. 
@@ -20,6 +20,9 @@ I jot down ideas that I get about what to try next here.
 ### 10Print like == horiz, vert and diag
 
 ## Celtic Knots
+
+## Tiling
+- square tiles of ribbons that run curved and over and under one another. 4 symmetrical points wrt vertices
 
 ## Islamic Designs Series
 

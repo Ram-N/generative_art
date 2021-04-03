@@ -7,6 +7,16 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-04-02
+<img src="2021/2021-04-02/images/keep_2021-04-03-16-42-56.png" width="400">
+
+Keywords: Rectangles, Ripples, Echoes, Rhythmic lines
+ 
+
+Made using P5.js. | [Code](2021/2021-04-02/)| 
+
+-----
+
 ## 2021-04-01
 <img src="2021/2021-04-01/images/keep_2021-4-2-9-20-43-5382.png" width="400">
 
