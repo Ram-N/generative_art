@@ -79,7 +79,7 @@ I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/vid
 - https://www.openprocessing.org/sketch/392202
 - https://www.openprocessing.org/sketch/876285: A very clever use of line widths mapped to image pixels
 - [Canvas Cards by Luke Patton](https://canvas-cards.glitch.me/)
-
+- [Tiny](https://tixy.land/?code=1%2F%28%28x%5Ey%29%25t%29) Amazing javascript code golf
 # Animated GIFS
 
 - [Prof. Golan's Github has LoopTemplates for Processing.py](https://github.com/golanlevin/LoopTemplates)

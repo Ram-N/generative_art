@@ -7,6 +7,16 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-04-04
+<img src="2021/2021-04-04/images/keep_2021-04-05-21-00-06.png" width="400">
+
+Keywords: Rectangles, Ripples, Echoes, Rhythmic lines
+ 
+
+Made using P5.js. | [Code](2021/2021-04-04/)| 
+
+-----
+
 ## 2021-04-03
 <img src="2021/2021-04-03/images/keep_2021-04-04-09-28-22.png" width="400">
 
@@ -77,7 +87,7 @@ Made using P5.js. | [Code](2021/2021-03-28/)|
 -----
 
 ## 2021-03-27
-<img src="2021/2021-03-27/images/keep0.gif" width="400">
+<img src="2021/2021-03-27/images/keep_2021-03-27.gif" width="400">
 
 Keywords: Shape, Echo, Rhythmic lines
  
@@ -173,7 +183,7 @@ Made using P5.js. [Code](2021/2021-03-18/)
 -----
 
 ## 2021-03-17
-<img src="2021/2021-03-17/images/keep0.png" width="400">
+<img src="2021/2021-03-17/images/keep_2021-3-17-22-39-47-16001.png" width="400">
 
 Keywords: Hexagons, Shapes 
 
@@ -200,7 +210,7 @@ Made using P5.js. [Code](2021/2021-03-15/)
 -----
 
 ## 2021-03-14
-<img src="2021/2021-03-14/images/keep0.png" width="400">
+<img src="2021/2021-03-14/images/keep_2021-3-15-10-50-26-4868.png" width="400">
 
 Keywords: Shapes, Convex Blobs, Non-overlapping 
 
@@ -269,7 +279,7 @@ Made with P5.js. [Code](2021/2021-03-07/)
 -----
 
 ## 2021-03-06
-<img src="2021/2021-03-06/images/keep0.png" width="400">
+<img src="2021/2021-03-06/images/keep_2021-3-7-11-59-44-2937.png" width="400">
 
 Made with P5.js. [Code](2021/2021-03-06/)
 
@@ -294,20 +304,20 @@ Made with P5.js. [Code](2021/2021-03-04/)
 
 
 ## 2021-03-03
-<img src="2021/2021-03-03/images/keep0.png" width="400">
+<img src="2021/2021-03-03/images/keep_2021-3-4-10-6-36.png" width="400">
 
 Made with P5.js. [Code](2021/2021-03-03/)
 
 -----
 ## 2021-03-02
-<img src="2021/2021-03-02/images/keep0.png" width="400">
+<img src="2021/2021-03-02/images/keep0_2021-03-02.png" width="400">
 
 Made with P5.js. [Code](2021/2021-03-02/)
 
 -----
 
 ## 2021-03-01 
-<img src="2021/2021-03-01/images/keep0.png" width="400">
+<img src="2021/2021-03-01/images/keep0_2021-03-01.png" width="400">
 
 Made with P5.js. [Code](2021/2021-03-01/)
 
