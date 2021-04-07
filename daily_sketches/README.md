@@ -1,12 +1,21 @@
 # Daily Sketches
 
-Quick sketches created during daily practice. I hope to spend under 1 hour to create these sketches.
+Quick sketches created during daily practice. I hope to spend under 1 hour each day to create these sketches.
 Some days it takes a lot longer.
 
 Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-04-06
+<img src="2021/2021-04-06/images/keep_2021-04-07-18-54-10.png" width="400">
+
+Keywords: Hexagons, Shapes, Hexagonal grid 
+
+Made using P5.js. | [Code](2021/2021-04-06/)| 
+
+-----
+
 ## 2021-04-05
 <img src="2021/2021-04-05/images/keep_2021-04-06-23-40-11.png" width="400">
 
