@@ -7,6 +7,15 @@ Daily Sketches: [2021](2021/)
 -----
 -----
 ***
+## 2021-04-05
+<img src="2021/2021-04-05/images/keep_2021-04-06-23-40-11.png" width="400">
+
+Keywords: Hexagons, Shapes, Hexagonal grid 
+
+Made using P5.js. | [Code](2021/2021-04-05/)| 
+
+-----
+
 ## 2021-04-04
 <img src="2021/2021-04-04/images/keep_2021-04-05-21-00-06.png" width="400">
 
