@@ -6,7 +6,17 @@ Some days it takes a lot longer.
 Daily Sketches: [2021](2021/)
 -----
 -----
+
 ***
+## 2021-04-08
+<img src="2021/2021-04-08/images/keep_2021-04-08-17-02-58.png" width="400">
+
+Keywords: Hexagons, Hexagonal grid 
+
+Made using P5.js. | [Code](2021/2021-04-08/)| 
+
+-----
+
 ## 2021-04-07
 <img src="2021/2021-04-07/images/keep_2021-04-07-23-03-48.png" width="400">
 
