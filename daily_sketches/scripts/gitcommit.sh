@@ -3,12 +3,48 @@
 #echo $(date +'%Y-%m-%d')
 #echo "Total arguments : $#"
 
+usage() { echo "Usage: $0 [-m <string>] [Y]" 1>&2; }
+
+while getopts ":s:m:" o; do
+    case "${o}" in
+        s)
+            s=${OPTARG}
+            ((s == 45 || s == 90)) || usage
+            ;;
+        m)
+            m=${OPTARG}
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+shift $((OPTIND-1))
+
+if [ -z "$m" ]
+then
+    echo "\$m is empty"
+    echo "No commit message. Problem"
+    usage
+    exit 0
+else
+    echo " commit message ${m}"
+fi
+
+
+if [[ $1 == "Y" ]]; then
+    echo "Committing Yesterday's files"
+fi
+
+
+
+
 git add ../README.md
 git add ../docs/*.md
 
-if [[ $1 == "Y" ]] #get yesterday's date and go there
+if [[ $1 == "Y" ]]; #get yesterday's date and go there
 then
-    echo "Yesterday"
+    echo "Committing Yesterday's files"
     YDAY=$(date -d "yesterday 13:00" '+%d')
     YMONTH=$(date -d "yesterday 13:00" '+%m')
     YYEAR=$(date -d "yesterday 13:00" '+%Y')
@@ -20,6 +56,8 @@ then
     git add "../2021/$YYEAR-$YMONTH-$YDAY/*.html"
 
 else
+    echo "Committing Today's files"
+
     DAY=$(date '+%d')
     MONTH=$(date '+%m')
     YEAR=$(date '+%Y')
@@ -34,6 +72,6 @@ else
     git add "../2021/$YEAR-$MONTH-$DAY/README.md"
     git add "../2021/$YEAR-$MONTH-$DAY/*.html"
 
-    git commit -m "../2021/$YEAR-$MONTH-$DAY/daily_sketch"
+    git commit -m "$YEAR-$MONTH-$DAY/daily_sketch $m"
 fi
 
