@@ -8,6 +8,16 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-04-09
+<img src="2021/2021-04-09/images/keep_2021-04-10-10-34-36.png" width="400">
+
+Keywords: Rectangles, Echoes, Grid
+ 
+
+Made using P5.js. | [Code](2021/2021-04-09/)| 
+
+-----
+
 ## 2021-04-08
 <img src="2021/2021-04-08/images/keep_2021-04-08-17-02-58.png" width="400">
 

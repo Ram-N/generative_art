@@ -26,7 +26,7 @@ then
     echo "\$m is empty"
     echo "No commit message. Problem"
     usage
-    exit 0
+    return 0
 else
     echo " commit message ${m}"
 fi
