@@ -54,6 +54,7 @@ then
     git add "../2021/$YYEAR-$YMONTH-$YDAY/images"
     git add "../2021/$YYEAR-$YMONTH-$YDAY/README.md"
     git add "../2021/$YYEAR-$YMONTH-$YDAY/*.html"
+    git commit -m "$YYEAR-$YMONTH-$YDAY $m"
 
 else
     echo "Committing Today's files"
