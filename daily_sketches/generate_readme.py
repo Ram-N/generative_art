@@ -79,12 +79,19 @@ def get_nameof_keepfile(INPUT_DIR):
 
 def check_todays_keywords(INPUT_DIR):
     # open todays_notes file.
+    desc = ""
+    kw_exists, d_exists = False, False
     p = Path("2021/" + INPUT_DIR + "/todays_notes.txt")
     with open(p, "r") as notes_file:
         for line in notes_file:
             if line[:9] == "Keywords:":
                 kwds = line
-                return (1, kwds)
+                kw_exists = True
+            if line[:5] == "Desc:":
+                desc += line[5:]
+                d_exists = True
+
+    return (kw_exists, kwds, d_exists, desc)
 
 
 def generate_todays_text(INPUT_DIR, TECH):
@@ -97,9 +104,11 @@ def generate_todays_text(INPUT_DIR, TECH):
         f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
     )
 
-    keywords_exist, kwds = check_todays_keywords(INPUT_DIR)
+    keywords_exist, kwds, description_exists, desc = check_todays_keywords(INPUT_DIR)
     if keywords_exist:
         todays_text += f"{kwds} \n\n"
+    if description_exists:
+        todays_text += f"{desc} \n\n"
 
     todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/)| \n\n"
     todays_text += f"-----\n\n"
