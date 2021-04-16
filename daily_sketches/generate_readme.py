@@ -94,8 +94,11 @@ def check_todays_keywords(INPUT_DIR):
     return (kw_exists, kwds, d_exists, desc)
 
 
-def generate_todays_text(INPUT_DIR, TECH):
-    """Today's text in the MAIN file"""
+def generate_todays_text(INPUT_DIR, TECH, verbose=False):
+    """
+        Generate today's text twice.
+        Once for the child directory (more detailed), and
+        once more Today's text in the MAIN file"""
 
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
 
@@ -107,8 +110,8 @@ def generate_todays_text(INPUT_DIR, TECH):
     keywords_exist, kwds, description_exists, desc = check_todays_keywords(INPUT_DIR)
     if keywords_exist:
         todays_text += f"{kwds} \n\n"
-    if description_exists:
-        todays_text += f"{desc} \n\n"
+    if description_exists and verbose:
+        todays_text += f"## Description \n\n{desc} \n\n"
 
     todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/)| \n\n"
     todays_text += f"-----\n\n"
@@ -143,6 +146,7 @@ def main(argv):
 
     md_string = add_header(md_string, INPUT_DIR)
     md_string = add_images(files, md_string, INPUT_DIR)
+    md_string += generate_todays_text(INPUT_DIR, TECH, verbose=True)
 
     # New README inside subdir.
     textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README
