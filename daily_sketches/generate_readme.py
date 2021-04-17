@@ -103,9 +103,10 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
 
     todays_text = f"## {INPUT_DIR}\n"
-    todays_text += (
-        f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
-    )
+    if not verbose:
+        todays_text += (
+            f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
+        )
 
     keywords_exist, kwds, description_exists, desc = check_todays_keywords(INPUT_DIR)
     if keywords_exist:

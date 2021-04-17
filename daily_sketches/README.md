@@ -8,6 +8,16 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-04-16
+<img src="2021/2021-04-16/images/keep_2021-04-16-23-51-43.png" width="400">
+
+Keywords: Celtic pattern, Squares, Tiling
+ 
+
+Made using P5.js. | [Code](2021/2021-04-16/)| 
+
+-----
+
 ## 2021-04-15
 <img src="2021/2021-04-15/images/keep_2021-04-15-16-16-42.png" width="400">
 
