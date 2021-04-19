@@ -26,6 +26,10 @@ A running of image ideas on what to try next here.
 
 ## Islamic Designs Series
 
+## Cellular Automata
+Cyclic : https://github.com/aschinchon/cyclic-cellular-automata/blob/main/cyclic.R
+(Try this in P5.js)
+
 
 ## Map-making
     Islands, lakes, rives...
