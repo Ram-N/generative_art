@@ -6,6 +6,7 @@
 - [Tim Holman](https://tholman.com/) and [Ruth John's](https://ruthjohn.com/) [Generative Artistry Tutorials](https://generativeartistry.com/tutorials/) 
 
  - [Inigo Quilez](https://iquilezles.org/index.html) has several very good tutorials and videos.
+ - [Blueje's tutorials on animation](https://bleuje.github.io/tutorials/) - Blueje makes great animated gifs.
  
 ## Differential Growth
 - [Differential Growth](https://www.kaspar.wtf/code-poems/differential-growth)
@@ -14,6 +15,7 @@
 - https://n-e-r-v-o-u-s.com/blog/?p=6721
 - https://entagma.com/differential-line-growth/
 - http://www.codeplastic.com/2017/07/22/differential-line-growth-with-processing/
+- [Reaction Diffusion](https://fronkonstin.com/2019/12/28/reaction-diffusion/) by Fronkonstin, includes R code
 
 
 ## Shapes
