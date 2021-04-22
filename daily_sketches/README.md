@@ -8,6 +8,15 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-04-22
+<img src="2021/2021-04-22/images/keep_2021-04-22-16-24-16.png" width="400">
+
+Keywords: Hexagons, Hexagonal grid 
+
+Made using P5.js. | [Code](2021/2021-04-22/)| 
+
+-----
+
 ## 2021-04-21
 <img src="2021/2021-04-21/images/keep_2021-04-21-22-53-43.png" width="400">
 
