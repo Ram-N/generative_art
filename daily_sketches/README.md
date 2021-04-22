@@ -8,6 +8,16 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-04-21
+<img src="2021/2021-04-21/images/keep_2021-04-21-22-53-43.png" width="400">
+
+Keywords: Isometric grid, Tiling
+ 
+
+Made using P5.js. | [Code](2021/2021-04-21/)| 
+
+-----
+
 ## 2021-04-20
 <img src="2021/2021-04-20/images/keep_2021-04-21-10-03-59.png" width="400">
 
