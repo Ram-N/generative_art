@@ -1,5 +1,5 @@
 """
-2021-03-05
+2021-04-24
 Ram Narasimhan
 
 Given a Directory and a few string inputs, automates the generation of README.md for that directory
@@ -35,8 +35,12 @@ def add_header(md_string, INPUT_DIR):
 
 
 def add_images(files, md_string, INPUT_DIR):
-    """Add images to today's README file"""
-    md_string += "Here are some of the images that were generated.\n\n"
+    """Add images to subdir's README file"""
+
+    for f in files:
+        md_string += "<img src = 'images/" + f.name + "' width = '100'> \n"
+
+    md_string += "\n\n## Progression of Images that were generated.\n\n"
     for f in files:
         md_string += "<img src = 'images/" + f.name + "' width = '300'> \n"
 
@@ -141,12 +145,13 @@ def main(argv):
         print("Usage: generate_readme.py -i <inputdirname>")
         sys.exit()
 
+    # get all the intermediate images...
     p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
-    files = [x for x in p if x.is_file()]
+    img_files = [x for x in p if x.is_file()]
     md_string = ""
 
     md_string = add_header(md_string, INPUT_DIR)
-    md_string = add_images(files, md_string, INPUT_DIR)
+    md_string = add_images(img_files, md_string, INPUT_DIR)
     md_string += generate_todays_text(INPUT_DIR, TECH, verbose=True)
 
     # New README inside subdir.
@@ -154,6 +159,7 @@ def main(argv):
     textfile.write(md_string)
     textfile.close()
 
+    ########################################################3
     # Parent README.md
     # Read this file, store its contents, add to it and
     main_top, main_bottom = read_main_file()  # read the file and store its contents
@@ -172,5 +178,5 @@ def main(argv):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    main(sys.argv[1:])  # -i dirname
 
