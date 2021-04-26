@@ -48,18 +48,6 @@ class IsoTriangle {
 
     display(_clr) {
         fill(_clr)
-        // if ((this.row % 2) && (this.col % 2)) {
-        //     fill(100)
-        // }
-        // if ((this.row % 2) && (!this.col % 2)) {
-        //     fill(200, 0, 0)
-        // }
-        // if ((!this.row % 2) && (this.col % 2)) {
-        //     fill(0, 150, 0)
-        // }
-        // if ((!this.row % 2) && (!this.col % 2)) {
-        //     fill(0, 0, 100)
-        // }
         if (this.vertices) {
             beginShape()
             for (let gpt of this.vertices) {
@@ -120,43 +108,25 @@ class IsoTriangle {
                 }
             }
         }
-
-
-
-        // if (this.row % 2) { // Odd row
-        //     colOffset = 0
-        // } else {
-        //     colOffset = 1
-        //     print('here')
-        // }
-        // if (this.col % 2) {
-        //     if (!this.orientation) {
-        //         cO2 = -1
-        //     }
-        // } else { // even
-        //     cO2 = -1
-        //     if (this.orientation) {
-        //         cO2 = 1
-        //     }
-
-
-
-
-
         //up
         let up = grid.getTriangle(this.col + colOffset, this.row - 1, flip)
         print(this.col + colOffset, this.row - 1, flip, "up")
-        up.display("red")
+        if (up) {
+            up.display("red")
+        }
 
         //down 
         let down = grid.getTriangle(this.col + colOffset, this.row + 1, flip)
-        down.display("brown")
+        if (down) {
+            down.display("brown")
+        }
 
         //side neighbor
         let side = grid.getTriangle(this.col + sideOffset, this.row, flip)
-        side.display("orange")
+        if (side) {
+            side.display("orange")
+        }
     }
-
 }
 
 
