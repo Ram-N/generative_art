@@ -8,6 +8,15 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-04-30
+<img src="2021/2021-04-30/images/keep_2021-05-01-19-00-32.png" width="400">
+
+Keywords: isometric grid, isometric triangles, cube cuts 
+
+Made using P5.js. | [Code](2021/2021-04-30/)| 
+
+-----
+
 ## 2021-04-29
 <img src="2021/2021-04-29/images/keep_2021-04-29-23-34-00.png" width="400">
 
