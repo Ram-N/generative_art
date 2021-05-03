@@ -8,12 +8,21 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-05-02
+<img src="2021/2021-05-02/images/keep_2021-05-02-21-23-30.png" width="400">
+
+Keywords: Tiles, 25-square, variations-on-a-theme 
+
+Made using P5.js. | [Code](2021/2021-05-02/) | 
+
+-----
+
 ## 2021-05-01
 <img src="2021/2021-05-01/images/keep_2021-05-02-11-15-55.png" width="400">
 
 Keywords: isometric grid, isometric triangles, cube cuts 
 
-Made using P5.js. | [Code](2021/2021-05-01/)| 
+Made using P5.js. | [Code](2021/2021-05-01/) | 
 
 -----
 

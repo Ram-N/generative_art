@@ -38,7 +38,7 @@ def add_images(files, md_string, INPUT_DIR):
     """Add images to subdir's README file"""
 
     for f in files:
-        md_string += "<img src = 'images/" + f.name + "' width = '100'> \n"
+        md_string += "<img src = 'images/" + f.name + "' width = '100'> "
 
     md_string += "\n\n## Progression of Images that were generated.\n\n"
     for f in files:
@@ -118,7 +118,7 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
     if description_exists and verbose:
         todays_text += f"## Description \n\n{desc} \n\n"
 
-    todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/)| \n\n"
+    todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/) | \n\n"
     todays_text += f"-----\n\n"
 
     return todays_text

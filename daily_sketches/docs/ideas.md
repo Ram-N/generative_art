@@ -4,6 +4,18 @@
 
 A running of image ideas on what to try next here.
 
+## 25 Squares Series
+    Colors
+    Filled
+    Shapes
+    Rotations
+    Echo, Aztec
+    Word squares with text
+    text border
+    Flow field squares
+    Vertical lines...rotated squares
+    Circles Only
+
 ## Images related...
     Portrait based.. 
     Pixel sorting
@@ -17,7 +29,6 @@ A running of image ideas on what to try next here.
   -   One long line all over the canvas, symmetrical
 ### Echo effects...lines that go parallel "around" fixed shapes
 
-### 10Print like == horiz, vert and diag
 
 ## Celtic Knots
 
