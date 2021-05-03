@@ -1,0 +1,95 @@
+// Daily Sketch for 2021-05-03
+// Ram Narasimhan.
+/*
+Tile Grid
+5x5 squares...and variations
+
+*/
+let palette = []
+const cnv = {
+  xMargin: 30,
+  yMargin: 30,
+}
+
+const params = {
+  nRows: 5,
+  nCols: 5, // number of tiles per row in the active canvas
+  bgColor: '#0f0f0f',
+  numEcho: 15
+}
+
+
+function setup() {
+  createCanvas(860, 860);
+  background("#d3d3d3");
+  //background("#0F0F0F");
+  //background(seablue);
+  palette = red_brown_orange; //colors.js
+  palette = replicate(palette, 10)
+  palette = purples; //colors.js  
+  palette = replicate(palette, 10)
+  picked = random(red_brown_orange)
+  background(picked)
+  fill(picked)
+  stroke(255);
+  let alphaValue = 100;
+
+  cnv.height = height - 2 * cnv.yMargin // usable height
+  cnv.width = width - 2 * cnv.yMargin //usable width
+  rect(cnv.xMargin, cnv.yMargin, cnv.width, cnv.height);
+  grid = new Grid(params.nCols, params.nRows, cnv.width, cnv.height, cnv.xMargin, cnv.yMargin);
+  //grid.dispalyGridPoints(255)// rn_grid.js
+
+  tiles = createTileGrid(5, cnv)
+  print(tiles)
+  //fill('red')
+  tilesize = grid.xStep * 0.8
+  tz = tilesize / 2;
+  for (tcoord of tiles) {
+    push();
+    rectMode(CENTER);
+    translate(tcoord.x, tcoord.y)
+    strokeWeight(3)
+
+    rnd = random()
+    if (rnd < 0.33) {
+      horiz = 1
+      vertical = 0
+    } else if (rnd < 0.66) {
+      vertical = 1
+      horiz = 0
+    } else {
+      horiz = 1
+      vertical = 1
+    }
+
+
+    lStep = tilesize / params.numEcho;
+    for (let l = 0; l < params.numEcho; l++) {
+      if (horiz) {
+        line(-tz, -tz + lStep * l, tz, -tz + lStep * l)
+      }
+      if (vertical) {
+        line(-tz + lStep * l, -tz, -tz + lStep * l, tz)
+      }
+    }
+
+    rotate(PI / 6 * int(random(8)));
+    stroke(random(palette));
+    stroke(picked);
+    noFill();
+    strokeWeight(55);
+    rect(0, 0, tilesize, tilesize)
+    pop();
+  }
+
+  noStroke();
+
+  draw_border(clr = "#d3d3d3", sw = 57); //rn_utils.js
+  draw_border(c = "#d3d3d3", sw = 25); //rn_utils.js
+  draw_border(c = 20, sw = 20);
+}
+
+
+
+

@@ -8,6 +8,15 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-05-03
+<img src="2021/2021-05-03/images/keep_2021-05-03-19-26-18.png" width="400">
+
+Keywords: Tiles, 25-square, variations-on-a-theme 
+
+Made using P5.js. | [Code](2021/2021-05-03/) | 
+
+-----
+
 ## 2021-05-02
 <img src="2021/2021-05-02/images/keep_2021-05-02-21-23-30.png" width="400">
 
