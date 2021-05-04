@@ -73,7 +73,7 @@ function setup() {
       } else {
         curr.view = random([1, 2, 3])
       }
-      curr.display(cubePalette[curr.view])
+      curr.display(cubePalette[curr.view]) // move all display to after assigning colors
     }
 
   }

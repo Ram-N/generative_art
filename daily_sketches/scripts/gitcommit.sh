@@ -1,7 +1,19 @@
 #!/bin/bash
 # This has cd, so this should be sourced. Use . as shortcut
 #echo $(date +'%Y-%m-%d')
-#echo "Total arguments : $#"
+echo "Total arguments : $#"
+
+# store arguments in a special array 
+args=("$@") 
+# get number of elements 
+ELEMENTS=${#args[@]} 
+ 
+# echo each element in array  
+# for loop 
+for (( i=0;i<$ELEMENTS;i++)); do 
+    echo ${args[${i}]} 
+done
+
 
 usage() { echo "Usage: $0 [-m <string>] [Y]" 1>&2; }
 
@@ -19,7 +31,7 @@ while getopts ":s:m:" o; do
             ;;
     esac
 done
-shift $((OPTIND-1))
+##shift $((OPTIND-1))
 
 if [ -z "$m" ]
 then
@@ -32,17 +44,17 @@ else
 fi
 
 
-if [[ $1 == "Y" ]]; then
+if [[ $3 == "Y" ]]; then
     echo "Committing Yesterday's files"
 fi
-
-
 
 
 git add ../README.md
 git add ../docs/*.md
 
-if [[ $1 == "Y" ]]; #get yesterday's date and go there
+echo $3
+echo [[$3=="Y"]]
+if [[ $3 == "Y" ]]; #get yesterday's date and go there
 then
     echo "Committing Yesterday's files"
     YDAY=$(date -d "yesterday 13:00" '+%d')
@@ -57,6 +69,7 @@ then
     git commit -m "$YYEAR-$YMONTH-$YDAY $m"
 
 else
+    echo $3
     echo "Committing Today's files"
 
     DAY=$(date '+%d')
