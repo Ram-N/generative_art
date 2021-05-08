@@ -8,6 +8,15 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-05-07
+<img src="2021/2021-05-07/images/keep_2021-05-07-23-03-41.png" width="400">
+
+Keywords: Path following, steering behavior, curved lines 
+
+Made using P5.js. | [Code](2021/2021-05-07/) | 
+
+-----
+
 ## 2021-05-06
 <img src="2021/2021-05-06/images/keep_2021-05-06-18-39-24.png" width="400">
 
