@@ -51,7 +51,6 @@ function setup() {
         posX = tileX * gridX;
         posY = tileY * gridY;
         patch = img.get(posX, posY, stepSize, stepSize); //get color from certain pixels
-        getAvgPatchColor(patch)
         rgb = getAvgPatchColor(patch)
         //image(patch, posX, posY);
         paintPatch(posX, posY, rgb, stepSize)
