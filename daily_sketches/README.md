@@ -8,6 +8,16 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+## 2021-05-13
+<img src="2021/2021-05-13/images/keep_2021-05-13-15-39-26.png" width="400">
+
+Keywords: Grid points, Segments, Lego
+ 
+
+Made using P5.js. | [Code](2021/2021-05-13/) | 
+
+-----
+
 ## 2021-05-12
 <img src="2021/2021-05-12/images/keep_2021-05-12-22-19-29.png" width="400">
 

@@ -17,11 +17,12 @@ A running of image ideas on what to try next here.
     Circles Only
 
 ## Images related...
-    Portrait based.. 
     Pixel sorting
     pixel swapping
-    Rasterize: Size of circles
+
+### Portrait based... 
     Triangulation on face edges... to create images
+    Rasterize: Size of circles
 
 
 ## Single Line, mazelike
@@ -44,6 +45,15 @@ Cyclic : https://github.com/aschinchon/cyclic-cellular-automata/blob/main/cyclic
 
 ## Map-making
     Islands, lakes, rives...
+
+## Using Perlin Noise
+
+### Tree Rings
+- Create "almost" concetric cirlces.
+- using varying thickness (of lines/bands) and radii
+- Use a tight color palette to convey year to year variation
+- inner whorls for added impact
+
 
 
 ## Text + Images Combining
