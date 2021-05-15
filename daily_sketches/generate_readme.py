@@ -49,7 +49,7 @@ def add_images(files, md_string, INPUT_DIR):
     return md_string
 
 
-def read_main_file():
+def read_main_readme_file():
     top, bottom = "", ""
     flip = 0  # indicates whether split point has been reached
     with open("README.md", "r") as mfile:
@@ -63,7 +63,7 @@ def read_main_file():
                 flip = 1
                 print("flipping")
 
-    return top, bottom
+    return top, bottom  # two parts of the main README file
 
 
 def get_nameof_keepfile(INPUT_DIR):
@@ -106,7 +106,9 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
 
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
 
-    todays_text = f"## {INPUT_DIR}\n"
+    todays_text = ""
+
+    todays_text += f"\n ## {INPUT_DIR}\n"
     if not verbose:
         todays_text += (
             f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
@@ -118,13 +120,33 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
     if description_exists and verbose:
         todays_text += f"## Description \n\n{desc} \n\n"
 
-    todays_text += f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/) | \n\n"
+    todays_text += (
+        f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches) \n\n"
+    )
     todays_text += f"-----\n\n"
 
     return todays_text
 
 
+def add_todays_img_to_maintop(main_top, INPUT_DIR):
+
+    new_string = ""
+    keepfile_name = get_nameof_keepfile(INPUT_DIR)
+    for line in main_top.splitlines()[:-4]:
+        new_string += line + "\n"
+
+    new_string += f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">'
+    for line in main_top.splitlines()[-4:]:
+        new_string += "\n" + line
+
+    for line in new_string.splitlines():
+        print(line)
+    return new_string
+
+
 def main(argv):
+
+    alter_files = True  # turn this to False when debugging
 
     INPUT_DIR = ""
     try:
@@ -155,26 +177,29 @@ def main(argv):
     md_string += generate_todays_text(INPUT_DIR, TECH, verbose=True)
 
     # New README inside subdir.
-    textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README
-    textfile.write(md_string)
-    textfile.close()
+    if alter_files:
+        textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README
+        textfile.write(md_string)
+        textfile.close()
 
     ########################################################3
     # Parent README.md
     # Read this file, store its contents, add to it and
-    main_top, main_bottom = read_main_file()  # read the file and store its contents
+    main_top, main_bottom = read_main_readme_file()  # store README contents as 2 parts
     todays_text = generate_todays_text(INPUT_DIR, TECH)
+    main_top = add_todays_img_to_maintop(main_top, INPUT_DIR)
 
-    main_md_file = open("README.md", "w")
     print(todays_text)
-    main_md_file.write(main_top)
-    main_md_file.write(todays_text)  # This is the new addition
-    main_md_file.write(main_bottom)
-    main_md_file.close()
+    if alter_files:
+        main_md_file = open("README.md", "w")
+        main_md_file.write(main_top)
+        main_md_file.write(todays_text)  # This is the new addition
+        main_md_file.write(main_bottom)
+        main_md_file.close()
 
-    bkfile = open("bkup_README.md", "w")  # safety backup
-    bkfile.write(main_top + main_bottom)
-    bkfile.close()
+        bkfile = open("bkup_README.md", "w")  # safety backup
+        bkfile.write(main_top + main_bottom)
+        bkfile.close()
 
 
 if __name__ == "__main__":

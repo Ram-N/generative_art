@@ -4,10 +4,21 @@ Quick sketches created during daily practice. I hope to spend under 1 hour each 
 Some days it takes a lot longer.
 
 Daily Sketches: [2021](2021/)
+<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="100">
 -----
 -----
 
 ***
+## 2021-05-14
+<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="400">
+
+Keywords: Segments, Lego
+ 
+
+Made using P5.js. | [Code](2021/2021-05-14/) | [Top](#daily-sketches) 
+
+-----
+
 ## 2021-05-13
 <img src="2021/2021-05-13/images/keep_2021-05-13-15-39-26.png" width="400">
 

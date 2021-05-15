@@ -1,6 +1,6 @@
 //Use with p5.js sketches. 
 //Ram Narasimhan
-// March 2021
+// May 2021
 
 function keyTyped() {
     // png is much higher quality than jpg

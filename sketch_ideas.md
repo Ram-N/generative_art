@@ -12,10 +12,3 @@ Rules:
 1. Do this on a Checkerboard background.
 1. If a ball-center passes within epsilon of a square center, the square is painted the ball's color.
 
-## Using Perlin Noise
-
-### Tree Rings
-- Create "almost" concetric cirlces.
-- using varying thickness (of lines/bands) and radii
-- Use a tight color palette to convey year to year variation
-- inner whorls for added impact
