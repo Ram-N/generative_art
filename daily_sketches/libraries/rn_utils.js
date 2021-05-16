@@ -15,6 +15,11 @@ function keyTyped() {
         saveCanvas('keep0.png'); //representative. will overwrite existing file
     }
 
+    if (key == 'r') { // R = resume, reloop, redraw
+        print('redraw')
+        draw();
+    }
+
     if (key == 'x') {
         noLoop();
     }
