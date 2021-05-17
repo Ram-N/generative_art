@@ -5,12 +5,21 @@ Some days it takes a lot longer.
 
 Daily Sketches: [2021](2021/)
 
-<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="100">
-<img src="2021/2021-05-15/images/keep_2021-05-15-23-41-25.png" width="100">
+<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="100"><img src="2021/2021-05-15/images/keep_2021-05-15-23-41-25.png" width="100"><img src="2021/2021-05-16/images/keep_2021-05-16-21-58-31.png" width="100">
 -----
 -----
 
 ***
+ ## 2021-05-16
+<img src="2021/2021-05-16/images/keep_2021-05-16-21-58-31.png" width="400">
+
+Keywords: Segments, Lego
+ 
+
+Made using P5.js. | [Code](2021/2021-05-16/) | [Top](#daily-sketches) 
+
+-----
+
  ## 2021-05-15
 <img src="2021/2021-05-15/images/keep_2021-05-15-23-41-25.png" width="400">
 
