@@ -16,7 +16,7 @@ function keyTyped() {
     }
 
     if (key == 'r') { // R = resume, reloop, redraw
-        print('redraw')
+        //print('redraw')
         draw();
     }
 

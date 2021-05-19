@@ -132,11 +132,15 @@ def add_todays_img_to_maintop(main_top, INPUT_DIR):
 
     new_string = ""
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
-    for line in main_top.splitlines()[:-4]:
+    for line in main_top.splitlines()[:-5]:
         new_string += line + "\n"
 
-    new_string += f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">'
-    for line in main_top.splitlines()[-4:]:
+    new_string += (
+        main_top.splitlines()[-5]
+        + f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100"> \n'
+    )
+
+    for line in main_top.splitlines()[-4:]:  # --- and *** etc
         new_string += "\n" + line
 
     for line in new_string.splitlines():
