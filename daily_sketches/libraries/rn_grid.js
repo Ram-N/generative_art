@@ -268,9 +268,16 @@ class IsoTriangle {
 
 class Segment { // A segment between two GPts
     constructor(startPt, endPt, orientation) {
+        let orient;
         this.start = startPt;
         this.end = endPt;
         this.orientation = orientation; // axis 0 means vertical. ax 1 means horiz
+        if (orientation) { orient = 'H' } else { orient = 'V' }
+        if ((startPt) && (endPt)) {
+            this.id = orient + "_" + String(startPt.col) +
+                "_" + String(startPt.row) + "_" +
+                String(endPt.col) + "_" + String(endPt.row);
+        }
         this.active = 0
     }
 
@@ -290,9 +297,7 @@ class Segment { // A segment between two GPts
 
 function displaySegments(grid, colr = 255, sw = 1) {
     for (se of grid.segments) {
-        if (se.active) {
-            se.display(colr, sw = sw)
-        }
+        se.display(colr, sw = sw)
     }
 }
 
@@ -309,13 +314,13 @@ function attachNeighboringSegments(seg, grid) {
     if (seg.orientation) { //horizontal segment
         seg.n00 = grid.getSegment(seg.start, grid.getGPt(seg.start.col, seg.start.row - 1))
         seg.n01 = grid.getSegment(seg.start, grid.getGPt(seg.start.col, seg.start.row + 1))
-        seg.n10 = grid.getSegment(seg.start, grid.getGPt(seg.end.col, seg.end.row - 1))
-        seg.n11 = grid.getSegment(seg.start, grid.getGPt(seg.end.col, seg.end.row + 1))
+        seg.n10 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row - 1))
+        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row + 1))
     } else { // vertical
         seg.n00 = grid.getSegment(seg.start, grid.getGPt(seg.start.col - 1, seg.start.row))
         seg.n01 = grid.getSegment(seg.start, grid.getGPt(seg.start.col + 1, seg.start.row))
-        seg.n10 = grid.getSegment(seg.start, grid.getGPt(seg.end.col - 1, seg.end.row))
-        seg.n11 = grid.getSegment(seg.start, grid.getGPt(seg.end.col + 1, seg.end.row))
+        seg.n10 = grid.getSegment(seg.end, grid.getGPt(seg.end.col - 1, seg.end.row))
+        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col + 1, seg.end.row))
     }
 
     seg.neighbors = [seg.n00, seg.n01, seg.n10, seg.n11]
@@ -417,9 +422,14 @@ class Grid {
         if ((!startPt) || (!endPt)) {
             return (null)
         }
-
         for (let seg of this.segments) {
+            // if (verbose) {
+            //     print(seg.start, seg.end, 'seg s e')
+            // }
             if ((seg.start == startPt) && (seg.end == endPt)) {
+                return (seg)
+            }
+            if ((seg.start == endPt) && (seg.end == startPt)) {
                 return (seg)
             }
         }
@@ -480,7 +490,17 @@ class Grid {
         return neigh;
     }
 
-    dispalyGridPoints(colr) {
+    displayGPt(p, colr) {
+        push();
+        if (colr) {
+            stroke(colr);
+        }
+        strokeWeight(3);
+        circle(p.x, p.y, 5);
+        pop();
+    }
+
+    displayGridPoints(colr) {
         push();
         if (colr) {
             stroke(colr);
