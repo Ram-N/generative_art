@@ -4,6 +4,18 @@
 
 A running of image ideas on what to try next here.
 
+## Space Expansion
+    Fill rectangle
+    Fill rectangles based on growth direction
+    Fill 2 diagonal triangles for each rect
+    Expand 45degrees as well
+    2 sets of overlaid expansion. rotate...
+    Echo lines of expansion...
+
+    
+
+## Mandalas
+
 ## 25 Squares Series
     Colors
     Filled
