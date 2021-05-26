@@ -12,12 +12,23 @@ Daily Sketches: [2021](2021/)
 <img src="2021/2021-05-22/images/keep_2021-05-22-19-23-31.png" width="100"> 
 <img src="2021/2021-05-23/images/keep_2021-05-24-10-07-53.png" width="100"> 
 [<img src="2021/2021-05-24/images/keep_2021-05-24-21-28-20.png" width="100">](2021/2021-05-24/)
-[<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">] (2021/2021-05-25)
+[<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">](2021/2021-05-25)
+[<img src="2021/2021-05-26/images/keep_2021-05-26-16-44-29.png" width="100">](2021/2021-05-26)
 
 -----
 -----
 
 ***
+ ## 2021-05-26
+<img src="2021/2021-05-26/images/keep_2021-05-26-16-44-29.png" width="400">
+
+Keywords: Segments, Shape filling, shape shrinking, intestines
+ 
+
+Made using P5.js. | [Code](2021/2021-05-26/) | [Top](#daily-sketches) 
+
+-----
+
  ## 2021-05-25
 <img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="400">
 
