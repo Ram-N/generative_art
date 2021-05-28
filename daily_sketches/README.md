@@ -15,11 +15,22 @@ Daily Sketches: [2021](2021/)
 [<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">](2021/2021-05-25)
 [<img src="2021/2021-05-26/images/keep_2021-05-26-16-44-29.png" width="100">](2021/2021-05-26)
 [<img src="2021/2021-05-27/images/keep_2021-05-27-23-28-36.png" width="100">](2021/2021-05-27)
+[<img src="2021/2021-05-28/images/keep_2021-05-28-17-16-10.png" width="100">](2021/2021-05-28)
 
 -----
 -----
 
 ***
+ ## 2021-05-28
+<img src="2021/2021-05-28/images/keep_2021-05-28-17-16-10.png" width="400">
+
+Keywords: Segments, Shape filling, shape shrinking
+ 
+
+Made using P5.js. | [Code](2021/2021-05-28/) | [Top](#daily-sketches) 
+
+-----
+
  ## 2021-05-27
 <img src="2021/2021-05-27/images/keep_2021-05-27-23-28-36.png" width="400">
 
