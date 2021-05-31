@@ -11,6 +11,7 @@ A running of image ideas on what to try next here.
     Expand 45degrees as well
     2 sets of overlaid expansion. rotate...
     Echo lines of expansion...
+    FRACTALS .. in round 2, the segments get halved in length, and so on.
 
     
 
