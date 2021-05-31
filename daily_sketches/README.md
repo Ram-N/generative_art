@@ -18,11 +18,22 @@ Daily Sketches: [2021](2021/)
 [<img src="2021/2021-05-28/images/keep_2021-05-28-17-16-10.png" width="100">](2021/2021-05-28)
 [<img src="2021/2021-05-29/images/keep_2021-05-29-22-56-09.png" width="100">](2021/2021-05-29)
 [<img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="100">](2021/2021-05-30)
+[<img src="2021/2021-05-31/images/keep_2021-05-31-10-35-15.png" width="100">](2021/2021-05-31)
 
 -----
 -----
 
 ***
+ ## 2021-05-31
+<img src="2021/2021-05-31/images/keep_2021-05-31-10-35-15.png" width="400">
+
+Keywords: Shape creation, textures, contours, striations
+ 
+
+Made using P5.js. | [Code](2021/2021-05-31/) | [Top](#daily-sketches) 
+
+-----
+
  ## 2021-05-30
 <img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="400">
 
