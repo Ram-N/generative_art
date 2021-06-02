@@ -4,26 +4,42 @@ Quick sketches created during daily practice. I hope to spend under 1 hour each 
 Some days it takes a lot longer.
 
 Daily Sketches: [2021](2021/)
+[<img src="2021/2021-06-01/images/keep_2021-06-02-00-45-51.png" width="100">](2021/2021-06-01)
 
-<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="100"><img src="2021/2021-05-15/images/keep_2021-05-15-23-41-25.png" width="100"><img src="2021/2021-05-16/images/keep_2021-05-16-21-58-31.png" width="100"><img src="2021/2021-05-17/images/keep_2021-05-17-23-14-25.png" width="100"><img src="2021/2021-05-18/images/keep_2021-05-18-22-38-16.png" width="100"> 
-<img src="2021/2021-05-19/images/keep0.gif" width="100"> 
-<img src="2021/2021-05-20/images/keep0.gif" width="100"> 
-<img src="2021/2021-05-21/images/keep_2021-05-22-12-40-15.png" width="100"> 
-<img src="2021/2021-05-22/images/keep_2021-05-22-19-23-31.png" width="100"> 
-<img src="2021/2021-05-23/images/keep_2021-05-24-10-07-53.png" width="100"> 
-[<img src="2021/2021-05-24/images/keep_2021-05-24-21-28-20.png" width="100">](2021/2021-05-24/)
-[<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">](2021/2021-05-25)
-[<img src="2021/2021-05-26/images/keep_2021-05-26-16-44-29.png" width="100">](2021/2021-05-26)
-[<img src="2021/2021-05-27/images/keep_2021-05-27-23-28-36.png" width="100">](2021/2021-05-27)
-[<img src="2021/2021-05-28/images/keep_2021-05-28-17-16-10.png" width="100">](2021/2021-05-28)
-[<img src="2021/2021-05-29/images/keep_2021-05-29-22-56-09.png" width="100">](2021/2021-05-29)
-[<img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="100">](2021/2021-05-30)
 [<img src="2021/2021-05-31/images/keep_2021-05-31-10-35-15.png" width="100">](2021/2021-05-31)
+[<img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="100">](2021/2021-05-30)
+[<img src="2021/2021-05-29/images/keep_2021-05-29-22-56-09.png" width="100">](2021/2021-05-29)
+[<img src="2021/2021-05-28/images/keep_2021-05-28-17-16-10.png" width="100">](2021/2021-05-28)
+[<img src="2021/2021-05-27/images/keep_2021-05-27-23-28-36.png" width="100">](2021/2021-05-27)
+[<img src="2021/2021-05-26/images/keep_2021-05-26-16-44-29.png" width="100">](2021/2021-05-26)
+[<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">](2021/2021-05-25)
+[<img src="2021/2021-05-24/images/keep_2021-05-24-21-28-20.png" width="100">](2021/2021-05-24/)
+<img src="2021/2021-05-23/images/keep_2021-05-24-10-07-53.png" width="100"> 
+<img src="2021/2021-05-22/images/keep_2021-05-22-19-23-31.png" width="100"> 
+<img src="2021/2021-05-21/images/keep_2021-05-22-12-40-15.png" width="100"> 
+<img src="2021/2021-05-20/images/keep0.gif" width="100"> 
+<img src="2021/2021-05-19/images/keep0.gif" width="100"> 
+<img src="2021/2021-05-18/images/keep_2021-05-18-22-38-16.png" width="100"> 
+<img src="2021/2021-05-17/images/keep_2021-05-17-23-14-25.png" width="100">
+<img src="2021/2021-05-16/images/keep_2021-05-16-21-58-31.png" width="100">
+<img src="2021/2021-05-15/images/keep_2021-05-15-23-41-25.png" width="100">
+<img src="2021/2021-05-14/images/keep_2021-05-14-14-03-36.png" width="100">
 
 -----
 -----
 
 ***
+
+ ## 2021-06-01
+<img src="2021/2021-06-01/images/keep_2021-06-02-00-45-51.png" width="400">
+
+Keywords: Shape creation, contours, waves
+ 
+
+Made using P5.js. | [Code](2021/2021-06-01/) | [Top](#daily-sketches) 
+
+-----
+
  ## 2021-05-31
 <img src="2021/2021-05-31/images/keep_2021-05-31-10-35-15.png" width="400">
 

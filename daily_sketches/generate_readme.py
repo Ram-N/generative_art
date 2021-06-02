@@ -9,6 +9,7 @@ Output: README.md (placed in the correct directory)
 """
 
 import sys, getopt
+import re
 from pathlib import Path
 
 
@@ -130,18 +131,13 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
 
 def add_todays_img_to_maintop(main_top, INPUT_DIR):
 
-    new_string = ""
+    pattern = "-=-=\n"
+    pieces = re.split(pattern, main_top, 2)
+
+    new_string = pieces[0]
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
-    for line in main_top.splitlines()[:-5]:
-        new_string += line + "\n"
-
-    new_string += (
-        main_top.splitlines()[-5]
-        + f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR})\n'
-    )
-
-    for line in main_top.splitlines()[-4:]:  # --- and *** etc
-        new_string += "\n" + line
+    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR})\n'
+    new_string += pieces[1]
 
     for line in new_string.splitlines():
         print(line)
@@ -192,6 +188,8 @@ def main(argv):
     main_top, main_bottom = read_main_readme_file()  # store README contents as 2 parts
     todays_text = generate_todays_text(INPUT_DIR, TECH)
     main_top = add_todays_img_to_maintop(main_top, INPUT_DIR)
+
+    print(main_top, len(main_top))
 
     print(todays_text)
     if alter_files:
