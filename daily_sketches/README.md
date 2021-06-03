@@ -4,8 +4,9 @@ Quick sketches created during daily practice. I hope to spend under 1 hour each 
 Some days it takes a lot longer.
 
 Daily Sketches: [2021](2021/)
+-=-=
+[<img src="2021/2021-06-02/images/keep_2021-06-02-22-21-57.png" width="100">](2021/2021-06-02)
 [<img src="2021/2021-06-01/images/keep_2021-06-02-00-45-51.png" width="100">](2021/2021-06-01)
-
 [<img src="2021/2021-05-31/images/keep_2021-05-31-10-35-15.png" width="100">](2021/2021-05-31)
 [<img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="100">](2021/2021-05-30)
 [<img src="2021/2021-05-29/images/keep_2021-05-29-22-56-09.png" width="100">](2021/2021-05-29)
@@ -29,6 +30,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-02
+<img src="2021/2021-06-02/images/keep_2021-06-02-22-21-57.png" width="400">
+
+Keywords: Shape creation, contours, waves, dripping lava
+ 
+
+Made using P5.js. | [Code](2021/2021-06-02/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-01
 <img src="2021/2021-06-01/images/keep_2021-06-02-00-45-51.png" width="400">
