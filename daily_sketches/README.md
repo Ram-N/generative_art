@@ -6,6 +6,9 @@ Some days it takes a lot longer.
 Daily Sketches: [2021](2021/)
 
 -=-=
+
+[<img src="2021/2021-06-04/images/keep_2021-06-04-11-43-27.png" width="100">](2021/2021-06-04)
+
 [<img src="2021/2021-06-03/images/keep_2021-06-03-23-06-39.png" width="100">](2021/2021-06-03)
 [<img src="2021/2021-06-02/images/keep_2021-06-02-22-21-57.png" width="100">](2021/2021-06-02)
 [<img src="2021/2021-06-01/images/keep_2021-06-02-00-45-51.png" width="100">](2021/2021-06-01)
@@ -32,6 +35,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-04
+<img src="2021/2021-06-04/images/keep_2021-06-04-11-43-27.png" width="400">
+
+Keywords: Shape creation, contours, waves, Triangular regions
+ 
+
+Made using P5.js. | [Code](2021/2021-06-04/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-03
 <img src="2021/2021-06-03/images/keep_2021-06-03-23-06-39.png" width="400">
