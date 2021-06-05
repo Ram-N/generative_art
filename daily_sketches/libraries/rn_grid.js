@@ -282,6 +282,7 @@ class Segment { // A segment between two GPts
     }
 
     display(colr, sw = 1) {
+        print('disp', this)
         strokeWeight(sw)
         if (colr) {
             stroke(colr);
