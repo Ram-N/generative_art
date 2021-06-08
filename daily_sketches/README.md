@@ -7,6 +7,8 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-06-06/images/keep_2021-06-08-12-57-32.png" width="100">](2021/2021-06-06)
+
 [<img src="2021/2021-06-05/images/keep_2021-06-05-14-50-47.png" width="100">](2021/2021-06-05)
 
 [<img src="2021/2021-06-04/images/keep_2021-06-04-11-43-27.png" width="100">](2021/2021-06-04)
@@ -36,6 +38,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-06
+<img src="2021/2021-06-06/images/keep_2021-06-08-12-57-32.png" width="400">
+
+Keywords: 25 squares, sizes
+ 
+
+Made using P5.js. | [Code](2021/2021-06-06/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-05
 <img src="2021/2021-06-05/images/keep_2021-06-05-14-50-47.png" width="400">
