@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-06-11/images/keep_2021-06-13-13-47-23.png" width="100">](2021/2021-06-11)
 [<img src="2021/2021-06-10/images/keep_2021-06-12-21-36-49.png" width="100">](2021/2021-06-10)
 [<img src="2021/2021-06-09/images/keep_2021-06-11-03-41-46.png" width="100">](2021/2021-06-09)
 [<img src="2021/2021-06-08/images/keep_2021-06-08-14-02-23.png" width="100">](2021/2021-06-08)
@@ -26,9 +27,9 @@ Daily Sketches: [2021](2021/)
 [<img src="2021/2021-05-25/images/keep_2021-05-25-22-20-01.png" width="100">](2021/2021-05-25)
 [<img src="2021/2021-05-24/images/keep_2021-05-24-21-28-20.png" width="100">](2021/2021-05-24/)
 [<img src="2021/2021-05-23/images/keep_2021-05-24-10-07-53.png" width="100">](2021/2021-05-23)
-[<img src="2021/2021-05-22/images/keep_2021-05-22-19-23-31.png" width="100">] 
-[<img src="2021/2021-05-21/images/keep_2021-05-22-12-40-15.png" width="100">] 
-[<img src="2021/2021-05-20/images/keep0.gif" width="100">] 
+[<img src="2021/2021-05-22/images/keep_2021-05-22-19-23-31.png" width="100">](2021/2021-05-22)
+[<img src="2021/2021-05-21/images/keep_2021-05-22-12-40-15.png" width="100">](2021/2021-05-21)
+[<img src="2021/2021-05-20/images/keep0.gif" width="100">](2021/2021-05-20)
 <img src="2021/2021-05-19/images/keep0.gif" width="100"> 
 <img src="2021/2021-05-18/images/keep_2021-05-18-22-38-16.png" width="100"> 
 <img src="2021/2021-05-17/images/keep_2021-05-17-23-14-25.png" width="100">
@@ -40,6 +41,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-11
+<img src="2021/2021-06-11/images/keep_2021-06-13-13-47-23.png" width="400">
+
+Keywords: Rectangular cuts
+ 
+
+Made using P5.js. | [Code](2021/2021-06-11/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-10
 <img src="2021/2021-06-10/images/keep_2021-06-12-21-36-49.png" width="400">
