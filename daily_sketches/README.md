@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-06-10/images/keep_2021-06-12-21-36-49.png" width="100">](2021/2021-06-10)
 [<img src="2021/2021-06-09/images/keep_2021-06-11-03-41-46.png" width="100">](2021/2021-06-09)
 [<img src="2021/2021-06-08/images/keep_2021-06-08-14-02-23.png" width="100">](2021/2021-06-08)
 [<img src="2021/2021-06-07/images/keep_2021-06-08-13-18-31.png" width="100">](2021/2021-06-07)
@@ -39,6 +40,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-10
+<img src="2021/2021-06-10/images/keep_2021-06-12-21-36-49.png" width="400">
+
+Keywords: Rectangular cuts
+ 
+
+Made using P5.js. | [Code](2021/2021-06-10/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-09
 <img src="2021/2021-06-09/images/keep_2021-06-11-03-41-46.png" width="400">
