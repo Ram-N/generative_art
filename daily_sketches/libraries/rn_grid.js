@@ -1,7 +1,6 @@
 //P5, Grid-related objects, functions and utilities
 // Ram Narasimhan 
-// Updated on 2021-05-13
-
+// Updated on 2021-06-13
 
 
 class HexGrid {
@@ -266,6 +265,28 @@ class IsoTriangle {
 }
 
 
+class Point { // A point on the Grid
+    constructor(x, y, col, row) {
+        this.x = x;
+        this.y = y;
+        this.col = col;
+        this.row = row;
+        this.free = true;
+    }
+
+    display(colr, sw = 1) {
+        strokeWeight(sw)
+        if (colr) {
+            stroke(colr);
+            fill(colr);
+        }
+        circle(this.x, this.y, 4)
+    }
+
+
+}
+
+
 class Segment { // A segment between two GPts
     constructor(startPt, endPt, orientation) {
         let orient;
@@ -384,12 +405,8 @@ class Grid {
             for (let col = 0; col <= this.cols; col++) {
                 let px = this.xMargin + this.xStep * col;
                 let py = this.yMargin + this.yStep * row;
-                let v = createVector(px, py);
-                v.col = col;
-                v.row = row;
-                v.free = true; // all grid points are free initially
-                gridPts.push(v);
-
+                let p = new Point(px, py, col, row)
+                gridPts.push(p);
             }
         }
         return gridPts;
@@ -538,6 +555,8 @@ function getCoords(v) {
 }
 
 //GRID RELATED FUNCTION
+
+
 function outOfBounds(pt) {
     if (pt.x < cnv.xMargin) { return 1 }
     if (pt.x > width - cnv.xMargin) { return 1 }
@@ -573,5 +592,42 @@ function _get4NearestGridPoints(hpt) {
     }
     //print(hpt.x, gpts.length, 'gpts')
     return (gpts)
+}
+
+
+/**
+ * Return a subset of gridPoints on the Edge
+ * @param  {Integer} nRows Number of rows
+ * @param  {Integer} nCols Number of columns
+ */
+function getEdgeGridPoints(grid) {
+    let edgePts = [];
+
+
+    //North Wall
+    for (let col = 0; col <= grid.cols; col++) {
+        pt = grid.getGPt(col, 0)
+        edgePts.push(pt)
+    }
+
+    //East Wall
+    for (let row = 0; row <= grid.rows; row++) {
+        pt = grid.getGPt(grid.cols, row)
+        edgePts.push(pt)
+    }
+
+    //South Wall
+    for (let col = 0; col <= grid.cols; col++) {
+        pt = grid.getGPt(col, grid.rows)
+        edgePts.push(pt)
+    }
+
+    //West Wall
+    for (let row = 0; row <= grid.rows; row++) {
+        pt = grid.getGPt(0, row)
+        edgePts.push(pt)
+    }
+
+    return edgePts;
 }
 
