@@ -70,3 +70,5 @@ brickRed = "#cb4154" // brickred
 take5 = ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"];
 rainbowDash = ["#ee4035", "#f37736", "#fdf498", "#7bc043", "#0392cf"];
 cappuccino = ["#4b3832", "#854442", "#fff4e6", "#3c2f2f", "#be9b7b"];
+
+palList = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys]

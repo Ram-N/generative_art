@@ -643,9 +643,8 @@ function getCircleGPts(grid, centerPt, radius) {
     let circlePts = [];
 
     //radius is in Grid coordinates, not real world xy coords
-
     for (gpt of grid.points) {
-        d = dist(gpt.col, gpt.row, centerPt.col, centerPt.col)
+        d = dist(gpt.col, gpt.row, centerPt.col, centerPt.row)
         if (d < radius) {
             circlePts.push(gpt)
             pt.circle = 'true'
