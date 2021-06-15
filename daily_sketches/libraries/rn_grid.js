@@ -1,6 +1,6 @@
 //P5, Grid-related objects, functions and utilities
 // Ram Narasimhan 
-// Updated on 2021-06-13
+// Updated on 2021-06-15
 
 
 class HexGrid {
@@ -594,7 +594,6 @@ function _get4NearestGridPoints(hpt) {
     return (gpts)
 }
 
-
 /**
  * Return a subset of gridPoints on the Edge
  * @param  {Integer} nRows Number of rows
@@ -607,6 +606,7 @@ function getEdgeGridPoints(grid) {
     //North Wall
     for (let col = 0; col <= grid.cols; col++) {
         pt = grid.getGPt(col, 0)
+        pt.wall = 'N'
         edgePts.push(pt)
     }
 
@@ -614,20 +614,43 @@ function getEdgeGridPoints(grid) {
     for (let row = 0; row <= grid.rows; row++) {
         pt = grid.getGPt(grid.cols, row)
         edgePts.push(pt)
+        pt.wall = 'E'
     }
 
     //South Wall
     for (let col = 0; col <= grid.cols; col++) {
         pt = grid.getGPt(col, grid.rows)
         edgePts.push(pt)
+        pt.wall = 'S'
     }
 
     //West Wall
     for (let row = 0; row <= grid.rows; row++) {
         pt = grid.getGPt(0, row)
         edgePts.push(pt)
+        pt.wall = 'W'
     }
 
     return edgePts;
+}
+
+/**
+ * Return a subset of gridPoints within a Specified Circle
+ * @param  {GridPt} centerPt the center of the circle
+ * @param  {Integer or Float} radius in grid units
+ */
+function getCircleGPts(grid, centerPt, radius) {
+    let circlePts = [];
+
+    //radius is in Grid coordinates, not real world xy coords
+
+    for (gpt of grid.points) {
+        d = dist(gpt.col, gpt.row, centerPt.col, centerPt.col)
+        if (d < radius) {
+            circlePts.push(gpt)
+            pt.circle = 'true'
+        }
+    }
+    return circlePts;
 }
 

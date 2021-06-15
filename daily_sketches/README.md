@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-06-14/images/keep_2021-06-15-02-15-26.png" width="100">](2021/2021-06-14)
 [<img src="2021/2021-06-13/images/keep_2021-06-14-00-28-01.png" width="100">](2021/2021-06-13)
 [<img src="2021/2021-06-12/images/keep_2021-06-13-23-59-17.png" width="100">](2021/2021-06-12)
 [<img src="2021/2021-06-11/images/keep_2021-06-13-13-47-23.png" width="100">](2021/2021-06-11)
@@ -43,6 +44,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-14
+<img src="2021/2021-06-14/images/keep_2021-06-15-02-15-26.png" width="400">
+
+Keywords: Edge conncect, Line segments
+ 
+
+Made using P5.js. | [Code](2021/2021-06-14/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-13
 <img src="2021/2021-06-13/images/keep_2021-06-14-00-28-01.png" width="400">
