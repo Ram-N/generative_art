@@ -35,3 +35,19 @@ function ptDistanceToLine(x, y, x1, y1, x2, y2) {
     var dy = y - yy;
     return Math.sqrt(dx * dx + dy * dy);
 }
+
+
+/* Return 1 if Line between p1p2 intersects a given circle
+          0 otherwise
+    based on dist of line between p1-p2 to circle 
+    This only works for GridPoints.
+*/
+function lineIntersectsCircle(p1, p2, circlePts) {
+    for (c of circlePts) {
+        d = ptDistanceToLine(c.col, c.row, p1.col, p1.row, p2.col, p2.row)
+        if (d < 1) {
+            return 1 // line intersects
+        }
+    }
+    return 0 //does not intersect
+}

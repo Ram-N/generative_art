@@ -280,7 +280,7 @@ class Point { // A point on the Grid
             stroke(colr);
             fill(colr);
         }
-        circle(this.x, this.y, 4)
+        circle(this.x, this.y, 10)
     }
 
 
@@ -604,28 +604,28 @@ function getEdgeGridPoints(grid) {
 
 
     //North Wall
-    for (let col = 0; col <= grid.cols; col++) {
+    for (let col = 1; col <= grid.cols; col++) {
         pt = grid.getGPt(col, 0)
         pt.wall = 'N'
         edgePts.push(pt)
     }
 
     //East Wall
-    for (let row = 0; row <= grid.rows; row++) {
+    for (let row = 1; row <= grid.rows; row++) {
         pt = grid.getGPt(grid.cols, row)
         edgePts.push(pt)
         pt.wall = 'E'
     }
 
     //South Wall
-    for (let col = 0; col <= grid.cols; col++) {
+    for (let col = grid.cols - 1; col >= 0; col--) {
         pt = grid.getGPt(col, grid.rows)
         edgePts.push(pt)
         pt.wall = 'S'
     }
 
     //West Wall
-    for (let row = 0; row <= grid.rows; row++) {
+    for (let row = grid.rows - 1; row >= 0; row--) {
         pt = grid.getGPt(0, row)
         edgePts.push(pt)
         pt.wall = 'W'
