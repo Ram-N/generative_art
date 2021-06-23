@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-06-24/images/keep_2021-06-23-02-11-04.png" width="100">](2021/2021-06-24)
 [<img src="2021/2021-06-23/images/keep_2021-06-22-01-24-24.png" width="100">](2021/2021-06-23)
 [<img src="2021/2021-06-22/images/keep_2021-06-21-11-28-34.png" width="100">](2021/2021-06-22)
 [<img src="2021/2021-06-21/images/keep_2021-06-20-01-28-45.png" width="100">](2021/2021-06-21)
@@ -53,6 +54,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-06-24
+<img src="2021/2021-06-24/images/keep_2021-06-23-02-11-04.png" width="400">
+
+Keywords: Mandala, Concentric, Symmetry, circle division
+ 
+
+Made using P5.js. | [Code](2021/2021-06-24/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-23
 <img src="2021/2021-06-23/images/keep_2021-06-22-01-24-24.png" width="400">
