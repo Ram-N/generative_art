@@ -74,3 +74,9 @@ function create2DArray(cols) {
 function chooseOne(_list) {
     return (random(_list))
 }
+
+function alphaFill(clr, alphaValue) {
+    c = color(clr);
+    c.setAlpha(alphaValue);
+    fill(c);
+}
