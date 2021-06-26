@@ -70,3 +70,7 @@ function create2DArray(cols) {
     }
     return arr;
 }
+
+function chooseOne(_list) {
+    return (random(_list))
+}
