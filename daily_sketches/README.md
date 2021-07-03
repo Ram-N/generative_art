@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-01/images/keep_2021-07-03-13-22-04.png" width="100">](2021/2021-07-01)
 [<img src="2021/2021-06-30/images/keep_2021-07-02-12-37-32.png" width="100">](2021/2021-06-30)
 [<img src="2021/2021-06-29/images/keep_2021-06-29-23-16-03.png" width="100">](2021/2021-06-29)
 [<img src="2021/2021-06-28/images/keep_2021-06-29-23-06-39.png" width="100">](2021/2021-06-28)
@@ -60,6 +61,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-01
+<img src="2021/2021-07-01/images/keep_2021-07-03-13-22-04.png" width="400">
+
+Keywords: Mandala, Symmetry
+ 
+
+Made using P5.js. | [Code](2021/2021-07-01/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-06-30
 <img src="2021/2021-06-30/images/keep_2021-07-02-12-37-32.png" width="400">
