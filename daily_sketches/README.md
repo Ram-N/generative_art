@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-04/images/keep_2021-07-08-02-49-07.png" width="100">](2021/2021-07-04)
 [<img src="2021/2021-07-03/images/keep_2021-07-07-10-46-42.png" width="100">](2021/2021-07-03)
 [<img src="2021/2021-07-02/images/keep_2021-07-06-02-49-24.png" width="100">](2021/2021-07-02)
 [<img src="2021/2021-07-01/images/keep_2021-07-03-13-22-04.png" width="100">](2021/2021-07-01)
@@ -63,6 +64,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-04
+<img src="2021/2021-07-04/images/keep_2021-07-08-02-49-07.png" width="400">
+
+Keywords: Mandala, Grid
+ 
+
+Made using P5.js. | [Code](2021/2021-07-04/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-07-03
 <img src="2021/2021-07-03/images/keep_2021-07-07-10-46-42.png" width="400">
