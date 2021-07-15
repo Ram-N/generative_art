@@ -30,7 +30,7 @@ def add_header(md_string, INPUT_DIR):
         + "\n\n"
     )
 
-    md_string += f"[Code]({INPUT_DIR}) \n\n"
+    # md_string += f"[Code]({INPUT_DIR}) \n\n"
 
     return md_string
 
