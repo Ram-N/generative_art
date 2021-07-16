@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-13/images/keep_2021-07-16-11-49-11.png" width="100">](2021/2021-07-13)
 [<img src="2021/2021-07-12/images/keep_2021-07-15-15-21-05.png" width="100">](2021/2021-07-12)
 [<img src="2021/2021-07-11/images/keep_2021-07-15-14-50-22.png" width="100">](2021/2021-07-11)
 [<img src="2021/2021-07-10/images/keep_2021-07-15-14-45-10.png" width="100">](2021/2021-07-10)
@@ -72,6 +73,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-13
+<img src="2021/2021-07-13/images/keep_2021-07-16-11-49-11.png" width="400">
+
+Keywords: Lines, Edge Connect
+ 
+
+Made using P5.js. | [Code](2021/2021-07-13/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-07-12
 <img src="2021/2021-07-12/images/keep_2021-07-15-15-21-05.png" width="400">
