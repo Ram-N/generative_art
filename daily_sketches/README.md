@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-18/images/keep_2021-07-22-09-26-21.png" width="100">](2021/2021-07-18)
 [<img src="2021/2021-07-17/images/keep_2021-07-18-22-58-37.png" width="100">](2021/2021-07-17)
 [<img src="2021/2021-07-16/images/keep_2021-07-18-22-46-18.png" width="100">](2021/2021-07-16)
 [<img src="2021/2021-07-15/images/keep_2021-07-17-19-04-35.png" width="100">](2021/2021-07-15)
@@ -77,6 +78,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-18
+<img src="2021/2021-07-18/images/keep_2021-07-22-09-26-21.png" width="400">
+
+Keywords: Lines, Edge Connect, shape filling
+ 
+
+Made using P5.js. | [Code](2021/2021-07-18/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-07-17
 <img src="2021/2021-07-17/images/keep_2021-07-18-22-58-37.png" width="400">
