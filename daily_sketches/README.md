@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-22/images/keep_2021-07-26-09-59-06.png" width="100">](2021/2021-07-22)
 [<img src="2021/2021-07-21/images/keep_2021-07-26-09-45-04.png" width="100">](2021/2021-07-21)
 [<img src="2021/2021-07-20/images/keep_2021-07-24-23-09-19.png" width="100">](2021/2021-07-20)
 [<img src="2021/2021-07-19/images/keep_2021-07-23-16-13-27.png" width="100">](2021/2021-07-19)
@@ -81,6 +82,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-22
+<img src="2021/2021-07-22/images/keep_2021-07-26-09-59-06.png" width="400">
+
+Keywords: complex valued functions, color mapping
+ 
+
+Made using P5.js. | [Code](2021/2021-07-22/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-07-21
 <img src="2021/2021-07-21/images/keep_2021-07-26-09-45-04.png" width="400">
