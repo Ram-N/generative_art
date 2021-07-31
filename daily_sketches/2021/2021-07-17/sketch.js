@@ -44,7 +44,7 @@ function setup() {
     aX = cnv.xMargin + xOffset
     yStart = yOffset + cnv.yMargin;
     // draw a series of descending dots
-    strokeWeight(4);
+    //strokeWeight(4);
     bX = aX + xStep;
     bYOffset = 40;
     cYOffset = 30;

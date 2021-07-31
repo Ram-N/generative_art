@@ -7,6 +7,8 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-07-28/images/keep_2021-07-31-09-28-46.png" width="100">](2021/2021-07-28)
+[<img src="2021/2021-07-29/images/keep_2021-07-31-09-22-09.png" width="100">](2021/2021-07-29)
 [<img src="2021/2021-07-29/images/keep_2021-07-31-09-22-09.png" width="100">](2021/2021-07-29)
 [<img src="2021/2021-07-27/images/keep_2021-07-29-16-00-29.png" width="100">](2021/2021-07-27)
 [<img src="2021/2021-07-26/images/keep_2021-07-28-21-22-38.png" width="100">](2021/2021-07-26)
@@ -88,6 +90,28 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-07-28
+<img src="2021/2021-07-28/images/keep_2021-07-31-09-28-46.png" width="400">
+
+Keywords: Edge Connect
+ 
+
+Made using P5.js. | [Code](2021/2021-07-28/) | [Top](#daily-sketches) 
+
+-----
+
+
+ ## 2021-07-29
+<img src="2021/2021-07-29/images/keep_2021-07-31-09-22-09.png" width="400">
+
+Keywords: Edge connect
+ 
+
+Made using P5.js. | [Code](2021/2021-07-29/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-07-29
 <img src="2021/2021-07-29/images/keep_2021-07-31-09-22-09.png" width="400">
