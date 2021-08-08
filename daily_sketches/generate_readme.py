@@ -136,7 +136,7 @@ def add_todays_img_to_maintop(main_top, INPUT_DIR):
 
     new_string = pieces[0] + pattern + "\n"
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
-    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR})'
+    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR} "{INPUT_DIR"})'
     new_string += pieces[1]
 
     for line in new_string.splitlines():
