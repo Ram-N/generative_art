@@ -1,6 +1,46 @@
 //P5, GEOMETRY-related objects, functions and utilities
 // Ram Narasimhan 
-// Updated on 2021-06-15
+// Updated on 2021-08-07
+
+//August: Added a rectangle class
+// function: Is pt inside rectangle
+
+
+class Rectangle { // give NW corner, w and h
+    constructor(x, y, _width, _height) {
+        this.x = x;
+        this.y = y;
+        this.w = _width;
+        this.h = _height;
+        this.minX = x;
+        this.maxX = x + _width;
+        this.minY = y;
+        this.maxY = y + _height;
+    }
+
+    display() {
+        noFill();
+        rect(this.x, this.y, this.w, this.h)
+    }
+
+}
+
+function isPtInsideCircle(pt, centerX, centerY, radius) {
+    if (dist(pt.x, pt.y, centerX, centerY) > radius) {
+        return 0
+    }
+    return 1
+}
+
+
+function isPtInsideRect(pt, rect) {
+    if (pt.x < rect.minX) { return 0 }
+    if (pt.x > rect.maxX) { return 0 }
+    if (pt.y < rect.minY) { return 0 }
+    if (pt.y > rect.maxY) { return 0 }
+    return 1
+}
+
 
 //https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
 function ptDistanceToLine(x, y, x1, y1, x2, y2) {

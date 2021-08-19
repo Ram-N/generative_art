@@ -533,19 +533,52 @@ class Grid {
 } // end of Grid Class
 
 
-function createTileGrid(n, cnv) {
-    // generates a tile grid of n by n, and returns their centers...
-    tiles = [];
-    for (tx = 0; tx < n; tx++) {
-        for (ty = 0; ty < n; ty++) {
-            x = (1 / (n * 2) + tx / (n)) * cnv.width + cnv.xMargin
-            y = (1 / (n * 2) + ty / n) * cnv.height + cnv.yMargin
-            tile = createVector(x, y)
-            tiles.push(tile)
+class TileGrid {
+    /**
+     * Create and Return a grid object
+     * @param  {Integer} nRows Number of rows
+     * @param  {Integer} nCols Number of columns
+     */
+    constructor(nRows, nCols, cWidth, cHeight, canvasXMargin, canvasYMargin) {
+        this.rows = nRows;
+        this.cols = nCols;
+        this.tw = cWidth / nCols;
+        this.th = cHeight / nRows;
+        this.tiles = this.createTiles(cWidth, cHeight, canvasXMargin, canvasYMargin);
+    }
+
+    createTiles(cWidth, cHeight, canvasXMargin, canvasYMargin) {
+        // generates a tile grid of m by n, and returns their centers...
+        let tiles = [];
+        for (let tx = 0; tx < this.cols; tx++) {
+            for (let ty = 0; ty < this.rows; ty++) {
+                let x = this.tw * tx + cnv.xMargin
+                let y = this.th * ty + cnv.yMargin
+                tiles.push(createVector(x, y))
+            }
+        }
+        return tiles
+    }
+
+    getTile(xloc, yloc) {
+        // get the tile that any point belongs to
+        let tx = int((xloc - cnv.xMargin) / this.tw)
+        let ty = int((yloc - cnv.yMargin) / this.th)
+        return ({ tx: tx, ty: ty })
+    }
+
+    renderTileGrid() {
+        noFill();
+        for (let t of this.tiles) {
+            rect(t.x, t.y, this.tw, this.th)
         }
     }
-    return tiles
+
+
 }
+
+
+
 
 
 function getCoords(v) {
@@ -653,3 +686,113 @@ function getCircleGPts(grid, centerPt, radius) {
     return circlePts;
 }
 
+
+class PanelGrid {
+    /**
+     * Create and Return a Panel object
+     * @param: cnv
+     * @param  {Integer} colVector
+     * @param  {Integer} rowVector - fractions of how to split cnv.height
+     **/
+    constructor(cnv, colSplit, rowSplit) {
+        this.panels = this.createPanels(cnv, colSplit, rowSplit);
+    }
+
+
+    createPanels(cnv, colSplit, rowSplit) {
+        let panels = [];
+        let cumulative_x = cnv.xMargin;
+
+        let vec = this.makePanelVectors(colSplit, rowSplit);
+        let colVector = vec.colVector;
+        let rowVector = vec.rowVector;
+
+        //rowVector and colVector total to one and are fractions.
+        for (let px of colVector) {
+            let pw = px * cnv.width
+            let cumulative_y = cnv.yMargin;
+            for (let py of rowVector) {
+                let ph = py * cnv.height
+                let x = cumulative_x;
+                let y = cumulative_y;
+                let panel = createVector(x, y);
+                panel.pw = pw;
+                panel.ph = ph;
+                panels.push(panel)
+                cumulative_y += ph
+            }
+            cumulative_x += pw
+        }
+        return panels
+    }
+
+
+    /* function takes in any vector, and returns fractions to help in splitting
+    */
+    makePanelVectors(colSplit, rowSplit) {
+        let rv = [];
+        let cv = [];
+
+        var colSum = colSplit.reduce(function (a, b) { return a + b; }, 0);
+        var rowSum = rowSplit.reduce(function (a, b) { return a + b; }, 0);
+        if (colSum == 1) {
+            cv = colSplit
+        }
+        if (colSum < 1) {
+            cv = colSplit;
+            cv.push(1 - colSum)
+        }
+        if (colSum > 1) {
+            cv = colSplit.map(function (x) { return x / colSum });
+        }
+
+        if (rowSum == 1) {
+            rv = rowSplit;
+        }
+        if (rowSum < 1) {
+            rv = rowSplit;
+            rv.push(1 - rowSum)
+        }
+        if (rowSum > 1) {
+            rv = rowSplit.map(function (x) { return x / rowSum });
+        }
+
+
+        return ({
+            colVector: cv,
+            rowVector: rv
+        })
+    }
+
+
+    getPanel(xloc, yloc) {
+        // get the tile that any point belongs to
+        let tx = int((xloc - cnv.xMargin) / this.tw)
+        let ty = int((yloc - cnv.yMargin) / this.th)
+        return ({ tx: tx, ty: ty })
+    }
+
+    renderPanelGrid(sw = 5) {
+        // noFill();
+        push();
+        drawingContext.shadowOffsetX = 5;
+        drawingContext.shadowOffsetY = -5;
+        drawingContext.shadowBlur = 10;
+        for (let p of this.panels) {
+            let from = color(random(palette));
+            let to = color(random(palette2));
+            colorMode(HSB); // Try changing to HSB.
+            let interB = lerpColor(from, to, 0.66);
+            fill(interB)
+            drawingContext.shadowColor = random(palette);
+            rect(p.x, p.y, p.pw, p.ph)
+            strokeWeight(sw);
+            stroke(params.bgColor)
+            rect(p.x, p.y, p.pw, p.ph)
+        }
+        pop();
+
+    }
+
+
+}
