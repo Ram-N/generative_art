@@ -52,6 +52,12 @@ Here are a few Python-based GenArt repos that I like, admire, and am inspired by
 - https://github.com/houseofleft/generative_python_scripts
 - https://github.com/JakobGlock/Generative-Art
 
+
+### Clojure Repos
+
+- https://github.com/shimmering-void/sketches (with links to Tutorials)
+
+
 ## Video Tutorials (YouTube)
 
 - Eric Davidson: - https://github.com/erdavids?tab=repositories
