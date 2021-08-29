@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-08-26/images/keep_2021-08-28-20-07-21.png" width="100">](2021/2021-08-26 "2021-08-26")
 [<img src="2021/2021-08-25/images/keep_2021-08-28-18-25-43.png" width="100">](2021/2021-08-25 "2021-08-25")
 [<img src="2021/2021-08-24/images/keep_2021-08-26-22-29-15.png" width="100">](2021/2021-08-24 "2021-08-24")
 [<img src="2021/2021-08-23/images/keep_2021-08-26-22-11-16.png" width="100">](2021/2021-08-23 "2021-08-23")
@@ -116,6 +117,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-08-26
+<img src="2021/2021-08-26/images/keep_2021-08-28-20-07-21.png" width="400">
+
+Keywords: Domain Warping, Perlin Noise, Layers, WEBGL
+ 
+
+Made using P5.js. | [Code](2021/2021-08-26/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-08-25
 <img src="2021/2021-08-25/images/keep_2021-08-28-18-25-43.png" width="400">
