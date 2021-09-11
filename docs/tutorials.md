@@ -42,6 +42,7 @@
 - [Jason Labbe's Portrait Painter](https://www.openprocessing.org/sketch/392202) Very popular on Openprocessing
 - [okazz's image based](https://www.openprocessing.org/sketch/876285): A very clever use of line widths mapped to image pixels
 - [Weidi Zhang's YouTube Tutorial](https://www.youtube.com/watch?v=me04ZrTJqWA)
+
 - [Mona Lisa Portrait via Sine Waves](https://www.reddit.com/r/generative/comments/mwdsm4/image_composed_of_sine_waves/?utm_source=share&utm_medium=web2x&context=3)
     1. Split the original image into square cells and find the average color for each cell
     2. Convert to greyscale    
@@ -49,3 +50,6 @@
     4. The normalized value is the light intensity (brightness)
     5. Build a sine wave for each cell `y(x) = A * sin (2 * PI * f * x)` The amplitude `A` and the frequency `f` are directly proportional to the light intensity. `f` goes from `0 to 2`.
     6. Change the sine waves color according to average colors found at step 1
+
+## 2D Attractors
+[Softology's Writeup on Attractors](https://softologyblog.wordpress.com/2017/03/04/2d-strange-attractors/)

@@ -24,10 +24,10 @@ These resources contain GenArt Lists inside themselves
 - [Jason Webb's Morphogenesis List](https://github.com/jasonwebb/morphogenesis-resources/blob/master/README.md)
 - [Nikita Voloboev's Huge list of Generative Art Links](https://wiki.nikitavoloboev.xyz/art/generative-art)
 
-### 
+## Math and Algorithms related to Generative Art
 - [Mathematics of Animation](https://winkervsbecks.github.io/mathematics-of-animation/#/)
-
-
+- [John W's Pictures and Patterns site](http://www.eddaardvark.co.uk/)
+    -- Includes Spirographs, Line Patterns, Circle Patterns, Coloring in and overall a very good resource.
 
 ## Processing Resources
 
@@ -58,6 +58,10 @@ Here are a few Python-based GenArt repos that I like, admire, and am inspired by
 - https://github.com/shimmering-void/sketches (with links to Tutorials)
 
 
+## P5.js
+- Generative Design - Companion site to the Book, with working code on every piece of the gallery (http://www.generative-gestaltung.de/2/)
+
+
 ## Video Tutorials (YouTube)
 
 - Eric Davidson: - https://github.com/erdavids?tab=repositories
@@ -73,12 +77,6 @@ I really like [Eric's videos on YouTube](https://www.youtube.com/c/TheBuffED/vid
  -2. [Generative Design: Visualize, Program, and Create with Processing](https://www.amazon.com/Generative-Design-Visualize-Program-Processing/dp/1616890770/ref=sr_1_2?dchild=1&keywords=generative+design&qid=1596110874&sr=8-2) Authors: Hartmut Bohnacker, Benedikt Gross, Julia Laub, Claudius Lazzeroni (Editor)
 
 - 3. [Airtable's List of over 150 Books](https://airtable.com/shrugbQMDGVNvArMT/tblSrU1fNAykSMyXU)
-
-
-
-## P5.js
-- Generative Design - Companion site to the Book, with working code on every piece of the gallery (http://www.generative-gestaltung.de/2/)
-
 
 
 ## Images and Portraits:
