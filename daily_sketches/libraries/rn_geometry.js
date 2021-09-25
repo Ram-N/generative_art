@@ -8,7 +8,11 @@ List of functions available
 isPtInsideCircle
 isPtInsideRect
 ptDistanceToLine
-getinBetweenPtOnLine - given two points
+getInbetweenPtOnLine - given two points, get a pt on this line, distance fraction m away.
+
+  returns the x,y or the intersection point, if they exist.display
+intersectionPtOf2Lines(line1StartX, line1StartY, line1EndX, line1EndY, line2StartX, line2StartY, line2EndX, line2EndY) 
+
 
 */
 
@@ -108,7 +112,7 @@ function lineIntersectsCircle(p1, p2, circlePts) {
 The following function returns the x,y or the intersection point, if they exist.display
 https://jsfiddle.net/justin_c_rounds/Gd2S2/light/
 */
-function checkLineIntersection(line1StartX, line1StartY, line1EndX, line1EndY, line2StartX, line2StartY, line2EndX, line2EndY) {
+function intersectionPtOf2Lines(line1StartX, line1StartY, line1EndX, line1EndY, line2StartX, line2StartY, line2EndX, line2EndY) {
     // if the lines intersect, the result contains the x and y of the intersection (treating the lines as infinite) and booleans for whether line segment 1 or line segment 2 contain the point
     var denominator, a, b, numerator1, numerator2, result = {
         x: null,
@@ -147,9 +151,11 @@ function checkLineIntersection(line1StartX, line1StartY, line1EndX, line1EndY, l
     return result;
 };
 
+
+
 //xt, yt = (((1 - t) * x0 + t * x1), ((1 - t) * y0 + t * y1))
 //give 2 points p0 and p1, find a third pt that is t (0<t<1) away
-function getinBetweenPtOnLine(x0, y0, x1, y1, t) {
+function getInbetweenPtOnLine(x0, y0, x1, y1, t) {
 
     xt = (1 - t) * x0 + t * x1
     yt = (1 - t) * y0 + t * y1
