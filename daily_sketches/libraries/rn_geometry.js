@@ -1,9 +1,17 @@
 //P5, GEOMETRY-related objects, functions and utilities
 // Ram Narasimhan 
-// Updated on 2021-08-07
+// Updated on 2021-09-24
 
-//August: Added a rectangle class
-// function: Is pt inside rectangle
+/*
+List of functions available
+
+isPtInsideCircle
+isPtInsideRect
+ptDistanceToLine
+getinBetweenPtOnLine - given two points
+
+*/
+
 
 
 class Rectangle { // give NW corner, w and h
@@ -24,6 +32,9 @@ class Rectangle { // give NW corner, w and h
     }
 
 }
+
+
+
 
 function isPtInsideCircle(pt, centerX, centerY, radius) {
     if (dist(pt.x, pt.y, centerX, centerY) > radius) {
@@ -135,3 +146,12 @@ function checkLineIntersection(line1StartX, line1StartY, line1EndX, line1EndY, l
     // if line1 and line2 are segments, they intersect if both of the above are true
     return result;
 };
+
+//xt, yt = (((1 - t) * x0 + t * x1), ((1 - t) * y0 + t * y1))
+//give 2 points p0 and p1, find a third pt that is t (0<t<1) away
+function getinBetweenPtOnLine(x0, y0, x1, y1, t) {
+
+    xt = (1 - t) * x0 + t * x1
+    yt = (1 - t) * y0 + t * y1
+    return ({ x: xt, y: yt })
+}
