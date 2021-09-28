@@ -46,7 +46,27 @@ red_orange = [
     "#f48c06",
     "#faa307",
     "#ffba08",
-];  // red-orange
+];  // red-orange without darks
+
+
+green_yellow = ["#0b6623",
+    "#9dc183",
+    "#708238",
+    "#c7ea46",
+    "#3f704d",
+    "#00A86B",
+    "#4f7942",
+    "#29AB87",
+    "#8a9a5b",
+    "#98FB98",
+    "#01796F",
+    "#d0f0c0",
+    "#00A572",
+    "#50C878",
+    "#4cbb17",
+    "#39FF14",
+    "#2e8b57",];
+
 
 
 greys = [
@@ -75,4 +95,4 @@ flame = ["#801100", "#B62203", "#D73502", "#FC6400", "#FF7500", "#FAC000"]
 flame_r = ["#FAC000", "#FF7500", "#FC6400", "#D73502", "#B62203", "#801100",]
 
 test_palette = ['black', 'red', 'green', 'blue', 'white']
-palList = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys]
+palList = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow]
