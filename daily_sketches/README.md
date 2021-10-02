@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-10-01/images/keep_2021-10-02-10-05-24.png" width="100">](2021/2021-10-01 "2021-10-01")
 [<img src="2021/2021-09-30/images/keep_2021-09-30-15-36-42.png" width="100">](2021/2021-09-30 "2021-09-30")
 [<img src="2021/2021-09-29/images/keep_2021-09-29-22-43-28.png" width="100">](2021/2021-09-29 "2021-09-29")
 [<img src="2021/2021-09-28/images/keep_2021-09-28-16-32-13.png" width="100">](2021/2021-09-28 "2021-09-28")
@@ -161,6 +162,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+ ## 2021-10-01
+<img src="2021/2021-10-01/images/keep_2021-10-02-10-05-24.png" width="400">
+
+Keywords: Fractal, Subdivision, Shape, In-a-box, 25-squares
+ 
+
+Made using P5.js. | [Code](2021/2021-10-01/) | [Top](#daily-sketches) 
+
+-----
+
 
  ## 2021-09-30
 <img src="2021/2021-09-30/images/keep_2021-09-30-15-36-42.png" width="400">

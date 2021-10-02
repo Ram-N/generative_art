@@ -716,10 +716,13 @@ class PanelGrid {
                 let x = cumulative_x;
                 let y = cumulative_y;
                 let panel = createVector(x, y);
-                panel.pw = pw;
-                panel.ph = ph;
+                panel.x = x;
+                panel.y = y;
+                panel.w = pw;
+                panel.h = ph;
                 panel.cx = x + pw / 2;
                 panel.cy = y + ph / 2;
+
                 panels.push(panel)
 
                 cumulative_y += ph
