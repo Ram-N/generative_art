@@ -694,25 +694,29 @@ class PanelGrid {
      * @param  {Integer} colVector
      * @param  {Integer} rowVector - fractions of how to split cnv.height
      **/
-    constructor(cnv, colSplit, rowSplit) {
-        this.panels = this.createPanels(cnv, colSplit, rowSplit);
+    constructor(cnv, colSplit, rowSplit, margin = 10) {
+        this.panels = this.createPanels(cnv, colSplit, rowSplit, margin);
     }
 
 
-    createPanels(cnv, colSplit, rowSplit) {
+    createPanels(cnv, colSplit, rowSplit, margin) {
         let panels = [];
-        let cumulative_x = cnv.xMargin;
 
         let vec = this.makePanelVectors(colSplit, rowSplit);
         let colVector = vec.colVector;
         let rowVector = vec.rowVector;
+        let rowCount = rowVector.length
+        let colCount = colVector.length
+        let usableWidth = cnv.width - (colCount + 1) * margin
+        let usableHeight = cnv.height - (rowCount + 1) * margin
 
-        //rowVector and colVector total to one and are fractions.
-        for (let px of colVector) {
-            let pw = px * cnv.width
-            let cumulative_y = cnv.yMargin;
+        //rowVector and colVector total to 1.0 and are fractions.
+        let cumulative_x = cnv.xMargin + margin;
+        for (let px of colVector) { // could be [0.2, 0.6, 0.2]
+            let pw = px * usableWidth
+            let cumulative_y = cnv.yMargin + margin;
             for (let py of rowVector) {
-                let ph = py * cnv.height
+                let ph = py * usableHeight;
                 let x = cumulative_x;
                 let y = cumulative_y;
                 let panel = createVector(x, y);
@@ -725,9 +729,9 @@ class PanelGrid {
 
                 panels.push(panel)
 
-                cumulative_y += ph
+                cumulative_y += ph + margin
             }
-            cumulative_x += pw
+            cumulative_x += pw + margin
         }
         return panels
     }
@@ -778,23 +782,23 @@ class PanelGrid {
         return ({ tx: tx, ty: ty })
     }
 
-    renderPanelGrid(sw = 5) {
+    renderPanelGrid(sw = 1, _color = 255) {
         // noFill();
+        fill(_color)
         push();
-        drawingContext.shadowOffsetX = 5;
-        drawingContext.shadowOffsetY = -5;
-        drawingContext.shadowBlur = 10;
+        // drawingContext.shadowOffsetX = 5;
+        // drawingContext.shadowOffsetY = -5;
+        // drawingContext.shadowBlur = 10;
         for (let p of this.panels) {
-            let from = color(random(palette));
-            let to = color(random(palette2));
-            colorMode(HSB); // Try changing to HSB.
-            let interB = lerpColor(from, to, 0.66);
-            fill(interB)
-            drawingContext.shadowColor = random(palette);
-            rect(p.x, p.y, p.pw, p.ph)
+            // let from = color(random(palette));
+            // let to = color(random(palette2));
+            // colorMode(HSB); // Try changing to HSB.
+            // let interB = lerpColor(from, to, 0.66);
+            // fill(interB)
+            // drawingContext.shadowColor = random(palette);
             strokeWeight(sw);
-            stroke(params.bgColor)
-            rect(p.x, p.y, p.pw, p.ph)
+            // stroke(params.bgColor)
+            rect(p.x, p.y, p.w, p.h)
         }
         pop();
 

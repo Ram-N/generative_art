@@ -354,7 +354,7 @@ Made using P5.js. | [Code](2021/2021-09-16/) | [Top](#daily-sketches)
  ## 2021-09-15
 <img src="2021/2021-09-15/images/keep_2021-09-16-21-20-15.png" width="400">
 
-Keywords: Spirograph, Mandala
+Keywords: Spirograph, Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-09-15/) | [Top](#daily-sketches) 
@@ -365,7 +365,7 @@ Made using P5.js. | [Code](2021/2021-09-15/) | [Top](#daily-sketches)
  ## 2021-09-14
 <img src="2021/2021-09-14/images/keep_2021-09-15-21-40-33.png" width="400">
 
-Keywords: Spirograph, Mandala
+Keywords: Spirograph, Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-09-14/) | [Top](#daily-sketches) 
@@ -376,7 +376,7 @@ Made using P5.js. | [Code](2021/2021-09-14/) | [Top](#daily-sketches)
  ## 2021-09-13
 <img src="2021/2021-09-13/images/keep_2021-09-14-22-01-43.png" width="400">
 
-Keywords: Spirograph, Mandala
+Keywords: Spirograph, Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-09-13/) | [Top](#daily-sketches) 
@@ -1087,7 +1087,7 @@ Made using P5.js. | [Code](2021/2021-07-11/) | [Top](#daily-sketches)
  ## 2021-07-10
 <img src="2021/2021-07-10/images/keep_2021-07-15-14-45-10.png" width="400">
 
-Keywords: Mandala
+Keywords: Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-07-10/) | [Top](#daily-sketches) 
@@ -1098,7 +1098,7 @@ Made using P5.js. | [Code](2021/2021-07-10/) | [Top](#daily-sketches)
  ## 2021-07-09
 <img src="2021/2021-07-09/images/keep_2021-07-14-21-21-09.png" width="400">
 
-Keywords: Mandala
+Keywords: Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-07-09/) | [Top](#daily-sketches) 
@@ -1109,7 +1109,7 @@ Made using P5.js. | [Code](2021/2021-07-09/) | [Top](#daily-sketches)
  ## 2021-07-08
 <img src="2021/2021-07-08/images/keep_2021-07-14-12-01-52.png" width="400">
 
-Keywords: Mandala
+Keywords: Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-07-08/) | [Top](#daily-sketches) 
@@ -1120,7 +1120,7 @@ Made using P5.js. | [Code](2021/2021-07-08/) | [Top](#daily-sketches)
  ## 2021-07-07
 <img src="2021/2021-07-07/images/keep_2021-07-13-10-43-16.png" width="400">
 
-Keywords: Mandala
+Keywords: Mandalas
  
 
 Made using P5.js. | [Code](2021/2021-07-07/) | [Top](#daily-sketches) 
@@ -1131,7 +1131,7 @@ Made using P5.js. | [Code](2021/2021-07-07/) | [Top](#daily-sketches)
  ## 2021-07-06
 <img src="2021/2021-07-06/images/keep_2021-07-13-10-20-37.png" width="400">
 
-Keywords: Mandala, Grid
+Keywords: Mandalas, Grid
  
 
 Made using P5.js. | [Code](2021/2021-07-06/) | [Top](#daily-sketches) 
@@ -1142,7 +1142,7 @@ Made using P5.js. | [Code](2021/2021-07-06/) | [Top](#daily-sketches)
  ## 2021-07-05
 <img src="2021/2021-07-05/images/keep_2021-07-08-02-56-47.png" width="400">
 
-Keywords: Mandala, Grid
+Keywords: Mandalas, Grid
  
 
 Made using P5.js. | [Code](2021/2021-07-05/) | [Top](#daily-sketches) 
@@ -1153,7 +1153,7 @@ Made using P5.js. | [Code](2021/2021-07-05/) | [Top](#daily-sketches)
  ## 2021-07-04
 <img src="2021/2021-07-04/images/keep_2021-07-08-02-49-07.png" width="400">
 
-Keywords: Mandala, Grid
+Keywords: Mandalas, Grid
  
 
 Made using P5.js. | [Code](2021/2021-07-04/) | [Top](#daily-sketches) 
@@ -1164,7 +1164,7 @@ Made using P5.js. | [Code](2021/2021-07-04/) | [Top](#daily-sketches)
  ## 2021-07-03
 <img src="2021/2021-07-03/images/keep_2021-07-07-10-46-42.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-07-03/) | [Top](#daily-sketches) 
@@ -1175,7 +1175,7 @@ Made using P5.js. | [Code](2021/2021-07-03/) | [Top](#daily-sketches)
  ## 2021-07-02
 <img src="2021/2021-07-02/images/keep_2021-07-06-02-49-24.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-07-02/) | [Top](#daily-sketches) 
@@ -1186,7 +1186,7 @@ Made using P5.js. | [Code](2021/2021-07-02/) | [Top](#daily-sketches)
  ## 2021-07-01
 <img src="2021/2021-07-01/images/keep_2021-07-03-13-22-04.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-07-01/) | [Top](#daily-sketches) 
@@ -1197,7 +1197,7 @@ Made using P5.js. | [Code](2021/2021-07-01/) | [Top](#daily-sketches)
  ## 2021-06-30
 <img src="2021/2021-06-30/images/keep_2021-07-02-12-37-32.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-30/) | [Top](#daily-sketches) 
@@ -1208,7 +1208,7 @@ Made using P5.js. | [Code](2021/2021-06-30/) | [Top](#daily-sketches)
  ## 2021-06-29
 <img src="2021/2021-06-29/images/keep_2021-06-29-23-16-03.png" width="400">
 
-Keywords: Mandala, Symmetry, curved petals
+Keywords: Mandalas, Symmetry, curved petals
  
 
 Made using P5.js. | [Code](2021/2021-06-29/) | [Top](#daily-sketches) 
@@ -1219,7 +1219,7 @@ Made using P5.js. | [Code](2021/2021-06-29/) | [Top](#daily-sketches)
  ## 2021-06-28
 <img src="2021/2021-06-28/images/keep_2021-06-29-23-06-39.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-28/) | [Top](#daily-sketches) 
@@ -1230,7 +1230,7 @@ Made using P5.js. | [Code](2021/2021-06-28/) | [Top](#daily-sketches)
  ## 2021-06-27
 <img src="2021/2021-06-27/images/keep_2021-06-27-22-19-41.png" width="400">
 
-Keywords: Mandala, Symmetry
+Keywords: Mandalas, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-27/) | [Top](#daily-sketches) 
@@ -1241,7 +1241,7 @@ Made using P5.js. | [Code](2021/2021-06-27/) | [Top](#daily-sketches)
  ## 2021-06-26
 <img src="2021/2021-06-26/images/keep_2021-06-26-04-17-04.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry
+Keywords: Mandalas, Concentric, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-26/) | [Top](#daily-sketches) 
@@ -1252,7 +1252,7 @@ Made using P5.js. | [Code](2021/2021-06-26/) | [Top](#daily-sketches)
  ## 2021-06-25
 <img src="2021/2021-06-25/images/keep0.gif" width="400">
 
-Keywords: Mandala, Concentric, Symmetry
+Keywords: Mandalas, Concentric, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-25/) | [Top](#daily-sketches) 
@@ -1263,7 +1263,7 @@ Made using P5.js. | [Code](2021/2021-06-25/) | [Top](#daily-sketches)
  ## 2021-06-24
 <img src="2021/2021-06-24/images/keep_2021-06-23-02-11-04.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry, circle division
+Keywords: Mandalas, Concentric, Symmetry, circle division
  
 
 Made using P5.js. | [Code](2021/2021-06-24/) | [Top](#daily-sketches) 
@@ -1274,7 +1274,7 @@ Made using P5.js. | [Code](2021/2021-06-24/) | [Top](#daily-sketches)
  ## 2021-06-23
 <img src="2021/2021-06-23/images/keep_2021-06-22-01-24-24.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry, circle division
+Keywords: Mandalas, Concentric, Symmetry, circle division
  
 
 Made using P5.js. | [Code](2021/2021-06-23/) | [Top](#daily-sketches) 
@@ -1285,7 +1285,7 @@ Made using P5.js. | [Code](2021/2021-06-23/) | [Top](#daily-sketches)
  ## 2021-06-22
 <img src="2021/2021-06-22/images/keep_2021-06-21-11-28-34.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry, circle division
+Keywords: Mandalas, Concentric, Symmetry, circle division
  
 
 Made using P5.js. | [Code](2021/2021-06-22/) | [Top](#daily-sketches) 
@@ -1296,7 +1296,7 @@ Made using P5.js. | [Code](2021/2021-06-22/) | [Top](#daily-sketches)
  ## 2021-06-21
 <img src="2021/2021-06-21/images/keep_2021-06-20-01-28-45.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry, circle division
+Keywords: Mandalas, Concentric, Symmetry, circle division
  
 
 Made using P5.js. | [Code](2021/2021-06-21/) | [Top](#daily-sketches) 
@@ -1307,7 +1307,7 @@ Made using P5.js. | [Code](2021/2021-06-21/) | [Top](#daily-sketches)
  ## 2021-06-20
 <img src="2021/2021-06-20/images/keep_2021-06-19-03-09-08.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry
+Keywords: Mandalas, Concentric, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-20/) | [Top](#daily-sketches) 
@@ -1318,7 +1318,7 @@ Made using P5.js. | [Code](2021/2021-06-20/) | [Top](#daily-sketches)
  ## 2021-06-19
 <img src="2021/2021-06-19/images/keep_2021-06-18-03-35-59.png" width="400">
 
-Keywords: Mandala, Concentric, Symmetry
+Keywords: Mandalas, Concentric, Symmetry
  
 
 Made using P5.js. | [Code](2021/2021-06-19/) | [Top](#daily-sketches) 
@@ -1439,7 +1439,7 @@ Made using P5.js. | [Code](2021/2021-06-09/) | [Top](#daily-sketches)
  ## 2021-06-08
 <img src="2021/2021-06-08/images/keep_2021-06-08-14-02-23.png" width="400">
 
-Keywords: 25 squares, rotated, sliced with bg color
+Keywords: 25-squares
  
 
 Made using P5.js. | [Code](2021/2021-06-08/) | [Top](#daily-sketches) 
@@ -1450,7 +1450,7 @@ Made using P5.js. | [Code](2021/2021-06-08/) | [Top](#daily-sketches)
  ## 2021-06-07
 <img src="2021/2021-06-07/images/keep_2021-06-08-13-18-31.png" width="400">
 
-Keywords: 25 squares, rotated
+Keywords: 25-squares, rotated
  
 
 Made using P5.js. | [Code](2021/2021-06-07/) | [Top](#daily-sketches) 
@@ -1461,7 +1461,7 @@ Made using P5.js. | [Code](2021/2021-06-07/) | [Top](#daily-sketches)
  ## 2021-06-06
 <img src="2021/2021-06-06/images/keep_2021-06-08-12-57-32.png" width="400">
 
-Keywords: 25 squares, sizes
+Keywords: 25-squares, sizes
  
 
 Made using P5.js. | [Code](2021/2021-06-06/) | [Top](#daily-sketches) 
@@ -1536,7 +1536,7 @@ Made using P5.js. | [Code](2021/2021-05-31/) | [Top](#daily-sketches)
  ## 2021-05-30
 <img src="2021/2021-05-30/images/keep_2021-05-30-23-35-38.png" width="400">
 
-Keywords: Shape creation. LerpColor
+Keywords: Shape creation, LerpColor
  
 
 Made using P5.js. | [Code](2021/2021-05-30/) | [Top](#daily-sketches) 
@@ -1783,7 +1783,7 @@ Made using P5.js. | [Code](2021/2021-05-06/) |
 ## 2021-05-05
 <img src="2021/2021-05-05/images/keep_2021-05-05-15-38-27.png" width="400">
 
-Keywords: Tiles, 25-square, text 
+Keywords: Tiles, 25-squares, text 
 
 Made using P5.js. | [Code](2021/2021-05-05/) | 
 
@@ -1792,7 +1792,7 @@ Made using P5.js. | [Code](2021/2021-05-05/) |
 ## 2021-05-04
 <img src="2021/2021-05-04/images/keep_2021-05-04-19-12-17.png" width="400">
 
-Keywords: Tiles, 25-square, text 
+Keywords: Tiles, 25-squares, text 
 
 Made using P5.js. | [Code](2021/2021-05-04/) | 
 
@@ -1801,7 +1801,7 @@ Made using P5.js. | [Code](2021/2021-05-04/) |
 ## 2021-05-03
 <img src="2021/2021-05-03/images/keep_2021-05-03-19-26-18.png" width="400">
 
-Keywords: Tiles, 25-square, variations-on-a-theme 
+Keywords: Tiles, 25-squares, variations-on-a-theme 
 
 Made using P5.js. | [Code](2021/2021-05-03/) | 
 
@@ -1810,7 +1810,7 @@ Made using P5.js. | [Code](2021/2021-05-03/) |
 ## 2021-05-02
 <img src="2021/2021-05-02/images/keep_2021-05-02-21-23-30.png" width="400">
 
-Keywords: Tiles, 25-square, variations-on-a-theme 
+Keywords: Tiles, 25-squares, variations-on-a-theme 
 
 Made using P5.js. | [Code](2021/2021-05-02/) | 
 
@@ -1968,7 +1968,7 @@ Made using P5.js. | [Code](2021/2021-04-16/)|
 ## 2021-04-15
 <img src="2021/2021-04-15/images/keep_2021-04-15-16-16-42.png" width="400">
 
-Keywords: 10Print variations
+Keywords: 10Print 
  
 
 Made using P5.js. | [Code](2021/2021-04-15/)| 
@@ -1978,7 +1978,7 @@ Made using P5.js. | [Code](2021/2021-04-15/)|
 ## 2021-04-14
 <img src="2021/2021-04-14/images/keep_2021-04-14-20-08-46.png" width="400">
 
-Keywords: 10Print variations
+Keywords: 10Print 
  
 Made using P5.js. | [Code](2021/2021-04-14/)| 
 
@@ -1987,7 +1987,7 @@ Made using P5.js. | [Code](2021/2021-04-14/)|
 ## 2021-04-13
 <img src="2021/2021-04-13/images/keep_2021-04-13-08-38-24.png" width="400">
 
-Keywords: 10Print variations
+Keywords: 10Print 
  
 
 Made using P5.js. | [Code](2021/2021-04-13/)| 
