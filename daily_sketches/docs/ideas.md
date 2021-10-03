@@ -1,10 +1,24 @@
-
-
 # Ideas for future daily sketches
+----
 
 A running of image ideas on what to try next here.
 
-## Space Expansion
+## Single Line
+
+ - Start random, go in one of 8 directions and repeat.
+ - form clusters and then jump to another area, change color
+- Concentric, but connected somehow. Jump and draw another circle. Jump again.
+
+## Complex shapes
+- Cubes, cuboids.
+- Hexagonals
+- triangles stuck together
+- Flower petals
+
+## City Scapes
+Draw random cities buildings.
+
+## Space Expansion - dots and dashes
     Fill rectangle
     Fill rectangles based on growth direction
     Fill 2 diagonal triangles for each rect
@@ -38,9 +52,8 @@ A running of image ideas on what to try next here.
     Rasterize: Size of circles
 
 
-## Single Line, mazelike
-- Waclaw Szpakinski
-  -   One long line all over the canvas, symmetrical
+
+
 ### Echo effects...lines that go parallel "around" fixed shapes
 
 
