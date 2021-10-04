@@ -266,7 +266,7 @@ class IsoTriangle {
 
 
 class Point { // A point on the Grid
-    constructor(x, y, col, row) {
+    constructor(x, y, col = 0, row = 0) {
         this.x = x;
         this.y = y;
         this.col = col;
