@@ -95,4 +95,6 @@ flame = ["#801100", "#B62203", "#D73502", "#FC6400", "#FF7500", "#FAC000"]
 flame_r = ["#FAC000", "#FF7500", "#FC6400", "#D73502", "#B62203", "#801100",]
 
 test_palette = ['black', 'red', 'green', 'blue', 'white']
-palList = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow]
+allpalettes = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow, flame]
+
+palList = [rainbowDash, take5, cappuccino, purples, melons, red_orange, green_yellow, flame]

@@ -45,6 +45,7 @@ fi
 
 #add README file in daily_sketches
 git add ../README.md
+git add ../keywords.md
 git add ../docs/*.md
 
 #$3 is the DIRECTORY NAME
