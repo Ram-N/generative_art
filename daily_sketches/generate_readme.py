@@ -78,6 +78,10 @@ def get_nameof_keepfile(INPUT_DIR):
         return "keep0.png"
     else:
         _ctimes = [fname.stat().st_ctime for fname in files]
+        if not _ctimes:
+            print(f"No Images found in {INPUT_DIR}")
+            return
+
         idx = _ctimes.index(max(_ctimes))
         return files[idx].name
 
@@ -109,7 +113,7 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
 
     todays_text = ""
 
-    todays_text += f"\n ## {INPUT_DIR}\n"
+    todays_text += f"\n## {INPUT_DIR}\n"
     if not verbose:
         todays_text += (
             f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
@@ -136,7 +140,7 @@ def add_todays_img_to_maintop(main_top, INPUT_DIR):
 
     new_string = pieces[0] + pattern + "\n"
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
-    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR} "{INPUT_DIR"})'
+    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR} "{INPUT_DIR}")'
     new_string += pieces[1]
 
     for line in new_string.splitlines():

@@ -8,7 +8,8 @@
 - **Hexagons** | [Gallery](https://ram-n.github.io/hexagons-gallery/) | [Repo](https://github.com/Ram-N/hexagons) | [Documentation](https://ram-n.github.io/hexagons/build/html/index.html) | Done using Matplotlib. The repo contains several Jupyter Notebooks, with examples.
 - You might also want to look at the [images thumbnail sheet](https://github.com/Ram-N/generative_art/blob/main/docs/contact_sheet.md), to see if anything interests you, and then go to its directory to find the code.
 
-*Note: When I use Processing, it is almost always in the Python Mode.*
+
+*Note: I use p5.js. If and when I use Processing, it is almost always in the Python Mode.*
 
 This is a repo to store several GenArt attempts. I often use Python (Matplotlib) and Processing to create art sketches.
 
