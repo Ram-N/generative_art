@@ -542,8 +542,8 @@ class TileGrid {
     constructor(nRows, nCols, cWidth, cHeight, canvasXMargin, canvasYMargin) {
         this.rows = nRows;
         this.cols = nCols;
-        this.tw = cWidth / nCols;
-        this.th = cHeight / nRows;
+        this.width = cWidth / nCols;
+        this.height = cHeight / nRows;
         this.tiles = this.createTiles(cWidth, cHeight, canvasXMargin, canvasYMargin);
     }
 
@@ -552,28 +552,54 @@ class TileGrid {
         let tiles = [];
         for (let tx = 0; tx < this.cols; tx++) {
             for (let ty = 0; ty < this.rows; ty++) {
-                let x = this.tw * tx + cnv.xMargin
-                let y = this.th * ty + cnv.yMargin
-                tiles.push(createVector(x, y))
+                let x = this.width * tx + cnv.xMargin
+                let y = this.height * ty + cnv.yMargin
+                let tile = new Point(x, y)
+                tile.row = ty;
+                tile.col = tx;
+                tile.cx = x + this.width / 2;
+                tile.cy = y + this.height / 2;
+                tiles.push(tile)
             }
         }
         return tiles
     }
 
-    getTile(xloc, yloc) {
+    getTile(xloc, yloc, verbose = true) {
         // get the tile that any point belongs to
-        let tx = int((xloc - cnv.xMargin) / this.tw)
-        let ty = int((yloc - cnv.yMargin) / this.th)
-        return ({ tx: tx, ty: ty })
+        let tCol = int((xloc - cnv.xMargin) / this.width)
+        let tRow = int((yloc - cnv.yMargin) / this.height)
+
+
+        for (let tile of this.tiles) {
+            // if (verbose) {
+            //     print(seg.start, seg.end, 'seg s e')
+            // }
+            if ((tile.col == tCol) && (tile.row == tRow)) {
+                return (tile)
+            }
+        }
+        if (verbose) {
+            print('Unable to find tile', tCol, this.cols, tRow, this.rows, xloc, yloc)
+        }
+        return (null)
     }
 
-    renderTileGrid() {
+    renderTileGrid(colr) {
         noFill();
+        if (colr != null) {
+            stroke(colr);
+        }
         for (let t of this.tiles) {
-            rect(t.x, t.y, this.tw, this.th)
+            rect(t.x, t.y, this.width, this.height)
         }
     }
 
+    print() {
+        for (let t of this.tiles) {
+            print(t)
+        }
+    }
 
 }
 
@@ -777,8 +803,8 @@ class PanelGrid {
 
     getPanel(xloc, yloc) {
         // get the tile that any point belongs to
-        let tx = int((xloc - cnv.xMargin) / this.tw)
-        let ty = int((yloc - cnv.yMargin) / this.th)
+        let tx = int((xloc - cnv.xMargin) / this.width)
+        let ty = int((yloc - cnv.yMargin) / this.height)
         return ({ tx: tx, ty: ty })
     }
 
