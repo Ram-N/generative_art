@@ -50,17 +50,18 @@ def read_all_keywords(date_images):
                     # capitalize first letter in multi-word kws
                     t = t.strip(" \t\n\r").title()
 
+                    # alt="alternative text" title="this will be displayed as a tooltip"
                     if t in kwds:
                         kwds[t][0] += 1
                         kwds[t][1].append(_date)
-                        kwds[t][2] += f'[<img src="{file_path}"'
-                        kwds[t][2] += ' width="50">](2021/'
-                        kwds[t][2] += _date + ' "' + _date + '") '
+                        kwds[t][2] += f' <img src="{file_path}" width="50" '
+                        kwds[t][2] += f'title="{_date}">'
+                        # kwds[t][2] += _date + ' "' + _date + '" > '
 
                     # [<img src="2021/2021-06-19/images/keep_2021-06-18-03-35-59.png" width="100">](2021/2021-06-19 "2021-06-19")
 
                     else:
-                        img_str = f'[<img src="{file_path}" width="50">](2021/{_date} "{_date}") '
+                        img_str = f'<img src="{file_path}" width="50" title="{_date}">'
                         kwds[t] = [1, [_date], img_str]
 
     return kwds
