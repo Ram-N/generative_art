@@ -6,7 +6,10 @@
 //Functions in this library
 // cuboid - Draws a cuboid of given dimensions at x, y
 //dimensions: cw, ch, clen. NW corner is x,y
-function cuboid(x, y, clen, cw, ch, pal = Hgreen_yellow, dir = 'R') {
+
+// 4 _perspectives: RAbove, Rbelow, LAbove, LBelow
+// 2 View: Left view or Right View .. where the camera is placed
+function cuboid(x, y, clen, cw, ch, _perspective = 'Above', view = 'L', colr = [0, 100, 70]) {
 
     let hu = 0; let sa = 0; let br = 0;
     let angle = PI / 4;
@@ -14,42 +17,108 @@ function cuboid(x, y, clen, cw, ch, pal = Hgreen_yellow, dir = 'R') {
     translate(x, y)
 
     flip = 1
-    if (dir == 'L') {
+    if (view == 'L') {
         flip = -1
     }
 
-    xnwb = cw * cos(angle) * flip
-    ynwb = cw * sin(angle) * -1
-    xswb = xnwb;
-    yswb = ynwb + ch;
+    //back faces Left ABOVE
+    xnwla = cw * cos(angle) * flip //left above
+    ynwla = cw * sin(angle) * -1
+    xswla = xnwla;
+    yswla = ynwla + ch;
+    xnela = xnwla + clen;
+    ynela = ynwla;
+    xsela = xnela;
+    ysela = ynela + ch;
 
-    xneb = xnwb + clen;
-    yneb = ynwb;
+    //Right Above
+    xnwra = cw * cos(angle);
+    ynwra = -cw * sin(angle);
+    xnera = xnwra + clen;
+    ynera = ynwra;
+    xsera = xnwra + clen;
+    ysera = ynera + ch;
+
+    //Left BELOW
+    xnwlb = -cw * cos(angle) //left below
+    ynwlb = cw * sin(angle)
+    xswlb = xnwlb;
+    yswlb = ynwlb + ch;
+    xnelb = xnwlb + clen;
+    ynelb = ynwlb;
+    xselb = xnelb;
+    yselb = ynelb + ch;
+
+
+
+
+
+    //front face is easier
+    xnwf = 0;
+    ynwf = 0;
     xnef = clen;
     ynef = 0;
-    xseb = xneb;
-    yseb = yneb + ch;
     xsef = clen;
     ysef = ch;
     xswf = 0;
     yswf = ch;
-    hu = 0; sa = 0; br = 0;
-    [hu, sa, br] = random(pal);
+
+
+    hu = colr[0];
+    sa = colr[1];
+    br = colr[2];
     fill(hu, sa, br);
     rect(0, 0, clen, ch) // front plate
-    hu = 0; sa = 0; br = 0;
-    [hu, sa, br] = random(pal);
-    fill(hu, sa * 0.7, br);
-    quad(0, 0, xnwb, ynwb, xneb, yneb, xnef, ynef) // top lid
 
-    hu = 0; sa = 0; br = 0;
-    [hu, sa, br] = random(pal);
-    fill(hu, sa, br * 0.7);
+    hu = colr[0];
+    sa = colr[1];
+    br = colr[2];
+    fill(hu, sa * 0.7, br * 0.4);
+    if (view == 'L') {
+        if (_perspective == 'Above') {
+            //top wall or bottom plate depending on A or B view
+            quad(0, 0, xnwla, ynwla, xnela, ynela, xnef, ynef) // top lid
+        } else { // Left Below
+            quad(0, ch, xswlb, yswlb, xselb, yselb, xsef, ysef) // bottom plate
 
-    if (dir == 'L') {
-        quad(0, 0, xnwb, ynwb, xswb, yswb, xswf, yswf) // side wall
-    } else {
-        quad(xnef, ynef, xneb, yneb, xseb, yseb, xsef, ysef) // side wall
+        }
+    } else { //RIGHT VIEW
+        if (_perspective == 'Above') {
+            //top wall or bottom plate depending on A or B view
+            quad(0, 0, xnwra, ynwra, xnera, ynera, xnef, ynef) // top lid
+        } else { // Below
+            //RIGHT BELOW
+            xnwrb = cw * cos(angle) //left below
+            ynwrb = cw * sin(angle)
+            xswrb = xnwrb;
+            yswrb = ynwrb + ch;
+            xnerb = xnwrb + clen;
+            ynerb = ynwrb;
+            xserb = xnerb;
+            yserb = ynerb + ch;
+            quad(0, ch, xswrb, yswrb, xserb, yserb, xsef, ysef) // bottom plate
+        }
+    }
+
+    fill(hu, 50, br);
+    if (view == 'L') {
+        if (_perspective == 'Above') {
+            quad(0, 0, xnwla, ynwla, xswla, yswla, xswf, yswf) // side wall
+        } else { //Below
+            quad(xnwf, ynwf, xnwlb, ynwlb, xswlb, yswlb, xswf, yswf) // side wall
+            push();
+            strokeWeight(3);
+            line(xnwf, ynwf, xswlb, yswlb)
+            //            line(xnwlb, ynwlb, xswf, yswf)
+            pop();
+        }
+    } else { //RIGHT VIEW
+        if (_perspective == 'Above') {
+            quad(xnef, ynef, xnera, ynera, xsera, ysera, xsef, ysef) // side wall
+        } else {
+            quad(xnef, ynef, xnerb, ynerb, xserb, yserb, xsef, ysef) // side wall
+
+        }
     }
     pop();
 }
