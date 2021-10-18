@@ -1,12 +1,13 @@
 # Daily Sketches
 
-Quick sketches created during daily practice. I hope to spend under 1 hour each day to create these sketches.
-Some days it takes a lot longer.
+Quick sketches created during daily practice. I hope to spend less than 30 minutes to create these sketches.
+Some days it takes longer.
 
 Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2021/2021-10-18/images/keep_2021-10-18-16-54-08.png" width="100">](2021/2021-10-18 "2021-10-18")
 [<img src="2021/2021-10-17/images/keep_2021-10-17-21-02-14.png" width="100">](2021/2021-10-17 "2021-10-17")
 [<img src="2021/2021-10-16/images/keep_2021-10-16-18-37-19.png" width="100">](2021/2021-10-16 "2021-10-16")
 [<img src="2021/2021-10-15/images/keep_2021-10-15-21-26-55.png" width="100">](2021/2021-10-15 "2021-10-15")
@@ -178,6 +179,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+## 2021-10-18
+<img src="2021/2021-10-18/images/keep_2021-10-18-16-54-08.png" width="400">
+
+Keywords: shapes, tiles
+ 
+
+Made using P5.js. | [Code](2021/2021-10-18/) | [Top](#daily-sketches) 
+
+-----
+
 
 ## 2021-10-17
 <img src="2021/2021-10-17/images/keep_2021-10-17-21-02-14.png" width="400">

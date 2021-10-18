@@ -559,10 +559,24 @@ class TileGrid {
                 tile.col = tx;
                 tile.cx = x + this.width / 2;
                 tile.cy = y + this.height / 2;
+                tile.active = 1;
                 tiles.push(tile)
             }
         }
         return tiles
+    }
+
+    //Find tile at given Col and Row CR
+    getTileFromCR(tCol, tRow, verbose = true) {
+        for (let tile of this.tiles) {
+            if ((tile.col == tCol) && (tile.row == tRow)) {
+                return (tile)
+            }
+        }
+        if (verbose) {
+            print('Unable to find tile', tCol, this.cols, tRow, this.rows)
+        }
+        return (null)
     }
 
     getTile(xloc, yloc, verbose = true) {
@@ -570,6 +584,7 @@ class TileGrid {
         let tCol = int((xloc - cnv.xMargin) / this.width)
         let tRow = int((yloc - cnv.yMargin) / this.height)
 
+        print('getTile', xloc, yloc, tCol, tRow)
 
         for (let tile of this.tiles) {
             // if (verbose) {
