@@ -567,14 +567,14 @@ class TileGrid {
     }
 
     //Find tile at given Col and Row CR
-    getTileFromCR(tCol, tRow, verbose = true) {
+    getTileFromCR(tCol, tRow, verbose = false) {
         for (let tile of this.tiles) {
             if ((tile.col == tCol) && (tile.row == tRow)) {
                 return (tile)
             }
         }
         if (verbose) {
-            print('Unable to find tile', tCol, this.cols, tRow, this.rows)
+            print('Unable to find tile', tCol, tRow)
         }
         return (null)
     }

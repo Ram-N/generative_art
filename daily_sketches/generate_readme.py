@@ -45,7 +45,7 @@ def add_images(files, md_string, INPUT_DIR):
     for f in files:
         md_string += "<img src = 'images/" + f.name + "' width = '300'> \n"
 
-    md_string += f"\n\n[More Images]({INPUT_DIR}/images) \n\n"
+    md_string += f"\n\n\n"
 
     return md_string
 
