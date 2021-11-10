@@ -11,6 +11,7 @@ These `daily sketches` which are meant to be quick explorations     on whatever 
 ## Progression of Images that were generated.
 
 <img src = 'images/keep_2021-11-08-19-47-14.png' width = '300'> 
+<img src = 'images/keep_2021-11-08-20-32-02.png' width = '300'> 
 
 
 
