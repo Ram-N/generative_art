@@ -162,6 +162,7 @@ function renderPetal() {
     rad4 = 1 + int(random(4))
     fourthpoint = random() < 0.5;
     touchOrigin = random() < 0.5;
+    spoke2 = int(random(7))
     print(rad4, fourthpoint, touchOrigin)
     for (i = 0; i < octa.n; i++) {
         push();
@@ -182,7 +183,7 @@ function renderPetal() {
             vertex(0, 0);
         }
 
-        vertex(spoke[rad3][p1i].x, spoke[rad3][p1i].y)
+        vertex(spoke[rad3][spoke2].x, spoke[rad3][spoke2].y)
         vertex(apothem[rad2][n1i].x, apothem[rad2][n1i].y)
 
         // print(fourthpoint, n2i, n1i, i % 4)

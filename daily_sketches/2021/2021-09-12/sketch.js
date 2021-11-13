@@ -84,7 +84,7 @@ function sp1(phase, pcount) {
 }
 
 
-
+// These are the correct equations: https://linuxgazette.net/133/luana.html
 //    x(t,R,r,p) = (R-r)*cos(t) + p*cos((R-r)*t/r)
 //   y(t,R,r,p) = (R-r)*sin(t) - p*sin((R-r)*t/r)
 

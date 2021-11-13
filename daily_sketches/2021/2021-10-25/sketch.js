@@ -5,9 +5,6 @@
 Keywords: tiles, truchet
 
 Desc: An assorted tile Grid (varying square sizes) of assorted truchet tiles.
-
-Working on matching sides... right[tileno] & below[tile]
-
 */
 
 
@@ -26,7 +23,7 @@ const params = {
 }
 
 
-S2 = { //1 means it projects out, 0 ow
+south2 = { //1 means it projects out, 0 ow
     0: 0,
     6: 1,
     24: 0,
@@ -44,7 +41,7 @@ S2 = { //1 means it projects out, 0 ow
     255: 1,
 };
 
-E1 = { //1 means it projects out, 0 ow
+east1 = { //1 means it projects out, 0 ow
     0: 0,
     6: 0,
     24: 0,
@@ -150,19 +147,17 @@ function getCandidate(t) {
     if (left && left.toss) {
     }
 
-    //keep only those cands whose S2 and LB's E1 match
+    //keep only those cands whose south2 and LB's east1 match
     if (leftbelow && leftbelow.toss) {
         newCandidates = candidates
         candidates = [];
         for (cand of newCandidates) {
-            if (S2[cand] == E1[leftbelow.toss]) { //keep this
+            if (south2[cand] == east1[leftbelow.toss]) { //keep this
                 candidates.push(cand)
             }
         }
     }
 
-    //print('surviving Candidates after Lbelow', candidates)
-    //if (leftbelow && leftbelow.toss) { print('LB', leftbelow.toss) }
 
     if (above && above.toss) {
         leftCandidates = candidates
@@ -203,6 +198,9 @@ function populateTile(x, y, stepSize, toss = 0) {
 }
 
 function makeTile(tnum, x, y, stepSize) {
+
+
+
 
     pal = random([Hblue_green, Hred_orange, Htake5])
     selected = random(pal);
