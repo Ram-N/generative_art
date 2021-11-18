@@ -48,7 +48,6 @@ function setup() {
     for (p of pgrid.panels) {
         push();
         _box = new Bbox(p.x, p.y, p.w, p.h);
-        //        sineWall(_box, BgParams);
         diagWall(_box, BgParams);
         pop();
     }
