@@ -4,17 +4,131 @@
 // Updated: October 2021
 
 //Functions in this library
+
+/*
+CYL
+PRISM
+cuboid
+
+*/
 // cuboid - Draws a cuboid of given dimensions at x, y
-//dimensions: cw, ch, clen. NW corner is x,y
+//dimensions: cw, ch, clen. Center face is x,y
+
+function swqCircle(x, y, radius1, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        push();
+        translate(x + r, y + r);
+        arc(0, 0, radius1, radius1, 1.5 * PI, 0)
+        pop();
+    }
+}
+
+function seqCircle(x, y, radius1, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        push();
+        translate(x + r, y + r);
+        arc(0, 0, radius1, radius1, PI, 1.5 * PI)
+        pop();
+    }
+}
+
+
+function nwqCircle(x, y, radius1, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        push();
+        translate(x + r, y + r);
+        arc(0, 0, radius1, radius1, 0, PI / 2)
+        pop();
+    }
+}
+
+function neqCircle(x, y, radius1, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        push();
+        translate(x + r, y + r);
+        arc(0, 0, radius1, radius1, PI / 2, PI)
+        pop();
+    }
+}
+
+
+function cyl(x, y, radius1, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        push();
+        translate(x + r, y + r);
+        circle(0, 0, radius1)
+        pop();
+    }
+}
+
+
+
+//from p5js.org, and modified
+function star(x, y, radius1, radius2, npoints, rot = 0, curved = false, repeat = 1) {
+    for (r = 0; r < repeat; r += 1) {
+        let angle = TWO_PI / npoints;
+        let halfAngle = angle / 2.0;
+        push();
+        translate(x + r, y + r);
+        rotate(rot);
+        beginShape();
+        for (let a = 0; a < TWO_PI; a += angle) {
+            let sx = cos(a) * radius2;
+            let sy = sin(a) * radius2;
+            if (curved) {
+                curveVertex(sx, sy);
+            } else {
+                vertex(sx, sy);
+            }
+            sx = cos(a + halfAngle) * radius1;
+            sy = sin(a + halfAngle) * radius1;
+            if (curved) {
+                curveVertex(sx, sy);
+            } else {
+                vertex(sx, sy);
+            }
+        }
+        endShape(CLOSE);
+        pop();
+    }
+}
+
+
+
+function prism(x, y, plen, pw, ph, _perspective = 'Above', view = 'L', colr = [0, 100, 70]) {
+
+    let angle = PI / 6;
+
+    xnera = clen * cos(angle) //left above
+    ynera = clen * sin(angle) * -1
+    xsera = pw / 2 + plen * cos(angle)
+    ysera = ph - plen * sin(angle)
+
+    push();
+    translate(x, y);
+    fill(colr)
+    triangle(0, 0, -pw / 2, ph, pw / 2, ph)
+    hu = colr[0];
+    sa = colr[1];
+    br = colr[2];
+    fill(hu, sa, br * 0.7);
+    quad(0, 0, xnera, ynera, xsera, ysera, pw / 2, ph)
+
+    pop();
+}
+
+
 
 // 4 _perspectives: RAbove, Rbelow, LAbove, LBelow
 // 2 View: Left view or Right View .. where the camera is placed
+//x and y are the center of the front face of the cuboid.
 function cuboid(x, y, clen, cw, ch, _perspective = 'Above', view = 'L', colr = [0, 100, 70]) {
 
     let hu = 0; let sa = 0; let br = 0;
     let angle = PI / 4;
     push();
-    translate(x, y)
+    //go to the nw corner
+    translate(x - clen / 2, y - ch / 2)
 
     flip = 1
     if (view == 'L') {
@@ -106,11 +220,11 @@ function cuboid(x, y, clen, cw, ch, _perspective = 'Above', view = 'L', colr = [
             quad(0, 0, xnwla, ynwla, xswla, yswla, xswf, yswf) // side wall
         } else { //Below
             quad(xnwf, ynwf, xnwlb, ynwlb, xswlb, yswlb, xswf, yswf) // side wall
-            push();
-            strokeWeight(3);
-            line(xnwf, ynwf, xswlb, yswlb)
-            //            line(xnwlb, ynwlb, xswf, yswf)
-            pop();
+            // push();
+            // strokeWeight(3);
+            // line(xnwf, ynwf, xswlb, yswlb)
+            // //            line(xnwlb, ynwlb, xswf, yswf)
+            // pop();
         }
     } else { //RIGHT VIEW
         if (_perspective == 'Above') {

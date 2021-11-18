@@ -161,3 +161,25 @@ function getInbetweenPtOnLine(x0, y0, x1, y1, t) {
     yt = (1 - t) * y0 + t * y1
     return ({ x: xt, y: yt })
 }
+
+
+
+//https://stackoverflow.com/questions/34681457/html5-canvas-bezier-curve-get-all-the-points
+// Given the Start, EndPt and 2 control points on a Bezier curve 
+// get x,y at interval T along the curve (0<=T<=1)
+// The curve starts when T==0 and ends when T==1
+function getCubicBezierXYatPercent(startPt, controlPt1, controlPt2, endPt, percent) {
+    var x = CubicN(percent, startPt.x, controlPt1.x, controlPt2.x, endPt.x);
+    var y = CubicN(percent, startPt.y, controlPt1.y, controlPt2.y, endPt.y);
+    return ({
+        x: x,
+        y: y
+    });
+}
+
+// cubic helper formula
+function CubicN(T, a, b, c, d) {
+    var t2 = T * T;
+    var t3 = t2 * T;
+    return a + (-a * 3 + T * (3 * a - a * T)) * T + (3 * b + T * (-6 * b + b * 3 * T)) * T + (c * 3 - c * 3 * T) * t2 + d * t3;
+}

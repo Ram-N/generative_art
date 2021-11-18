@@ -823,7 +823,7 @@ class PanelGrid {
         return ({ tx: tx, ty: ty })
     }
 
-    renderPanelGrid(sw = 1, _color = 255) {
+    renderPanelGrid(sw = 1, _color = "white") {
         // noFill();
         fill(_color)
         push();
@@ -847,3 +847,12 @@ class PanelGrid {
 
 
 }
+
+//A convenience function to create an NxN panel grid
+function createSquareGrid(rowCount) {
+    //Custom Tiling
+    colSplit = Array(rowCount).fill(1)
+    pgrid = new PanelGrid(cnv, colSplit, colSplit);
+    return pgrid
+}
+

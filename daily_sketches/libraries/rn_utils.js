@@ -1,6 +1,16 @@
 //Use with p5.js sketches. 
 //Ram Narasimhan
-// May 2021
+// November 2021
+
+function draw_border(clr = 0, sw = 20) {
+    push();
+    strokeWeight(sw);
+    stroke(clr);
+    noFill();
+    rect(0, 0, width, height)
+    pop();
+}
+
 
 function keyTyped() {
     // png is much higher quality than jpg
@@ -25,9 +35,10 @@ function keyTyped() {
     }
 }
 
-function replicate(arr, times) {
+//replicate an array rep times
+function replicate(arr, rep) {
     var al = arr.length,
-        rl = al * times,
+        rl = al * rep,
         res = new Array(rl);
     for (var i = 0; i < rl; i++)
         res[i] = arr[i % al];
@@ -35,16 +46,12 @@ function replicate(arr, times) {
 }
 
 
-function draw_border(clr = 0, sw = 20) {
-    push();
-    strokeWeight(sw);
-    stroke(clr);
-    noFill();
-    rect(0, 0, width, height)
-    pop();
-}
 
 function irpm(n) {
+    return int(random(-n, n));
+}
+
+function jitter(n) {
     return int(random(-n, n));
 }
 
@@ -80,3 +87,27 @@ function alphaFill(clr, alphaValue) {
     c.setAlpha(alphaValue);
     fill(c);
 }
+
+//In place sorting of an array using Fisher-Yates (aka Knuth) Shuffle
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
+
+// Usage: 
+//   var arr = [2, 11, 37, 42];
+//   shuffle(arr);
+//   console.log(arr);
