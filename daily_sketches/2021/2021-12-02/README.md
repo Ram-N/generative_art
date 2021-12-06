@@ -7,10 +7,12 @@
 These `daily sketches` which are meant to be quick explorations     on whatever topic interested me on that day. This code is not typically optimized, but I share it as-is     for anyone interested.
 
 <img src = 'images/keep_2021-12-06-11-15-41.png' width = '100'> 
+<img src = 'images/keep_2021-12-06-11-20-33.png' width = '100'> 
 
 ## Progression of Images that were generated.
 
 <img src = 'images/keep_2021-12-06-11-15-41.png' width = '300'> 
+<img src = 'images/keep_2021-12-06-11-20-33.png' width = '300'> 
 
 
 
