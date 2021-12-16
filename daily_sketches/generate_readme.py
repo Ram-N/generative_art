@@ -103,11 +103,12 @@ def check_todays_keywords(INPUT_DIR):
     return (kw_exists, kwds, d_exists, desc)
 
 
-def generate_todays_text(INPUT_DIR, TECH, verbose=False):
+def generate_todays_text(INPUT_DIR, TECH, inside_page=False, verbose=False):
     """
         Generate today's text twice.
         Once for the child directory (more detailed), and
-        once more Today's text in the MAIN file"""
+        once more Today's text in the MAIN file
+    """
 
     keepfile_name = get_nameof_keepfile(INPUT_DIR)
 
@@ -125,9 +126,9 @@ def generate_todays_text(INPUT_DIR, TECH, verbose=False):
     if description_exists and verbose:
         todays_text += f"## Description \n\n{desc} \n\n"
 
-    todays_text += (
-        f"Made using {TECH}. | [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches) \n\n"
-    )
+    todays_text += f"Made using {TECH}. "
+    if not inside_page:
+        todays_text += f"| [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches) \n\n"
     todays_text += f"-----\n\n"
 
     return todays_text
@@ -174,11 +175,12 @@ def main(argv):
     # get all the intermediate images...
     p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
     img_files = [x for x in p if x.is_file()]
-    md_string = ""
 
+    # This is the text buffer to be written to the daily README
+    md_string = ""
     md_string = add_header(md_string, INPUT_DIR)
     md_string = add_images(img_files, md_string, INPUT_DIR)
-    md_string += generate_todays_text(INPUT_DIR, TECH, verbose=True)
+    md_string += generate_todays_text(INPUT_DIR, TECH, inside_page=True, verbose=True)
 
     # New README inside subdir.
     if alter_files:
@@ -190,7 +192,7 @@ def main(argv):
     # Parent README.md
     # Read this file, store its contents, add to it and
     main_top, main_bottom = read_main_readme_file()  # store README contents as 2 parts
-    todays_text = generate_todays_text(INPUT_DIR, TECH)
+    todays_text = generate_todays_text(INPUT_DIR, TECH, inside_page=False)
     main_top = add_todays_img_to_maintop(main_top, INPUT_DIR)
 
     print(main_top, len(main_top))
