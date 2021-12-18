@@ -128,8 +128,8 @@ def generate_todays_text(INPUT_DIR, TECH, inside_page=False, verbose=False):
 
     todays_text += f"Made using {TECH}. "
     if not inside_page:
-        todays_text += f"| [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches) \n\n"
-    todays_text += f"-----\n\n"
+        todays_text += f"| [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches)"
+    todays_text += f"\n\n-----\n\n"
 
     return todays_text
 
