@@ -54,5 +54,6 @@ git add "../2021/$3/*.js"
 git add "../2021/$3/README.md"
 git add "../2021/$3/*.html"
 git add "../2021/$3/images"
+git add "../2021/$3/assets"
 git commit -m "$3/daily_sketch $m"
 
