@@ -2,6 +2,8 @@
 
 Assorted list of resources that I've come across.
 
+[Algorithms](algorithms.md)
+
 ## GenArt Essays
 
 - [Inconvergent's Essay](https://inconvergent.net/generative/) is just fantastic.
