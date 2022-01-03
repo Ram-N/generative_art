@@ -6,19 +6,23 @@
 
 #check to see that the new director $2 doesn't already exist!
 
-if [ ! -d "../2021/$2" ]; then
+readonly YEAR="2022"
+echo $YEAR
+
+
+if [ ! -d "../$YEAR/$2" ]; then
     echo "Latest Directory = $1"
     echo "New Directory for today = $2"
     echo "Will create $2 directory by copying $1 directory. Okay? Abort if not"
     read ok
-    cp -r ../2021/$1 ../2021/$2
+    cp -r ../2021/$1 ../$YEAR/$2
 
 
-    `touch ../2021/$2/todays_notes.txt`
-    `rm ../2021/$2/README.md`
-    rm ../2021/$2/images/*
-    `cd ../2021/$2`
-    echo "Directory 2021/$2 Ready"
+    `touch ../$YEAR/$2/todays_notes.txt`
+    `rm ../$YEAR/$2/README.md`
+    rm ../$YEAR/$2/images/*
+    `cd ../$YEAR/$2`
+    echo "Directory $YEAR/$2 Ready"
 
 else
     echo "Please check inputs... $2 already exists"

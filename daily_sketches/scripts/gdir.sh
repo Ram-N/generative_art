@@ -12,10 +12,13 @@ for (( i=0;i<$ELEMENTS;i++)); do
     echo ${args[${i}]} 
 done
 
+readonly YEAR="2022"
+echo $YEAR
 
-usage() { echo "Usage: $0 [-m <git commit description>] [DIRNAME]" 1>&2; }
 
-while getopts ":s:m:" o; do
+usage() { echo "Usage: $0 [-m <git commit description>] [DIRNAME] [-a]" 1>&2; }
+
+while getopts ":s:m:a:" o; do
     case "${o}" in
         s)
             s=${OPTARG}
@@ -23,6 +26,10 @@ while getopts ":s:m:" o; do
             ;;
         m)
             m=${OPTARG}
+            ;;
+
+        a)
+            $assets=true
             ;;
         *)
             usage
@@ -48,12 +55,18 @@ git add ../README.md
 git add ../keywords.md
 git add ../docs/*.md
 
+
+#if there is a -a flag, then add assets
+if [[ $* == *-a* ]]; then
+    echo 'Adding assets'
+    git add "../$YEAR/$3/assets"
+fi
+
 #$3 is the DIRECTORY NAME
 echo $3
-git add "../2021/$3/*.js"
-git add "../2021/$3/README.md"
-git add "../2021/$3/*.html"
-git add "../2021/$3/images"
-git add "../2021/$3/assets"
+git add "../$YEAR/$3/*.js"
+git add "../$YEAR/$3/README.md"
+git add "../$YEAR/$3/*.html"
+git add "../$YEAR/$3/images"
 git commit -m "$3/daily_sketch $m"
 

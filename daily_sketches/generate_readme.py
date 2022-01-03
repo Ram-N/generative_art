@@ -1,5 +1,5 @@
 """
-2021-04-24
+Updated: 2022-01-01
 Ram Narasimhan
 
 Given a Directory and a few string inputs, automates the generation of README.md for that directory
@@ -62,15 +62,15 @@ def read_main_readme_file():
 
             if line[:3] == "***":
                 flip = 1
-                print("flipping")
+                print("Split Point Found")
 
     return top, bottom  # two parts of the main README file
 
 
-def get_nameof_keepfile(INPUT_DIR):
+def get_nameof_keepfile(CURR_YEAR, INPUT_DIR):
     """If keep0 is there, return that, else return name of the latest file"""
 
-    p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
+    p = Path(CURR_YEAR + "/" + INPUT_DIR + "/images").rglob("keep*.*")
     files = [x for x in p if x.is_file()]
 
     if "keep0.png" in files:
@@ -86,11 +86,11 @@ def get_nameof_keepfile(INPUT_DIR):
         return files[idx].name
 
 
-def check_todays_keywords(INPUT_DIR):
+def check_todays_keywords(CURR_YEAR, INPUT_DIR):
     # open todays_notes file.
     desc = ""
     kw_exists, d_exists = False, False
-    p = Path("2021/" + INPUT_DIR + "/todays_notes.txt")
+    p = Path(CURR_YEAR + "/" + INPUT_DIR + "/todays_notes.txt")
     with open(p, "r") as notes_file:
         for line in notes_file:
             if line[:9] == "Keywords:":
@@ -103,24 +103,24 @@ def check_todays_keywords(INPUT_DIR):
     return (kw_exists, kwds, d_exists, desc)
 
 
-def generate_todays_text(INPUT_DIR, TECH, inside_page=False, verbose=False):
+def generate_todays_text(CURR_YEAR, INPUT_DIR, TECH, inside_page=False, verbose=False):
     """
         Generate today's text twice.
         Once for the child directory (more detailed), and
         once more Today's text in the MAIN file
     """
 
-    keepfile_name = get_nameof_keepfile(INPUT_DIR)
+    keepfile_name = get_nameof_keepfile(CURR_YEAR, INPUT_DIR)
 
     todays_text = ""
 
     todays_text += f"\n## {INPUT_DIR}\n"
     if not verbose:
-        todays_text += (
-            f'<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
-        )
+        todays_text += f'<img src="{CURR_YEAR}/{INPUT_DIR}/images/{keepfile_name}" width="400">\n\n'
 
-    keywords_exist, kwds, description_exists, desc = check_todays_keywords(INPUT_DIR)
+    keywords_exist, kwds, description_exists, desc = check_todays_keywords(
+        CURR_YEAR, INPUT_DIR
+    )
     if keywords_exist:
         todays_text += f"{kwds} \n\n"
     if description_exists and verbose:
@@ -128,31 +128,34 @@ def generate_todays_text(INPUT_DIR, TECH, inside_page=False, verbose=False):
 
     todays_text += f"Made using {TECH}. "
     if not inside_page:
-        todays_text += f"| [Code](2021/{INPUT_DIR}/) | [Top](#daily-sketches)"
+        todays_text += f"| [Code]({CURR_YEAR}/{INPUT_DIR}/) | [Top](#daily-sketches)"
     todays_text += f"\n\n-----\n\n"
 
     return todays_text
 
 
-def add_todays_img_to_maintop(main_top, INPUT_DIR):
+def add_todays_img_to_maintop(main_top, CURR_YEAR, INPUT_DIR, Verbose=False):
 
     pattern = "-=-=\n"
     pieces = re.split(pattern, main_top, 2)
 
     new_string = pieces[0] + pattern + "\n"
-    keepfile_name = get_nameof_keepfile(INPUT_DIR)
-    new_string += f'[<img src="2021/{INPUT_DIR}/images/{keepfile_name}" width="100">](2021/{INPUT_DIR} "{INPUT_DIR}")'
+    keepfile_name = get_nameof_keepfile(CURR_YEAR, INPUT_DIR)
+    new_string += f'[<img src="{CURR_YEAR}/{INPUT_DIR}/images/{keepfile_name}" width="100">]({CURR_YEAR}/{INPUT_DIR} "{INPUT_DIR}")'
     new_string += pieces[1]
 
-    for line in new_string.splitlines():
-        print(line)
+    if Verbose:
+        for line in new_string.splitlines():
+            print(line)
     return new_string
 
 
 def main(argv):
 
     alter_files = True  # turn this to False when debugging
+    # alter_files = False  # turn this to False when debugging
 
+    CURR_YEAR = "2022"
     INPUT_DIR = ""
     try:
         opts, args = getopt.getopt(argv, "hi:")
@@ -173,18 +176,24 @@ def main(argv):
         sys.exit()
 
     # get all the intermediate images...
-    p = Path("2021/" + INPUT_DIR + "/images").rglob("keep*.*")
+    p = Path(CURR_YEAR + "/" + INPUT_DIR + "/images").rglob("keep*.*")
     img_files = [x for x in p if x.is_file()]
+    for imf in img_files:
+        print(imf)
 
     # This is the text buffer to be written to the daily README
     md_string = ""
     md_string = add_header(md_string, INPUT_DIR)
     md_string = add_images(img_files, md_string, INPUT_DIR)
-    md_string += generate_todays_text(INPUT_DIR, TECH, inside_page=True, verbose=True)
+    md_string += generate_todays_text(
+        CURR_YEAR, INPUT_DIR, TECH, inside_page=True, verbose=True
+    )
 
     # New README inside subdir.
     if alter_files:
-        textfile = open("2021/" + INPUT_DIR + "/README.md", "w")  # the subdir README
+        textfile = open(
+            CURR_YEAR + "/" + INPUT_DIR + "/README.md", "w"
+        )  # the subdir README
         textfile.write(md_string)
         textfile.close()
 
@@ -192,12 +201,14 @@ def main(argv):
     # Parent README.md
     # Read this file, store its contents, add to it and
     main_top, main_bottom = read_main_readme_file()  # store README contents as 2 parts
-    todays_text = generate_todays_text(INPUT_DIR, TECH, inside_page=False)
-    main_top = add_todays_img_to_maintop(main_top, INPUT_DIR)
+    todays_text = generate_todays_text(CURR_YEAR, INPUT_DIR, TECH, inside_page=False)
+    main_top = add_todays_img_to_maintop(main_top, CURR_YEAR, INPUT_DIR, Verbose=True)
 
-    print(main_top, len(main_top))
+    # print(main_top, len(main_top))
 
-    print(todays_text)
+    echo_today_text = False
+    if echo_today_text:
+        print(todays_text)
     if alter_files:
         main_md_file = open("README.md", "w")
         main_md_file.write(main_top)
