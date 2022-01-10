@@ -1,6 +1,6 @@
 //P5, Grid-related objects, functions and utilities
 // Ram Narasimhan 
-// Updated on 2021-06-15
+// Updated on 2021-12-25
 
 
 class HexGrid {
@@ -303,11 +303,11 @@ class Segment { // A segment between two GPts
     }
 
     display(colr, sw = 1) {
-        print('disp', this)
         strokeWeight(sw)
         if (colr) {
             stroke(colr);
         }
+        //print('st', this.start, this.start != null)
         if ((this.start) && (this.end)) {
             line(this.start.x, this.start.y, this.end.x, this.end.y)
         }
@@ -325,27 +325,47 @@ function displaySegments(grid, colr = 255, sw = 1) {
 
 /*
 Given any segment, this function will attach its 4 neighboring segments, if they exist.
+The 4 neighbors are: 00, 01, 10, 11
 Else the neighbor is none
 */
 function attachNeighboringSegments(seg, grid) {
 
+    // 0: POinting East, 1: pointing S, 2: pointing W, 3: pointing N
     if ((!seg.start) || (!seg.end)) {
         return
     }
     // see if current seg is vert or horiz
     if (seg.orientation) { //horizontal segment
-        seg.n00 = grid.getSegment(seg.start, grid.getGPt(seg.start.col, seg.start.row - 1))
-        seg.n01 = grid.getSegment(seg.start, grid.getGPt(seg.start.col, seg.start.row + 1))
-        seg.n10 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row - 1))
-        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row + 1))
+        seg.n01 = grid.getSegment(seg.start, grid.getGPt(seg.start.col, seg.start.row + 1)) // v--
+        seg.n02 = grid.getSegment(grid.getGPt(seg.start.col - 1, seg.start.row), seg.start) // <--
+        seg.n03 = grid.getSegment(grid.getGPt(seg.start.col, seg.start.row - 1), seg.start) // ^--
+        seg.n13 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row - 1)) //--^
+        seg.n12 = grid.getSegment(seg.end, grid.getGPt(seg.end.col + 1, seg.end.row)) // -->
+        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row + 1)) //--v
+        seg.startNeighbors = [seg.n03, seg.n02, seg.n01] //03 should start with END
+        seg.startJn = [0, 0, 1]
+        seg.endNeighbors = [seg.n11, seg.n12, seg.n13] //13 is incoming
+        seg.endJn = [1, 1, 0]
+
+        seg.incoming = [seg.n02, seg.n03, seg.n13] // clockwise: from west, from north/west, from north/east 
+        seg.outgoing = [seg.n12, seg.n11, seg.n01] //clockwise: end to east, end to S, start to S
+        seg.neighbors = [seg.n01, seg.n02, seg.n03, seg.n11, seg.n12, seg.n13]
     } else { // vertical
-        seg.n00 = grid.getSegment(seg.start, grid.getGPt(seg.start.col - 1, seg.start.row))
-        seg.n01 = grid.getSegment(seg.start, grid.getGPt(seg.start.col + 1, seg.start.row))
-        seg.n10 = grid.getSegment(seg.end, grid.getGPt(seg.end.col - 1, seg.end.row))
-        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col + 1, seg.end.row))
+        seg.n02 = grid.getSegment(seg.start, grid.getGPt(seg.start.col - 1, seg.start.row))
+        seg.n00 = grid.getSegment(seg.start, grid.getGPt(seg.start.col + 1, seg.start.row))
+        seg.n03 = grid.getSegment(grid.getGPt(seg.start.col, seg.start.row - 1), seg.start)
+        seg.n12 = grid.getSegment(seg.end, grid.getGPt(seg.end.col - 1, seg.end.row))
+        seg.n10 = grid.getSegment(seg.end, grid.getGPt(seg.end.col + 1, seg.end.row))
+        seg.n11 = grid.getSegment(seg.end, grid.getGPt(seg.end.col, seg.end.row + 1))
+        seg.incoming = [seg.n12, seg.n02, seg.n03] // clockwise: West to end, west to start, north to start
+        seg.outgoing = [seg.n00, seg.n10, seg.n11] //clockwise: start to east, end to east, end to S
+        seg.neighbors = [seg.n00, seg.n02, seg.n03, seg.n10, seg.n11, seg.n12]
+        seg.startNeighbors = [seg.n00, seg.n03, seg.n02] //02 is outgoing
+        seg.startJn = [1, 0, 0]
+        seg.endNeighbors = [seg.n10, seg.n11, seg.n12] //default is Endnode, except 12 is incoming
+        seg.endJn = [1, 1, 0]
     }
 
-    seg.neighbors = [seg.n00, seg.n01, seg.n10, seg.n11]
 }
 
 
@@ -355,7 +375,7 @@ class Grid {
      * @param  {Integer} nRows Number of rows
      * @param  {Integer} nCols Number of columns
      */
-    constructor(nRows, nCols, cWidth, cHeight, canvasXMargin, canvasYMargin) {
+    constructor(nRows, nCols, cWidth, cHeight, canvasXMargin, canvasYMargin, createSegs = false) {
         this.rows = nRows;
         this.cols = nCols;
         this.width = cWidth;
@@ -365,8 +385,10 @@ class Grid {
         this.xStep = cWidth / nCols;
         this.yStep = cHeight / nRows;
         print('x y step:', this.xStep, this.yStep)
+
         this.points = this.createGridPoints();
-        this.segments = this.createSegments(); // optional
+
+        if (createSegs) { this.segments = this.createSegments(); } // optional
     }
 
 
@@ -406,6 +428,7 @@ class Grid {
                 let px = this.xMargin + this.xStep * col;
                 let py = this.yMargin + this.yStep * row;
                 let p = new Point(px, py, col, row)
+                p.free = 1;
                 gridPts.push(p);
             }
         }
@@ -584,7 +607,7 @@ class TileGrid {
         let tCol = int((xloc - cnv.xMargin) / this.width)
         let tRow = int((yloc - cnv.yMargin) / this.height)
 
-        print('getTile', xloc, yloc, tCol, tRow)
+        //print('getTile', xloc, yloc, tCol, tRow)
 
         for (let tile of this.tiles) {
             // if (verbose) {
@@ -753,10 +776,14 @@ class PanelGrid {
 
         //rowVector and colVector total to 1.0 and are fractions.
         let cumulative_x = cnv.xMargin + margin;
+        let col = -1
         for (let px of colVector) { // could be [0.2, 0.6, 0.2]
             let pw = px * usableWidth
             let cumulative_y = cnv.yMargin + margin;
+            col += 1
+            let row = -1
             for (let py of rowVector) {
+                row += 1
                 let ph = py * usableHeight;
                 let x = cumulative_x;
                 let y = cumulative_y;
@@ -767,7 +794,8 @@ class PanelGrid {
                 panel.h = ph;
                 panel.cx = x + pw / 2;
                 panel.cy = y + ph / 2;
-
+                panel.row = row
+                panel.col = col
                 panels.push(panel)
 
                 cumulative_y += ph + margin
@@ -849,10 +877,10 @@ class PanelGrid {
 }
 
 //A convenience function to create an NxN panel grid
-function createSquareGrid(rowCount) {
+function createSquareGrid(rowCount, margin = 10) {
     //Custom Tiling
     colSplit = Array(rowCount).fill(1)
-    pgrid = new PanelGrid(cnv, colSplit, colSplit);
+    pgrid = new PanelGrid(cnv, colSplit, colSplit, margin = margin);
     return pgrid
 }
 

@@ -11,10 +11,12 @@ paintPatch
 */
 
 
+//BEGIN DITHERING CODE
 //Coding Train: 
 // https://thecodingtrain.com/CodingChallenges/090-floyd-steinberg-dithering.html
+// Index is the pixel index at position (x,y) in the image
 function imageIndex(img, x, y) {
-    return 4 * (x + y * img.width);
+    return 4 * (x + y * img.width); //integer
 }
 
 function getColorAtindex(img, x, y) {

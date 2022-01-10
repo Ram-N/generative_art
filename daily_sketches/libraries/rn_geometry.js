@@ -164,6 +164,8 @@ function getInbetweenPtOnLine(x0, y0, x1, y1, t) {
 
 
 
+
+
 //https://stackoverflow.com/questions/34681457/html5-canvas-bezier-curve-get-all-the-points
 // Given the Start, EndPt and 2 control points on a Bezier curve 
 // get x,y at interval T along the curve (0<=T<=1)
@@ -182,4 +184,43 @@ function CubicN(T, a, b, c, d) {
     var t2 = T * T;
     var t3 = t2 * T;
     return a + (-a * 3 + T * (3 * a - a * T)) * T + (3 * b + T * (-6 * b + b * 3 * T)) * T + (c * 3 - c * 3 * T) * t2 + d * t3;
+}
+
+//draws a rectilinear SPIRAL
+function drawRectSpiral(count, stepX, stepY) {
+    let xSE1 = 0;
+    let ySE1 = 0;
+    let xSW2 = 0;
+    let ySW2 = 0;
+    let xNW3 = 0;
+    let yNW3 = 0;
+    let xNE4 = 0;
+    let yNE4 = 0;
+    let station = 0;
+    for (let i = 0; i < count; i++) {
+        xSE1 += stepX;
+        xSW2 -= stepX;
+        xNW3 -= stepX;
+        xNE4 += stepX;
+        ySE1 += stepY;
+        ySW2 += stepY;
+        yNW3 -= stepY;
+        yNE4 -= stepY;
+        push();
+        fill('white')
+        translate(width / 2, height / 2);
+        //line(xSE1, ySE1, xSW2 - stepX, ySW2) // South Wall
+        station += 1
+        if (!(station % 5)) { drawSquares(xSE1, ySE1, i); }
+        //line(xSW2 - stepX, ySW2, xNW3 - stepX, yNW3 - stepY); //West Wall
+        station += 1
+        if (!(station % 5)) { drawSquares(xSW2 - stepX, ySW2, i); }
+        //line(xNW3 - stepX, yNW3 - stepY, xNE4 + stepX, yNE4 - stepY); //N wall
+        station += 1
+        if (!(station % 5)) { drawSquares(xNW3 - stepX, yNW3 - stepY, i); }
+        //line(xNE4 + stepX, yNE4 - stepY, xSE1 + stepX, ySE1 + stepY); //East wall
+        station += 1
+        if (!(station % 5)) { drawSquares(xNE4 + stepX, yNE4 - stepY, i); }
+        pop();
+    }
 }

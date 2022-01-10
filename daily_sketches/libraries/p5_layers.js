@@ -11,6 +11,24 @@ diagWall
 brickWall
 */
 
+class Bbox { // A bounding box
+    constructor(x, y, w, h) {
+        this.x = x; // nw corner x
+        this.y = y; //nw y
+        this.h = h;
+        this.w = w;
+    }
+
+    display(colr, sw = 1) {
+        strokeWeight(sw)
+        if (colr) {
+            stroke(colr);
+            fill(colr);
+        }
+        rect(this.x, this.y, this.w, this.h)
+    }
+}
+
 
 function BgLayer(_box, BgParams) {
 
@@ -97,7 +115,7 @@ function brickWall(_box, BgParams) {
 function diagWall(_box, BgParams) {
     BgParams.type = 'diag';
     BgParams.color = random(palette2)
-    BgParams.rows = int(random(5, 15))
+    BgParams.rows = int(random(5, 15));
     BgParams.sw = 3;
     BgParams.size = random(['NW', 'NE', 'SE', 'SW']);
     if (BgParams.rows > 0) {
@@ -105,26 +123,28 @@ function diagWall(_box, BgParams) {
         xStep = yStep * 2
     }
 
+    pal = BgParams.pal;
+
     translate(_box.x, _box.y)
     //stroke(BgParams.color)
     noStroke();
     strokeWeight(BgParams.sw)
-    fill(random(palette2))
+    fill(pal[0]);
     rect(0, 0, _box.w, _box.h);
 
     xMax = _box.w;
     numSteps = 5;
-    numLayers = random([2, 3, 4, 5, 6, 7])
+    numLayers = BgParams.numLayers;
     for (layer = 0; layer < numLayers; layer++) {
 
         yMin = max(_box.h * (0.8 - 0.2 * layer), 0);
         yMax = _box.h * (0.8 - 0.1 * layer);
         yStep = (yMax - yMin) / numSteps; //average y distance
         xStep = (xMax) / numSteps; //average distance
-        fill(random(palette2))
+        fill(pal[layer])
         beginShape();
         vertex(0, 0) // nw corner of the box
-        vertex(_box.w, 0) // nw corner of the box
+        vertex(_box.w, 0) // ne corner of the box
         for (vtx = 0; vtx < numSteps; vtx++) {
             xDist = int(xStep) + jitter(5)
             yDist = int(yStep) + jitter(3)
@@ -135,21 +155,6 @@ function diagWall(_box, BgParams) {
     }
 }
 
-// beginShape()
-// vertex(0, 0)
-// vertex(width, 0)
-// vertex(width, 88) //come down a bit
-// vertex(280, 360) //down more, x less
-// vertex(0, 435) // x=0, y final
-// endShape(CLOSE)
-
-// fill(random(palette2))
-// beginShape()
-// vertex(0, 0)
-// vertex(200, 0)
-// vertex(80, 160)
-// vertex(0, 200)
-// endShape(CLOSE)
 
 
 
@@ -182,23 +187,15 @@ function bubblesLayer(_box, numBubbles, palette) {
 
 }
 
-function coloredPanelBackground() {
-    //Custom Tiling
-    colSplit = Array(10).fill(1)
-    rowSplit = Array(10).fill(1)
-
-    pgrid = new PanelGrid(cnv, colSplit, rowSplit, margin = 0) //rn_grids
-    pgrid.renderPanelGrid(1);
-    pMargin = 0;
-    for (p of pgrid.panels) {
-        _box.x = p.x + pMargin;
-        _box.y = p.y + pMargin;
-        _box.w = p.w - 2 * pMargin;
-        _box.h = p.h - 2 * pMargin;
-        fill(random(random(palList)))
-        rect(p.x, p.y, p.w, p.h)
-        fill(random(random(palList)))
-        triangle(p.x, p.y, p.x, p.y + p.h, p.x + p.w, p.y + p.h)
-    }
-
+function coloredWall(_box, BgParams) {
+    // //Custom Tiling
+    // colSplit = Array(10).fill(1)
+    // rowSplit = Array(10).fill(1)
+    push();
+    translate(_box.x, _box.y)
+    //stroke(BgParams.color)
+    noStroke();
+    fill(random(BgParams.palette))
+    rect(0, 0, _box.w, _box.h);
+    pop();
 }

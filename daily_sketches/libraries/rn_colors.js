@@ -1,3 +1,15 @@
+function skyGradient(xs, ys, xe, ye, cStart, cEnd) {
+
+    noFill();
+    for (let i = ys; i <= ye; i++) {
+        let inter = map(i, ys, ye, 0, 1);
+        let c = lerpColor(cStart, cEnd, inter);
+        stroke(c);
+        line(xs, i, xe, i);
+    }
+
+}
+
 purples = [
     "#7400b8",
     "#6930c3",
@@ -90,6 +102,7 @@ brickRed = "#cb4154" // brickred
 take5 = ["#264653", "#2a9d8f", "#e9c46a", "#f4a261", "#e76f51"];
 rainbowDash = ["#ee4035", "#f37736", "#fdf498", "#7bc043", "#0392cf"];
 cappuccino = ["#4b3832", "#854442", "#fff4e6", "#3c2f2f", "#be9b7b"];
+dark_cappuccino = ["#4b3832", "#854442", "#3c2f2f", "#be9b7b"];
 
 flame = ["#801100", "#B62203", "#D73502", "#FC6400", "#FF7500", "#FAC000"]
 flame_r = ["#FAC000", "#FF7500", "#FC6400", "#D73502", "#B62203", "#801100",]
@@ -97,7 +110,7 @@ flame_r = ["#FAC000", "#FF7500", "#FC6400", "#D73502", "#B62203", "#801100",]
 test_palette = ['black', 'red', 'green', 'blue', 'white']
 allpalettes = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow, flame]
 
-palList = [rainbowDash, take5, cappuccino, purples, melons, red_orange, green_yellow, flame]
+RGBPalList = [rainbowDash, take5, cappuccino, purples, melons, red_orange, green_yellow, flame]
 
 //HSB Palettes
 
@@ -144,3 +157,5 @@ HrainbowDash = [
     [93.12, 65.10416666666666, 75.29411764705883],
     [197.94117647058823, 98.55072463768117, 81.17647058823529],
 ]
+
+palList = [HrainbowDash, Hcappuccino, Htake5, Hred_orange, Hred_yellow, Hblue_green, Hgreen_yellow, Hflame]
