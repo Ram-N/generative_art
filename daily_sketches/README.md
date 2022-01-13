@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2022/2022-01-12/images/keep_2022-01-12-22-57-39.png" width="100">](2022/2022-01-12 "2022-01-12")
 [<img src="2022/2022-01-11/images/keep_2022_01_11.JPG" width="100">](2022/2022-01-11 "2022-01-11")
 [<img src="2022/2022-01-10/images/keep_2022-01-10-21-47-48.png" width="100">](2022/2022-01-10 "2022-01-10")
 [<img src="2022/2022-01-09/images/keep_2022-01-10-11-36-52.png" width="100">](2022/2022-01-09 "2022-01-09")
@@ -330,6 +331,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+## 2022-01-12
+<img src="2022/2022-01-12/images/keep_2022-01-12-22-57-39.png" width="400">
+
+Keywords: Fractal, subdivision, shapes, Genuary2022
+ 
+
+Made using P5.js. | [Code](2022/2022-01-12/) | [Top](#daily-sketches)
+
+-----
+
 
 ## 2022-01-11
 <img src="2022/2022-01-11/images/keep_2022_01_11.JPG" width="400">
