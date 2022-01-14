@@ -583,6 +583,8 @@ class TileGrid {
                 tile.cx = x + this.width / 2;
                 tile.cy = y + this.height / 2;
                 tile.active = 1;
+                tile.width = this.width;
+                tile.height = this.height;
                 tiles.push(tile)
             }
         }
