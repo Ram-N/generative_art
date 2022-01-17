@@ -7,6 +7,7 @@ Daily Sketches: [2021](2021/)
 
 -=-=
 
+[<img src="2022/2022-01-16/images/keep_2022-01-17-11-02-48.png" width="100">](2022/2022-01-16 "2022-01-16")
 [<img src="2022/2022-01-15/images/keep0.mp4" width="100">](2022/2022-01-15 "2022-01-15")
 [<img src="2022/2022-01-14/images/keep_2022-01-14-21-57-32.png" width="100">](2022/2022-01-14 "2022-01-14")
 [<img src="2022/2022-01-13/images/keep1.gif" width="100">](2022/2022-01-13 "2022-01-13")
@@ -334,6 +335,17 @@ Daily Sketches: [2021](2021/)
 -----
 
 ***
+
+## 2022-01-16
+<img src="2022/2022-01-16/images/keep_2022-01-17-11-02-48.png" width="400">
+
+Keywords: Genuary2022, colors
+ 
+
+Made using P5.js. | [Code](2022/2022-01-16/) | [Top](#daily-sketches)
+
+-----
+
 
 ## 2022-01-15
 <img src="2022/2022-01-15/images/keep0.mp4" width="400">
