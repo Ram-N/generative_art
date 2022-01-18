@@ -804,9 +804,32 @@ class PanelGrid {
             }
             cumulative_x += pw + margin
         }
+
         return panels
     }
 
+    //Find Panel at given Col and Row CR
+    getPanelFromCR(tCol, tRow, verbose = false) {
+        for (let tile of this.panels) {
+            if ((tile.col == tCol) && (tile.row == tRow)) {
+                return (tile)
+            }
+        }
+        if (verbose) {
+            print('Unable to find Panel', tCol, tRow)
+        }
+        return (null)
+    }
+
+
+    getRandomPtfromCR(col, row) {
+        //find the correct panel//
+        let panel = this.getPanelFromCR(col, row)
+        //print(col, row, panel)
+        let x = panel.x + random(panel.w)
+        let y = panel.y + random(panel.h)
+        return createVector(x, y)
+    }
 
     /* function takes in any vector, and returns fractions to help in splitting
     */

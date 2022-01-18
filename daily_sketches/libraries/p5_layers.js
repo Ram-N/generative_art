@@ -5,6 +5,8 @@
 
 //Functions in this library
 /*
+
+DrawSanddunes
 BgLayer
 sineWall
 diagWall
@@ -29,6 +31,56 @@ class Bbox { // A bounding box
     }
 }
 
+
+function drawDunes(bBox, dune) {
+
+    let amplitude = 7.0; // Height of wave
+    let ygap = 0;
+    let period = 200; // wave periodicity
+    let perturb = 15;
+    let num_waves = 10;
+
+    let ystart = (bBox.y + bBox.h) - dune.verticalWidthofDunes;
+    let yEnd = (bBox.y + bBox.h);
+    let xEnd = (bBox.x + bBox.w);
+
+    //print(ystart, yEnd, 'ys ye')
+    ygap = (yEnd - ystart) / num_waves;
+
+    push();
+    colorMode(HSB)
+    //draw a bunch of sinusoidal lines
+    for (let wave = 0; wave < num_waves; wave++) {
+
+        amplitude = int(5 + random(-3, 7));
+        slope = -1 + random(2);
+        inflection_x = random(width);
+
+        beginShape();
+        fill(25 + wave * 2, 80 + wave * 10, random(90, 100));
+        //fill(234, 206 - 5 * wave, 106 + 10 * wave);
+        stroke(25 + wave * 2, 90, 80);
+        strokeWeight(3);
+        vertex(bBox.x, yEnd); //lower left of Box
+        let yoffset = ystart + wave * ygap;
+        //print('yoff', yoffset)
+        dx = int(random(perturb));
+        dx = 0;
+        for (let x = bBox.x; x < xEnd; x += 5) {
+
+            y = yoffset + sin(TWO_PI / period * (x + dx)) * amplitude;
+            if (y > bBox.y + bBox.h) { y = bBox.y + bBox.h }
+            vertex(x, y);
+            yoffset += slope;
+            if (x > inflection_x) {
+                slope *= -1;
+            }
+        }
+        vertex(xEnd, yEnd);//lower right of Box
+        endShape(CLOSE);
+    }
+    pop();
+}
 
 function BgLayer(_box, BgParams) {
 

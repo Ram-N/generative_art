@@ -123,7 +123,7 @@ function prism(x, y, plen, pw, ph, _perspective = 'Above', view = 'L', colr = [0
 // 4 _perspectives: RAbove, Rbelow, LAbove, LBelow
 // 2 View: Left view or Right View .. where the camera is placed
 //x and y are the center of the front face of the cuboid.
-function cuboid(x, y, clen, cw, ch, colr = [0, 100, 70], _perspective = 'Above', view = 'L') {
+function cuboid(x, y, clen, cw, ch, cubecolor, _perspective = 'Above', view = 'L') {
 
     let hu = 0; let sa = 0; let br = 0;
     let angle = PI / 4;
@@ -179,13 +179,14 @@ function cuboid(x, y, clen, cw, ch, colr = [0, 100, 70], _perspective = 'Above',
     yswf = ch;
 
 
-    hu = colr[0];
-    sa = colr[1];
-    br = colr[2];
-    fill(hu, sa, br);
+    // hu = colr[0];
+    // sa = colr[1];
+    // br = colr[2];
+    fill(cubecolor.face)
     rect(0, 0, clen, ch) // front plate
 
-    fill(hu, sa * 0.7, br * 0.4);
+    //fill(hu, sa * 0.7, br * 0.4);
+    fill(cubecolor.top)
     if (view == 'L') {
         if (_perspective == 'Above') {
             //top wall or bottom plate depending on A or B view
@@ -212,17 +213,13 @@ function cuboid(x, y, clen, cw, ch, colr = [0, 100, 70], _perspective = 'Above',
         }
     }
 
-    fill(hu, 50, br);
+    //fill(hu, 50, br);
+    fill(cubecolor.side)
     if (view == 'L') {
         if (_perspective == 'Above') {
             quad(0, 0, xnwla, ynwla, xswla, yswla, xswf, yswf) // side wall
         } else { //Below
             quad(xnwf, ynwf, xnwlb, ynwlb, xswlb, yswlb, xswf, yswf) // side wall
-            // push();
-            // strokeWeight(3);
-            // line(xnwf, ynwf, xswlb, yswlb)
-            // //            line(xnwlb, ynwlb, xswf, yswf)
-            // pop();
         }
     } else { //RIGHT VIEW
         if (_perspective == 'Above') {
