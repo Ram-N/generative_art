@@ -8,6 +8,7 @@ Archive: Daily Sketches created in: [2021](2021/). *[2021 Gallery](2021.md)*
 
 -=-=
 
+[<img src="2022/2022-01-20/images/keep_2022-01-20-22-51-20.png" width="100">](2022/2022-01-20 "2022-01-20")
 [<img src="2022/2022-01-19/images/keep_2022-01-20-13-48-42.png" width="100">](2022/2022-01-19 "2022-01-19")
 [<img src="2022/2022-01-18/images/keep0.gif" width="100">](2022/2022-01-18 "2022-01-18")
 [<img src="2022/2022-01-17/images/keep_2022-01-17-23-03-40.png" width="100">](2022/2022-01-17 "2022-01-17")
@@ -339,6 +340,17 @@ Archive: Daily Sketches created in: [2021](2021/). *[2021 Gallery](2021.md)*
 -----
 
 ***
+
+## 2022-01-20
+<img src="2022/2022-01-20/images/keep_2022-01-20-22-51-20.png" width="400">
+
+Keywords: Genuary2022, shapes
+ 
+
+Made using P5.js. | [Code](2022/2022-01-20/) | [Top](#daily-sketches)
+
+-----
+
 
 ## 2022-01-19
 <img src="2022/2022-01-19/images/keep_2022-01-20-13-48-42.png" width="400">
