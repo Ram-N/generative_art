@@ -3,11 +3,14 @@
 Quick sketches created during daily practice. I hope to spend less than 30 minutes to create these sketches.
 Some days it takes longer.
 
+**Archive**: Daily Sketches created in: [2021](2021/). **[2021 Gallery](2021.md)**
+
 Daily Sketches: [2022](2022/)
-Archive: Daily Sketches created in: [2021](2021/). *[2021 Gallery](2021.md)*
+**2022 Sketches**
 
 -=-=
 
+[<img src="2022/2022-01-23/images/keep_2022-01-23-23-38-26.png" width="100">](2022/2022-01-23 "2022-01-23")
 [<img src="2022/2022-01-22/images/keep_2022-01-22-23-29-38.png" width="100">](2022/2022-01-22 "2022-01-22")
 [<img src="2022/2022-01-21/images/keep_2022-01-21-23-19-29.png" width="100">](2022/2022-01-21 "2022-01-21")
 [<img src="2022/2022-01-20/images/keep_2022-01-20-22-51-20.png" width="100">](2022/2022-01-20 "2022-01-20")
@@ -35,6 +38,17 @@ Archive: Daily Sketches created in: [2021](2021/). *[2021 Gallery](2021.md)*
 -----
 
 ***
+
+## 2022-01-23
+<img src="2022/2022-01-23/images/keep_2022-01-23-23-38-26.png" width="400">
+
+Keywords: genuary2022, shapes, tiles, flow
+ 
+
+Made using P5.js. | [Code](2022/2022-01-23/) | [Top](#daily-sketches)
+
+-----
+
 
 ## 2022-01-22
 <img src="2022/2022-01-22/images/keep_2022-01-22-23-29-38.png" width="400">
