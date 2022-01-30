@@ -6,7 +6,7 @@
 //Functions in this library
 /*
 imageIndex(img, x, y)
-getAvgPatchColor
+getPatchAvgRGBA
 paintPatch
 */
 
@@ -122,7 +122,7 @@ function rgb2hsl(r, g, b) {
 
 //A patch is a rectangle of image
 //Returns a dictionary of rgba for the patch in question
-function getAvgPatchColor(patch) {
+function getPatchAvgRGBA(patch) {
 
     patch.loadPixels();
     rgb = { r: 0, g: 0, b: 0, a: 0 }
@@ -155,34 +155,119 @@ function getAvgPatchColor(patch) {
 }
 
 
+// PATCH RENDERING FUNCTION
+/*
+A patch can be rendered in ONE TOUCH --> single value or stroke or shape for the whole patch
+or in PATCH SWEEP. In a SWEEP, we need a stepsize for averaging stamps, and then paint each stamp.
+
+Terminology: RenderStamp --> rgb is already single-value.
+
+It may or may not use randomness.
+StokeWeight
+StrokeColor
+Shape - rect, circle, Text, X, or line.
+
+RGB or Black and White 
+*/
+
+function renderStamp(x, y, _directions) {
+
+    _sw = 3
+    bwFlag = 0;
+    rectFlag = 0;
+    circleFlag = 0;
+    rgba = _directions['rgba']
+    colr = color(rgba.r, rgba.g, rgba.b)
+
+    push();
+
+    rot_angle = 0;
+    ss = _directions['stepSize'];
+    ss5 = ss / 2;
+    bSlash = false; fSlash = true;
+    if (random() > 0.5) { bSlash = true; fSlash = false }
+
+    if ('strokeWeight' in _directions) {
+        _sw = _directions['strokeWeight']
+    }
+    if ('rotateRandom' in _directions) {
+        if (_directions['rotateRandom']) {
+            rot_angle = random(0, TAU);
+        }
+    }
+    if ('colorMode' in _directions) {
+        if (_directions['colorMode'] == 'BW') {
+            bwFlag = 1;
+            //Y = 0.299R + 0.587G + 0.114B - YUV model
+            colr = rgba.r * 0.299 + rgba.g * 0.587 + rgba.b * 0.114
+            _sw = int(1 + (Math.abs(colr - 128) / 20))
+            if (colr > 128) { bSlash = true; fSlash = false }
+            if (colr <= 128) { bSlash = false; fSlash = true }
+        }
+        if (_directions['colorMode'] == 'HSB') {
+            colorMode(HSB)
+        }
+        if (_directions['colorMode'] == 'RGB_Max') {
+            if ((rgba.r > rgba.g) && (rgba.r > rgba.g)) {
+                colr = color(rgba.r, 0, 0)
+            } else if (rgba.g > rgba.b) {
+                colr = color(0, rgba.g, 0)
+            } else {
+                colr = color(0, 0, rgba.b)
+            }
+
+        }
+    }
+
+    if ('shape' in _directions) {
+        if (_directions['shape'] == 'rect') { rectFlag = 1 }
+        if (_directions['shape'] == 'circle') { circleFlag = 1 }
+        fSlash = false;
+        bSlash = false;
+    }
+
+    translate(x, y);
+    rotate(rot_angle);
+    strokeWeight(_sw);
+    stroke(colr);
+    fill(colr);
+
+    //Line
+    if (fSlash) {
+        line(-ss5, -ss5, ss5, ss5)
+    }
+    if (bSlash) {
+        line(ss5, -ss5, -ss5, ss5)
+    }
+
+    if (rectFlag) {
+        rect(0, 0, ss, ss);
+    }
+    if (circleFlag) {
+        circle(0, 0, ss);
+    }
+
+    pop();
+}
+
+
 function paintPatch(posX, posY, rgb, stepSize) {
 
     push();
     translate(posX, posY);
 
-    //ac = getAvgPatchColor(c)
+    //ac = getPatchAvgRGBA(c)
 
     pc = color(rgb.r, rgb.g, rgb.b)
     stroke(pc);
-    odds = random();
-    //fillProbability(0, pc);
-    if ((stepSize == 20) && (odds < 0.3)) {
-        fill(pc)
-    } else {
-        noFill();
-    }
-    if (odds < 0.3) {
-        strokeWeight(stepSize / 8);
-    } else {
-        strokeWeight(stepSize / 6);
-    }
+    fill(pc);
 
     odds = random();
-    // if (odds < 0.5) {
-    //   rect(0, 0, stepSize, stepSize);
-    // } else {
-    ellipse(0, 0, stepSize, stepSize);
-    // }
+    if (odds < 0.5) {
+        rect(0, 0, stepSize, stepSize);
+    } else {
+        ellipse(0, 0, stepSize, stepSize);
+    }
 
     pop();
 }

@@ -8,6 +8,8 @@
 /*
 CYL
 star()
+Usage: star(x, y, radius1, radius2, npoints, rot = 0, curved = false, repeat = 1)
+
 PRISM
 cuboid
 
@@ -312,16 +314,34 @@ class Polygon {
         push();
         translate(this.posX, this.posY);
         rotate(this.rotAngle);
-        stroke(this.col);
         beginShape();
         for (var a = 0; a < TWO_PI; a += this.polyAngle) {
-            var sx = cos(a) * this.dim;
-            var sy = sin(a) * this.dim;
-            vertex(sx, sy);
+            var vx = cos(a) * this.dim;
+            var vy = sin(a) * this.dim;
+            vertex(vx, vy);
         }
         endShape(CLOSE);
         pop();
     }
+
+    //@param: vSet= 012 for top. [0, 1, 2]
+    renderSlice(vSet) {
+
+        push();
+        translate(this.posX, this.posY);
+        rotate(this.rotAngle);
+        beginShape();
+        vertex(0, 0)
+        for (var v of vSet) {
+            vertex(this.vertices[v].x, this.vertices[v].y);
+        }
+        endShape(CLOSE);
+
+
+        pop();
+    }
+
+
 
     // updating current rotation angle (radians)
     rotate(rotAngle) {
@@ -405,7 +425,7 @@ class Polygon {
         }
         return edgePts;
     }
-}
+} //Polygon Class 
 
 /////////////////////////
 

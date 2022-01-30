@@ -17,8 +17,15 @@ class Bbox { // A bounding box
     constructor(x, y, w, h) {
         this.x = x; // nw corner x
         this.y = y; //nw y
+        this.cx = x + w / 2
+        this.cy = y + h / 2
         this.h = h;
         this.w = w;
+        this.height = h;
+        this.width = w;
+        this.xe = x + w;
+        this.ye = y + h;
+
     }
 
     display(colr, sw = 1) {

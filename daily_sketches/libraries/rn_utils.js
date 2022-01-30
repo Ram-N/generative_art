@@ -88,6 +88,11 @@ function alphaFill(clr, alphaValue) {
     fill(c);
 }
 
+
+// Usage: 
+//   var arr = [2, 11, 37, 42];
+//   shuffleArray(arr);
+//   console.log(arr);
 //In place sorting of an array using Fisher-Yates (aka Knuth) Shuffle
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
@@ -107,7 +112,3 @@ function shuffleArray(array) {
     return array;
 }
 
-// Usage: 
-//   var arr = [2, 11, 37, 42];
-//   shuffle(arr);
-//   console.log(arr);

@@ -107,6 +107,8 @@ dark_cappuccino = ["#4b3832", "#854442", "#3c2f2f", "#be9b7b"];
 flame = ["#801100", "#B62203", "#D73502", "#FC6400", "#FF7500", "#FAC000"]
 flame_r = ["#FAC000", "#FF7500", "#FC6400", "#D73502", "#B62203", "#801100",]
 
+gen2 = ["#2E294E", "#541388", "#F1E9DA", '#FFD400', "#D90368",]
+
 test_palette = ['black', 'red', 'green', 'blue', 'white']
 allpalettes = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow, flame]
 

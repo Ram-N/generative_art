@@ -232,7 +232,7 @@ class IsoTriangle {
         return null
     }
 
-    display(_clr) {
+    display(_clr = 255) {
         strokeWeight(3)
 
         fill(_clr)
@@ -561,13 +561,14 @@ class TileGrid {
      * Create and Return a grid object
      * @param  {Integer} nRows Number of rows
      * @param  {Integer} nCols Number of columns
+     * @param  {Integer} gridWidth Width of the entire TG.
      */
-    constructor(nRows, nCols, cWidth, cHeight, canvasXMargin, canvasYMargin) {
+    constructor(nRows, nCols, gridWidth, cHeight, canvasXMargin, canvasYMargin) {
         this.rows = nRows;
         this.cols = nCols;
-        this.width = cWidth / nCols;
+        this.width = gridWidth / nCols;
         this.height = cHeight / nRows;
-        this.tiles = this.createTiles(cWidth, cHeight, canvasXMargin, canvasYMargin);
+        this.tiles = this.createTiles(gridWidth, cHeight, canvasXMargin, canvasYMargin);
     }
 
     createTiles(cWidth, cHeight, canvasXMargin, canvasYMargin) {

@@ -164,6 +164,32 @@ function getInbetweenPtOnLine(x0, y0, x1, y1, t) {
 
 
 
+//Creates a list of points along the Bezier Curve
+//Specified by bCurve
+function findBezierPoints(bCurve) {
+    var numSlices = bCurve.numSlices;
+    var startPt = bCurve.start;
+    var controlPt1 = bCurve.control1;
+    var controlPt2 = bCurve.control2;
+    var endPt = bCurve.end;
+    var pts = [startPt];
+    var lastPt = startPt;
+    for (var t = 0; t <= numSlices; t++) {
+        // calc another point along the curve
+        var pt = getCubicBezierXYatPercent(startPt, controlPt1, controlPt2, endPt, t / numSlices);
+        // add the pt if it's not already in the pts[] array
+        var dx = pt.x - lastPt.x;
+        var dy = pt.y - lastPt.y;
+        var d = Math.sqrt(dx * dx + dy * dy);
+        var dInt = parseInt(d);
+        if (dInt > 0 || t == numSlices) {
+            lastPt = pt;
+            pts.push(pt);
+        }
+    }
+    return (pts);
+}
+
 
 
 //https://stackoverflow.com/questions/34681457/html5-canvas-bezier-curve-get-all-the-points
