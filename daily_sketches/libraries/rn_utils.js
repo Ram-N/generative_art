@@ -47,7 +47,7 @@ function replicate(arr, rep) {
 
 
 
-function irpm(n) {
+function irpm(n) { //int random plus minus
     return int(random(-n, n));
 }
 

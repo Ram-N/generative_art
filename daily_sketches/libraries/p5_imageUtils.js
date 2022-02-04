@@ -185,7 +185,10 @@ function renderStamp(x, y, _directions) {
     ss = _directions['stepSize'];
     ss5 = ss / 2;
     bSlash = false; fSlash = true;
-    if (random() > 0.5) { bSlash = true; fSlash = false }
+    if (rgba.r > 196) { bSlash = true; fSlash = false }
+
+
+    //if (random() > 0.5) { bSlash = true; fSlash = false }
 
     if ('strokeWeight' in _directions) {
         _sw = _directions['strokeWeight']
@@ -232,12 +235,17 @@ function renderStamp(x, y, _directions) {
     stroke(colr);
     fill(colr);
 
+
+    ts = map(rgba.r, 128, 255, 5, 20)
+    textSize(ts)
     //Line
     if (fSlash) {
-        line(-ss5, -ss5, ss5, ss5)
+        //line(-ss5, -ss5, ss5, ss5)
+        text('1', 0, 0)
     }
     if (bSlash) {
-        line(ss5, -ss5, -ss5, ss5)
+        //line(ss5, -ss5, -ss5, ss5)
+        text('0', 0, 0)
     }
 
     if (rectFlag) {
@@ -270,4 +278,48 @@ function paintPatch(posX, posY, rgb, stepSize) {
     }
 
     pop();
+}
+
+
+
+// _directions = {'red':128, 'blue:200', 'green':220}
+// 128 is the red-cutoff value
+function imgHeatMap(img, _directions) {
+    img.loadPixels();
+
+    for (let y = 0; y < img.height; y++) {
+        for (let x = 0; x < img.width; x++) {
+            let clr = getColorAtindex(img, x, y);
+            let oldR = red(clr);
+            let oldG = green(clr);
+            let oldB = blue(clr);
+            let oldAlpha = alpha(clr);
+
+            //convert pixel as directed
+            let newClr = color(0, 0, 0);
+            if ('red' in _directions) {
+                if (oldR > _directions['red']) {
+                    newClr = color(oldR, 0, 0);
+                }
+            }
+            if ('blue' in _directions) {
+                if (oldB > _directions['blue']) {
+                    newClr = color(0, 0, oldB);
+                }
+            }
+            if ('green' in _directions) {
+                if (oldG > _directions['green']) {
+                    newClr = color(0, oldG, 0);
+                }
+            }
+            if ('brightness' in _directions) {
+                if (oldAlpha > _directions['brightness']) {
+                    newClr = color(oldAlpha);
+                }
+            }
+            setColorAtIndex(img, x, y, newClr);
+        }
+    }
+
+    img.updatePixels();
 }
