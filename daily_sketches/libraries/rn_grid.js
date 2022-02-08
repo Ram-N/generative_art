@@ -757,7 +757,7 @@ function getCircleGPts(grid, centerPt, radius) {
 class PanelGrid {
     /**
      * Create and Return a Panel object
-     * @param: cnv
+     * @param: cnv - has cnv.x, cnv.y, cnv.width, height, xMargin, yMargin
      * @param  {Integer} colVector
      * @param  {Integer} rowVector - fractions of how to split cnv.height
      **/
@@ -808,6 +808,21 @@ class PanelGrid {
 
         return panels
     }
+
+    display(colr) {
+        this.render(colr)
+    }
+
+    render(colr = 'white') {
+        if (colr != null) {
+            stroke(colr);
+            fill(colr)
+        }
+        for (let p of this.panels) {
+            rect(p.x, p.y, p.w, p.h)
+        }
+    }
+
 
     //Find Panel at given Col and Row CR
     getPanelFromCR(tCol, tRow, verbose = false) {
@@ -907,6 +922,14 @@ function createSquareGrid(rowCount, margin = 10) {
     //Custom Tiling
     colSplit = Array(rowCount).fill(1)
     pgrid = new PanelGrid(cnv, colSplit, colSplit, margin = margin);
+    return pgrid
+}
+
+//A convenience function to create an 6x7 panel grid
+function createMonthGrid(margin = 10) {
+    rowSplit = Array(6).fill(1)
+    colSplit = Array(7).fill(1)
+    pgrid = new PanelGrid(cnv, colSplit, rowSplit, margin = margin);
     return pgrid
 }
 
