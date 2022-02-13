@@ -112,7 +112,7 @@ gen2 = ["#2E294E", "#541388", "#F1E9DA", '#FFD400', "#D90368",]
 test_palette = ['black', 'red', 'green', 'blue', 'white']
 allpalettes = [rainbowDash, take5, cappuccino, purples, melons, red_brown_orange, red_orange, greys, green_yellow, flame]
 
-RGBPalList = [rainbowDash, take5, cappuccino, purples, melons, red_orange, green_yellow, flame]
+RGBPalList = [rainbowDash, take5, cappuccino, purples, melons, red_orange, green_yellow, flame, gen2]
 
 //HSB Palettes
 

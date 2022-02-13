@@ -780,11 +780,12 @@ class PanelGrid {
         //rowVector and colVector total to 1.0 and are fractions.
         let cumulative_x = cnv.xMargin + margin;
         let col = -1
+        let row = -1;
         for (let px of colVector) { // could be [0.2, 0.6, 0.2]
             let pw = px * usableWidth
             let cumulative_y = cnv.yMargin + margin;
             col += 1
-            let row = -1
+            row = -1
             for (let py of rowVector) {
                 row += 1
                 let ph = py * usableHeight;
@@ -806,6 +807,8 @@ class PanelGrid {
             cumulative_x += pw + margin
         }
 
+        this.cols = col;
+        this.rows = row; //number of rows in pgrid
         return panels
     }
 
@@ -890,6 +893,62 @@ class PanelGrid {
         let tx = int((xloc - cnv.xMargin) / this.width)
         let ty = int((yloc - cnv.yMargin) / this.height)
         return ({ tx: tx, ty: ty })
+    }
+
+
+    //Creates a list of panels in Spiral order from center, emanating outward
+    createSpiralPanelsList() {
+
+        let spiral = []
+
+        let g = 1;
+        let w = 0; //width of the spiral
+        let cx = int(this.cols / 2); //center tile
+        let cy = cx
+        for (let n = 0; n < (cx + 1); n++) {
+            let p0 = { x: n * (g + w), y: -(g + w) * n + 1 }
+            let p1 = { x: n * (g + w), y: (g + w) * n + 1 }
+            let p2 = { x: -(g + w) * n, y: (g + w) * n }
+            let p3 = { x: -(g + w) * n, y: -(g + w) * n - 1 };
+
+            fill(palette[n])
+            //p0 to p1. (go South)
+            for (let sqy = p0.y; sqy < p1.y; sqy++) {
+                let pnl = pgrid.getPanelFromCR(cx + p0.x, cy + sqy)
+                if (pnl) {
+                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
+                    spiral.push(pnl);
+                }
+            }
+
+            //p1 to p2 
+            for (let sqx = p1.x; sqx > p2.x; sqx--) {
+                let pnl = pgrid.getPanelFromCR(cx + sqx, cy + p2.y)
+                if (pnl) {
+                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
+                    spiral.push(pnl);
+                }
+            }
+
+            //p2 to p3. 
+            for (let sqy = p2.y; sqy > p3.y; sqy--) {
+                let pnl = pgrid.getPanelFromCR(cx + p2.x, cy + sqy)
+                if (pnl) {
+                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
+                    spiral.push(pnl);
+                }
+            }
+
+            //p3 to p0
+            for (let sqx = p3.x; sqx <= p0.x + 1; sqx++) {
+                let pnl = pgrid.getPanelFromCR(cx + sqx, cy + p3.y)
+                if (pnl) {
+                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
+                    spiral.push(pnl);
+                }
+            }
+        }
+        this.spiral = spiral;
     }
 
     renderPanelGrid(sw = 1, _color = "white") {
