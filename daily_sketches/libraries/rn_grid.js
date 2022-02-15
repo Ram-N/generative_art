@@ -916,7 +916,6 @@ class PanelGrid {
             for (let sqy = p0.y; sqy < p1.y; sqy++) {
                 let pnl = pgrid.getPanelFromCR(cx + p0.x, cy + sqy)
                 if (pnl) {
-                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
                     spiral.push(pnl);
                 }
             }
@@ -925,7 +924,6 @@ class PanelGrid {
             for (let sqx = p1.x; sqx > p2.x; sqx--) {
                 let pnl = pgrid.getPanelFromCR(cx + sqx, cy + p2.y)
                 if (pnl) {
-                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
                     spiral.push(pnl);
                 }
             }
@@ -934,7 +932,6 @@ class PanelGrid {
             for (let sqy = p2.y; sqy > p3.y; sqy--) {
                 let pnl = pgrid.getPanelFromCR(cx + p2.x, cy + sqy)
                 if (pnl) {
-                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
                     spiral.push(pnl);
                 }
             }
@@ -943,7 +940,6 @@ class PanelGrid {
             for (let sqx = p3.x; sqx <= p0.x + 1; sqx++) {
                 let pnl = pgrid.getPanelFromCR(cx + sqx, cy + p3.y)
                 if (pnl) {
-                    rect(pnl.x, pnl.y, pnl.w, pnl.h)
                     spiral.push(pnl);
                 }
             }

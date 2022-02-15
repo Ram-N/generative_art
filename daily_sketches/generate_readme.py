@@ -1,8 +1,11 @@
 """
-Updated: 2022-01-01
+Updated: 2022-02-15
 Ram Narasimhan
 
 Given a Directory and a few string inputs, automates the generation of README.md for that directory
+
+Log: 2022-02-15 Added interactive page links
+
 
 Input: path to directory
 Output: README.md (placed in the correct directory)
@@ -126,9 +129,11 @@ def generate_todays_text(CURR_YEAR, INPUT_DIR, TECH, inside_page=False, verbose=
     if description_exists and verbose:
         todays_text += f"## Description \n\n{desc} \n\n"
 
+    yeardate = f"{CURR_YEAR}/{INPUT_DIR}"
+
     todays_text += f"Made using {TECH}. "
     if not inside_page:
-        todays_text += f"| [Code]({CURR_YEAR}/{INPUT_DIR}/) | [Top](#daily-sketches)"
+        todays_text += f"| [Code]({yeardate}/) | [Top](#daily-sketches) | [Interactive](https://ram-n.github.io/generative_art/daily_sketches/{yeardate})"
     todays_text += f"\n\n-----\n\n"
 
     return todays_text
