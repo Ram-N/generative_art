@@ -19,10 +19,14 @@ from pathlib import Path
 TECH = "P5.js"
 
 
-def add_header(md_string, INPUT_DIR):
+def add_header(md_string, CURR_YEAR, INPUT_DIR):
+
+    yeardate = f"{CURR_YEAR}/{INPUT_DIR}"
 
     md_string += "# DAILY SKETCH for " + INPUT_DIR + "\n\n"
-    md_string += "## Done using " + TECH + "\n\n"
+
+    md_string += f"### [Interactive Version](https://ram-n.github.io/generative_art/daily_sketches/{yeardate}) \n "
+    md_string += "### Done using " + TECH + "\n\n"
 
     md_string += "### Description" + "\n\n"
 
@@ -188,7 +192,7 @@ def main(argv):
 
     # This is the text buffer to be written to the daily README
     md_string = ""
-    md_string = add_header(md_string, INPUT_DIR)
+    md_string = add_header(md_string, CURR_YEAR, INPUT_DIR)
     md_string = add_images(img_files, md_string, INPUT_DIR)
     md_string += generate_todays_text(
         CURR_YEAR, INPUT_DIR, TECH, inside_page=True, verbose=True

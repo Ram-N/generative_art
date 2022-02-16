@@ -233,9 +233,8 @@ class IsoTriangle {
     }
 
     display(_clr = 255) {
-        strokeWeight(3)
-
         fill(_clr)
+        stroke(_clr)
         if (this.vertices) {
             beginShape()
             for (let gpt of this.vertices) {
@@ -245,7 +244,6 @@ class IsoTriangle {
             }
             endShape();
         }
-        noStroke();
     }
 
     displayNeighbors(grid) {

@@ -10,6 +10,7 @@ Daily Sketches: [2022](2022/)
 
 -=-=
 
+[<img src="2022/2022-02-15/images/keep_2022-02-16-08-52-14.png" width="100">](2022/2022-02-15 "2022-02-15")
 [<img src="2022/2022-02-14/images/keep_2022-02-15-09-51-31.png" width="100">](2022/2022-02-14 "2022-02-14")
 [<img src="2022/2022-02-13/images/keep_2022-02-13-16-39-53.png" width="100">](2022/2022-02-13 "2022-02-13")
 [<img src="2022/2022-02-12/images/keep_2022-02-12-22-23-06.png" width="100">](2022/2022-02-12 "2022-02-12")
@@ -60,6 +61,17 @@ Daily Sketches: [2022](2022/)
 -----
 
 ***
+
+## 2022-02-15
+<img src="2022/2022-02-15/images/keep_2022-02-16-08-52-14.png" width="400">
+
+Keywords: 3D, Shapes
+ 
+
+Made using P5.js. | [Code](2022/2022-02-15/) | [Top](#daily-sketches) | [Interactive](https://ram-n.github.io/generative_art/daily_sketches/2022/2022-02-15)
+
+-----
+
 
 ## 2022-02-14
 <img src="2022/2022-02-14/images/keep_2022-02-15-09-51-31.png" width="400">
