@@ -92,6 +92,23 @@ class HexGrid {
         return (null)
     }
 
+    createFaceList() {
+        this.FaceList = [];
+        for (let col = 0; col <= this.cols; col++) {
+            for (let row = 0; row <= this.rows; row++) {
+                let f1 = new Face(col, row, this)
+                this.FaceList.push(f1)
+            }
+        }
+
+        //also add xp, xn, yp and yn to each of the top faces
+        for (let f1 of this.FaceList) {
+            f1.xP = f1.getxP();
+            f1.yP = f1.getyP();
+            f1.xN = f1.getxN();
+            f1.yN = f1.getyN();
+        }
+    }
 
     getTriangle(col, row, orient) {
         for (let t of this.triangles) {
@@ -261,6 +278,79 @@ class IsoTriangle {
         }
     }
 }
+
+
+function getFace(_col, _row, hg) {
+    for (f of hg.FaceList) {
+        if ((f.col == _col) && (f.row == _row)) {
+            return f
+        }
+    }
+    return null
+}
+
+class Face {
+
+    constructor(col, row, hg) {
+        this.col = col;
+        this.row = row;
+        this.tL = hg.getTriangle(col, row, 1) //< Triangle
+        this.tR = hg.getTriangle(col + 1, row, 0) //> Triangle
+    }
+
+
+    getxP() {
+        let x;
+        if (this.row % 2) {
+            x = getFace(this.col, this.row + 1, hg) // South East Face
+            return x
+        } else { // row number is even            
+            return getFace(this.col + 1, this.row + 1, hg) // South East Face
+        }
+    }
+
+    getxN() {
+        if (this.row % 2 == 0) {
+            return getFace(this.col, this.row - 1, hg) // NW Face
+        } else {
+            return getFace(this.col - 1, this.row - 1, hg) // NW Face
+        }
+    }
+
+    getyP() {
+        if (this.row % 2) { //odd row
+            return getFace(this.col, this.row - 1, hg) // South East Face
+        } else { //row number is even
+            return getFace(this.col + 1, this.row - 1, hg) // South East Face
+        }
+    }
+
+    getyN() {
+        if (this.row % 2 == 0) {
+            return getFace(this.col, this.row + 1, hg) // NW Face
+        } else { //odd row
+            return getFace(this.col - 1, this.row + 1, hg)
+        }
+    }
+
+    getAboveFace() {
+        if (this.xN) {
+            return this.xN.yP
+        }
+        if (this.yP) {
+            return this.yP.xN
+        }
+        return null
+    }
+
+    display(_clr = 'white') {
+        if (this) {
+            if (this.tL) { this.tL.display(_clr) }
+            if (this.tR) { this.tR.display(_clr) }
+        }
+    }
+}
+
 
 
 class Point { // A point on the Grid
@@ -603,7 +693,7 @@ class TileGrid {
         return (null)
     }
 
-    getTile(xloc, yloc, verbose = true) {
+    getTile(xloc, yloc, verbose = false) {
         // get the tile that any point belongs to
         let tCol = int((xloc - cnv.xMargin) / this.width)
         let tRow = int((yloc - cnv.yMargin) / this.height)

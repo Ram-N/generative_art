@@ -1,6 +1,7 @@
 //Use with p5.js sketches. 
 //Ram Narasimhan
-// November 2021
+// Feb 2022
+//Added resetsketch()
 
 function draw_border(clr = 0, sw = 20) {
     push();
@@ -112,3 +113,6 @@ function shuffleArray(array) {
     return array;
 }
 
+function resetSketch() {
+    window.location.reload();
+}

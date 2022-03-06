@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tutorial: How can we animate a ball to move in a sine wave? &mdash; Generative Art 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial: Creating “Circular Noise” using Processing.py" href="tutorial_circular_noise.html" />
+    <link rel="prev" title="Download and Install Processing.py" href="install_processing_python.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Generative Art
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install_processing_python.html">Download and Install Processing.py</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial: How can we animate a ball to move in a sine wave?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thought-process">Thought Process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-can-we-vary">What can we vary?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-make-cosine-vary-with-time">How to make <cite>cosine()</cite> vary with time?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-change-the-amplitude-of-each-ball">How to change the amplitude of each ball?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-about-the-frequency-consider-these-two-choices">What about the Frequency? Consider these two choices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-things-up">Setting things up</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html">Tutorial: Creating “Circular Noise” using Processing.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html#how-to-approach-this">How to Approach this?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html#static-rings">Static rings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html#adding-some-noise-to-the-rings-jaggedness">Adding some noise to the rings (jaggedness)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html#bringing-in-perlin-noise">Bringing in Perlin Noise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_circular_noise.html#wrapping-up-with-a-few-variations">Wrapping up with a few Variations</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Generative Art</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Tutorial: How can we animate a ball to move in a sine wave?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/move_ball_in_sinusoidal_manner.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#tutorial-how-can-we-animate-a-ball-to-move-in-a-sine-wave" id="id1">Tutorial: How can we animate a ball to move in a sine wave?</a></p></li>
+</ul>
+</div>
+<div class="section" id="tutorial-how-can-we-animate-a-ball-to-move-in-a-sine-wave">
+<h1><a class="toc-backref" href="#id1">Tutorial: How can we animate a ball to move in a sine wave?</a><a class="headerlink" href="#tutorial-how-can-we-animate-a-ball-to-move-in-a-sine-wave" title="Permalink to this headline">¶</a></h1>
+<p>Find the <a class="reference external" href="https://github.com/Ram-N/generative_art/blob/master/ball_animations/sinusoidal_ball.py">Code:</a> here.</p>
+<p>Observe the 3 balls in the following figure:</p>
+<a class="reference internal image-reference" href="_images/notrails_amplitudes.gif"><img alt="_images/notrails_amplitudes.gif" src="_images/notrails_amplitudes.gif" style="width: 400px;" /></a>
+<p>If you pay attention, you will notice that all 3 have the exact same frequency, but they each have different amplitudes.
+It becomes easier to see if we let the balls leave trails (see the image below).</p>
+<a class="reference internal image-reference" href="_images/amplitudes.gif"><img alt="_images/amplitudes.gif" src="_images/amplitudes.gif" style="width: 400px;" /></a>
+<div class="section" id="thought-process">
+<h2>Thought Process<a class="headerlink" href="#thought-process" title="Permalink to this headline">¶</a></h2>
+<p>We want a few balls to move from left to right, but instead of a straight line, it would be along
+a cosine or a sine curve.</p>
+<p>There are 3 Steps in most Ball movement animations:</p>
+<ol class="arabic simple">
+<li><p>At each frame, we could compute its x and y coordinates</p></li>
+<li><p>We would update its coordinates and store it for each ball</p></li>
+<li><p>Display each ball at its latest location. (This is very common and nothing unusual here.)</p></li>
+</ol>
+</div>
+<div class="section" id="what-can-we-vary">
+<h2>What can we vary?<a class="headerlink" href="#what-can-we-vary" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>We could vary the FREQUENCY of the Sine/cosine curve.</p></li>
+<li><p>We could vary the AMPLITUDE (how high does it bounce?)</p></li>
+</ol>
+</div>
+<div class="section" id="how-to-make-cosine-vary-with-time">
+<h2>How to make <cite>cosine()</cite> vary with time?<a class="headerlink" href="#how-to-make-cosine-vary-with-time" title="Permalink to this headline">¶</a></h2>
+<p>cos(x) is always between -1 and 1. To bring in a time component, we could use the built-in
+variable called <cite>frameCount</cite> (note the camel-case in the name.)</p>
+<p>cos(frameCount) will always vary from -1 to +1, and will be constantly changing over time. So we are getting somewhere.</p>
+<div class="section" id="how-to-change-the-amplitude-of-each-ball">
+<h3>How to change the amplitude of each ball?<a class="headerlink" href="#how-to-change-the-amplitude-of-each-ball" title="Permalink to this headline">¶</a></h3>
+<p>Now <cite>cos(frameCount) * 20</cite> will always vary from -20 to + 20. So that is how we will get our <em>amplitude</em> going.
+If we multiply <cite>cos(frameCount)</cite> by three different numbers, one for each ball, we will have 3 different amplitudes.</p>
+<p>In the following image, we have 3 balls, moving with 3 different amplitudes:</p>
+<a class="reference internal image-reference" href="_images/diff_amplitudes.png"><img alt="_images/diff_amplitudes.png" src="_images/diff_amplitudes.png" style="width: 400px;" /></a>
+</div>
+<div class="section" id="what-about-the-frequency-consider-these-two-choices">
+<h3>What about the Frequency? Consider these two choices<a class="headerlink" href="#what-about-the-frequency-consider-these-two-choices" title="Permalink to this headline">¶</a></h3>
+<p>Consider:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cos</span><span class="p">(</span><span class="n">frameCount</span><span class="p">)</span> <span class="n">vs</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">frameCount</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One moves twice as fast as the other. It completes its ‘rotations’ faster. So that can be our proxy for frequency.</p>
+<p>Let’s put it all together.</p>
+<p>Look at this one line of code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">vy</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">radians</span><span class="p">(</span><span class="n">frameCount</span> <span class="o">*</span> <span class="n">angle_step</span><span class="p">)</span> <span class="o">*</span> <span class="n">FREQ</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span> <span class="o">*</span> <span class="n">AMPLITUDE</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We are setting the <cite>y</cite> position (coordinate) of ball <cite>b</cite> here. To understand this, start always from the innermost.
+frameCount is just an integer that forever is increasing. <cite>angle_step</cite> is a constant. I am using 6 degrees in my code.</p>
+<p><cite>radians(frameCount * angle_step)</cite> is where we convert degress to radians. It is a straight conversion. Read upon on radians
+if this is new to you. Then we multiply this by a FREQ[idx] where idx is the index for each ball.
+This is how we can control a ball’s frequency. Finally, we are multipling by AMPLITUDE.</p>
+<p>So, to recap, we are using many constants to control how much the ball moves in the y (vertical) direction. That’s all.</p>
+</div>
+</div>
+<div class="section" id="setting-things-up">
+<h2>Setting things up<a class="headerlink" href="#setting-things-up" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Frequency variations. Create a list to hold each ball’s Frequency: <cite>FREQ = [0.5, 1, 2]</cite></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/notrails_frequencies.gif"><img alt="_images/notrails_frequencies.gif" src="_images/notrails_frequencies.gif" style="width: 400px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>amplitude variations: Create a list to hold each ball’s Amplitude: <cite>AMPLITUDE = [10, 20, 50]</cite></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/notrails_amplitudes.gif"><img alt="_images/notrails_amplitudes.gif" src="_images/notrails_amplitudes.gif" style="width: 400px;" /></a>
+<p>In the following image, we have 3 balls, moving with 3 different frequencies:</p>
+<a class="reference internal image-reference" href="_images/diff_frequencies.jpg"><img alt="_images/diff_frequencies.jpg" src="_images/diff_frequencies.jpg" style="width: 400px;" /></a>
+<p>This is a small script. You can find it in github. Do give it a try:
+<a class="reference external" href="https://github.com/Ram-N/generative_art/blob/master/ball_animations/sinusoidal_ball.py">sinusoidal_ball.py</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial_circular_noise.html" class="btn btn-neutral float-right" title="Tutorial: Creating “Circular Noise” using Processing.py" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install_processing_python.html" class="btn btn-neutral float-left" title="Download and Install Processing.py" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Ram Narasimhan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
