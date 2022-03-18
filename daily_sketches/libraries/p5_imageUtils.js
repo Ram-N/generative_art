@@ -46,29 +46,42 @@ function closestDiscreteValue(value, steps, max) {
     return round(steps * value / max) * floor(max / steps);
 }
 
-function makeDithered(img, steps) {
+function getNewcolor(existingClr, rules) {
+    let oldR = red(existingClr);
+    let oldG = green(existingClr);
+    let oldB = blue(existingClr);
+    steps = rules.steps;
+    // convert pixel to its closest color from a subset
+    let newR = closestDiscreteValue(oldR, steps, 255);
+    let newG = closestDiscreteValue(oldG, steps, 255);
+    let newB = closestDiscreteValue(oldB, steps, 255);
+    if (rules.noRed) { newR = 0; }
+    if (rules.noBlue) { newB = 0; }
+    if (rules.noGreen) { newG = 0; }
+    return color(newR, newG, newB);
+
+}
+
+
+function makeDithered(img, rules) {
     img.loadPixels();
 
-    for (let y = 0; y < img.height; y++) {
-        for (let x = 0; x < img.width; x++) {
-            let clr = getColorAtindex(img, x, y);
-            let oldR = red(clr);
-            let oldG = green(clr);
-            let oldB = blue(clr);
+    yStep = 10;
+    for (let y = 0; y < img.height; y += yStep) {
+        for (let x = 0; x < img.width; x += yStep) {
+            let existingClr = getColorAtindex(img, x, y);
 
-            //convert pixel to its closest color from a subset
-            let newR = closestDiscreteValue(oldR, steps, 255);
-            let newG = closestDiscreteValue(oldG, steps, 255);
-            let newB = closestDiscreteValue(oldB, steps, 255);
-            let newClr = color(newR, newG, newB);
+            let newClr = getNewcolor(existingClr, rules);
             setColorAtIndex(img, x, y, newClr);
+            fill(newClr)
+            rect(x, y, yStep, yStep);
 
             //but we are not done.
             //take residual error and "push" it to 4 neighboring pixels 
             //to the right and below the current xy pixel
-            let errR = oldR - newR;
-            let errG = oldG - newG;
-            let errB = oldB - newB;
+            let errR = red(existingClr) - red(newClr);
+            let errG = green(existingClr) - green(newClr);
+            let errB = blue(existingClr) - blue(newClr);
 
             distributeError(img, x, y, errR, errG, errB);
         }
@@ -79,10 +92,12 @@ function makeDithered(img, steps) {
 
 //7-3-5-1
 function distributeError(img, x, y, errR, errG, errB) {
-    addError(img, 7 / 16.0, x + 1, y, errR, errG, errB);
-    addError(img, 3 / 16.0, x - 1, y + 1, errR, errG, errB);
-    addError(img, 5 / 16.0, x, y + 1, errR, errG, errB);
-    addError(img, 1 / 16.0, x + 1, y + 1, errR, errG, errB);
+    //Note that the "error" can only be pused to pixels that have not been set as yet.
+    //So North, and West options are unavailable, since we process left to right
+    addError(img, 7 / 16.0, x + 1, y, errR, errG, errB); //East
+    addError(img, 3 / 16.0, x - 1, y + 1, errR, errG, errB); //South West
+    addError(img, 5 / 16.0, x, y + 1, errR, errG, errB); //South
+    addError(img, 1 / 16.0, x + 1, y + 1, errR, errG, errB); //South East
 }
 
 function addError(img, factor, x, y, errR, errG, errB) {

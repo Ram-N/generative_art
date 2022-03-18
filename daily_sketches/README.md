@@ -10,6 +10,7 @@ Daily Sketches: [2022](2022/)
 
 -=-=
 
+[<img src="2022/2022-03-16/images/keep_2022-03-18-16-34-06.png" width="100">](2022/2022-03-16 "2022-03-16")
 [<img src="2022/2022-03-15/images/keep_2022-03-18-12-39-50.png" width="100">](2022/2022-03-15 "2022-03-15")
 [<img src="2022/2022-03-14/images/keep_2022-03-14-23-14-13.png" width="100">](2022/2022-03-14 "2022-03-14")
 [<img src="2022/2022-03-13/images/keep_2022-03-14-23-01-26.png" width="100">](2022/2022-03-13 "2022-03-13")
@@ -89,6 +90,17 @@ Daily Sketches: [2022](2022/)
 -----
 
 ***
+
+## 2022-03-16
+<img src="2022/2022-03-16/images/keep_2022-03-18-16-34-06.png" width="400">
+
+Keywords: dithering
+ 
+
+Made using P5.js. | [Code](2022/2022-03-16/) | [Top](#daily-sketches) | [Interactive](https://ram-n.github.io/generative_art/daily_sketches/2022/2022-03-16)
+
+-----
+
 
 ## 2022-03-15
 <img src="2022/2022-03-15/images/keep_2022-03-18-12-39-50.png" width="400">
